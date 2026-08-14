@@ -1,5 +1,10 @@
 # Entity register — what the site already claims
 
+> **Read `entity-health.md` first.** This file is the **claims** layer: what each surface was built
+> to target. It never holds a metric. Whether a claim is actually held, contested or free is the
+> **health** view, derived from a dated GSC snapshot — and that is the file to consult before a title
+> settles. Method: `../library/entity-health-method.md`.
+
 The site-wide map of which entities each published surface targets. Read it **before** proposing a
 new title, and append to it **after** a surface ships.
 
@@ -40,25 +45,30 @@ register tells it what the rest of the site is already standing on.
 
 URL pattern: `/en/case-studies/<slug>`.
 
-| Slug | Live title | Primary entity | Supporting entities | Cluster |
-|---|---|---|---|---|
-| `non-bank-factoring-digitalization` | A factoring lender that transformed funding into a 70%-faster edge | factoring digitalization | non-bank lender, straight-through processing, KYC, e-invoicing, credit bureau | Credit & lending |
-| `online-credit-system-for-individuals-and-businesses` | Digital credit platform that approves loans 60% faster for a bank | digital credit platform | loan origination, SME lending, bank | Credit & lending |
-| `1c-crm-integration-credit-management` | A low-code CRM on top of 1C, that grew a lender's credit portfolio by 33.5% | credit management CRM | low-code, 1C integration, loan portfolio | Credit & lending |
-| `banking-app-psd2-ips-compliance` | A modern mobile banking app delivered under urgent PSD2 and IPS rules | mobile banking app | PSD2, instant payments (IPS), regulatory deadline | Banking & payments |
-| `mobile-wallet-for-offline-crypto-payments` | A mobile app that transforms cryptocurrency into everyday payments | crypto payments wallet | POS integration, offline payments, EU/Asia | Banking & payments |
-| `digital-tax-returns-germany-diaspora` | A tax-return platform that lets the German diaspora file in under 20 minutes | digital tax return platform | Elster integration, cross-border finance, diaspora, multilingual UX | Cross-border finance |
-| `educational-platform-for-an-online-english-school` | An educational platform for Moldova's leading English-language school | education platform | online school, systems integration, Moldova | Education |
-| `academic-management-system-for-multi-campus-institution` | Replacing a 15-year-old PHP system academic system for a global education organization | academic management system | legacy replacement, multi-campus, scheduling | Education |
-| `educational-app-and-platform-for-parents-on-web` | A platform that brought science-based parenting to 2M+ parents | parenting education app | subscription product, consumer scale | Education |
-| `e-admission-system-for-moldova` | A platform unifying MD's university admissions for students, universities, and the ministry | university admissions system | e-gov, ministry, multi-stakeholder platform, Moldova | E-gov / public sector |
-| `queue-system-for-md-customs` | A digital queue system that lets truck drivers book border crossings in advance | border crossing queue system | customs, logistics, e-gov, Moldova | E-gov / public sector |
-| `postal-service-digital-transformation` | A postal transformation that made international shipping affordable | postal digital transformation | international shipping, state operator, logistics | E-gov / public sector |
-| `ecommerce-marketplace-for-classified-ads` | A redesigned, mobile-first marketplace built for Tanzania's mobile majority | classifieds marketplace | mobile-first redesign, data migration, Tanzania / emerging market | Marketplace & commerce |
-| `marketplace-to-help-pets-find-their-home` | A pet adoption marketplace with AI, escrow, and native apps | pet adoption marketplace | escrow, payment processing, AI, native apps | Marketplace & commerce |
-| `digital-optical-showroom-application` | A unified ERP and app connecting Lensa's optical stores and e-commerce | omnichannel retail ERP | optical retail, e-commerce, in-store app, Lensa | Marketplace & commerce |
-| `gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce |
-| `system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data |
+The **observed probe** column is the query GSC reports the page is actually found for
+(`gsc-pages.top_keyword`, snapshot 2026-08-14). It is the join key to `entity-health.md` — observed,
+not authored, which is why it is allowed in this file when no other metric is. `—` means the page sat
+below that snapshot's reporting floor: absent, not proven zero.
+
+| Slug | Live title | Primary entity | Supporting entities | Cluster | Observed probe |
+|---|---|---|---|---|---|
+| `non-bank-factoring-digitalization` | A factoring lender that transformed funding into a 70%-faster edge | factoring digitalization | non-bank lender, straight-through processing, KYC, e-invoicing, credit bureau | Credit & lending | factoring cloud · factoring platform |
+| `online-credit-system-for-individuals-and-businesses` | Digital credit platform that approves loans 60% faster for a bank | digital credit platform | loan origination, SME lending, bank | Credit & lending | ebs loans *(brand)* |
+| `1c-crm-integration-credit-management` | A low-code CRM on top of 1C, that grew a lender's credit portfolio by 33.5% | credit management CRM | low-code, 1C integration, loan portfolio | Credit & lending | integrated credit reporting |
+| `banking-app-psd2-ips-compliance` | A modern mobile banking app delivered under urgent PSD2 and IPS rules | mobile banking app | PSD2, instant payments (IPS), regulatory deadline | Banking & payments | — |
+| `mobile-wallet-for-offline-crypto-payments` | A mobile app that transforms cryptocurrency into everyday payments | crypto payments wallet | POS integration, offline payments, EU/Asia | Banking & payments | ebs wallet *(brand)* |
+| `digital-tax-returns-germany-diaspora` | A tax-return platform that lets the German diaspora file in under 20 minutes | digital tax return platform | Elster integration, cross-border finance, diaspora, multilingual UX | Cross-border finance | — |
+| `educational-platform-for-an-online-english-school` | An educational platform for Moldova's leading English-language school | education platform | online school, systems integration, Moldova | Education | — |
+| `academic-management-system-for-multi-campus-institution` | Replacing a 15-year-old PHP system academic system for a global education organization | academic management system | legacy replacement, multi-campus, scheduling | Education | integrated campus management |
+| `educational-app-and-platform-for-parents-on-web` | A platform that brought science-based parenting to 2M+ parents | parenting education app | subscription product, consumer scale | Education | — |
+| `e-admission-system-for-moldova` | A platform unifying MD's university admissions for students, universities, and the ministry | university admissions system | e-gov, ministry, multi-stakeholder platform, Moldova | E-gov / public sector | e admi |
+| `queue-system-for-md-customs` | A digital queue system that lets truck drivers book border crossings in advance | border crossing queue system | customs, logistics, e-gov, Moldova | E-gov / public sector | — |
+| `postal-service-digital-transformation` | A postal transformation that made international shipping affordable | postal digital transformation | international shipping, state operator, logistics | E-gov / public sector | e postal service · innovative postal services |
+| `ecommerce-marketplace-for-classified-ads` | A redesigned, mobile-first marketplace built for Tanzania's mobile majority | classifieds marketplace | mobile-first redesign, data migration, Tanzania / emerging market | Marketplace & commerce | *(`site:` operator — no usable probe)* |
+| `marketplace-to-help-pets-find-their-home` | A pet adoption marketplace with AI, escrow, and native apps | pet adoption marketplace | escrow, payment processing, AI, native apps | Marketplace & commerce | pets4homes payment fee *(competitor brand)* |
+| `digital-optical-showroom-application` | A unified ERP and app connecting Lensa's optical stores and e-commerce | omnichannel retail ERP | optical retail, e-commerce, in-store app, Lensa | Marketplace & commerce | — |
+| `gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
+| `system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
 
 ## 2. In the pipeline, not live
 
@@ -85,6 +95,12 @@ inventory (Ahrefs audit, 2026-07-16)".
 
 Not verdicts. Overlap is recorded because it should be seen before a title is chosen, not because a
 cost has been measured.
+
+> **As measured on 2026-08-14, none of the overlaps below is contested** — they are claims, not
+> contests, because most of these pages hold nothing yet. The numbers behind that verdict, the
+> per-page states, and the entities other surfaces hold instead all live in `entity-health.md`. They
+> are deliberately not repeated here: this file carries claims, and a metric copied into it would be
+> wrong within a fortnight with nothing to signal that it had gone stale.
 
 - **Credit and lending carries three live surfaces** (`non-bank-factoring-digitalization`,
   `online-credit-system-for-individuals-and-businesses`, `1c-crm-integration-credit-management`),

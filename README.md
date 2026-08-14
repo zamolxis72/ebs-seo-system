@@ -8,9 +8,13 @@ The SEO workstream of the EBS marketing system: keyword strategy, on-page and te
 
 | Path | Role |
 |---|---|
-| `intake/` | The facts: keyword portfolio, target pages, and current rankings data. |
-| `library/` | The reference: audit checklist, on-page and schema templates, the prioritization method. |
-| `reports/` | The outputs: shipped audits and recommendation sets, one folder per pass. |
+| `intake/` | The facts: keyword portfolio, target pages, and current rankings data. Also the entity layer — `entity-register.md` (claims), `snapshots/` (dated GSC pulls, immutable), and `entity-health.md` (the generated read surface). |
+| `library/` | The reference: audit checklist, on-page and schema templates, the prioritization method, and `entity-health-method.md`. |
+| `reports/` | The outputs: shipped audits and recommendation sets, one folder per pass, plus the living `site-problems-log.md`. |
+
+### The entity layer, in one line each
+
+Read **`intake/entity-health.md`** before any new title is proposed anywhere on the site. It says, per entity, whether we hold it, are splitting it, lost it to another of our pages, claim it without ranking, or have never claimed it — and what may be done in each case. It is generated from the claims in `entity-register.md` joined to the latest dated pull in `snapshots/`, and it is never hand-edited. The split exists because claims stay true for a year and metrics are wrong in a fortnight; keeping them in one file is how a stale number ends up deciding a title.
 
 ## How it connects
 
@@ -20,4 +24,4 @@ The SEO workstream of the EBS marketing system: keyword strategy, on-page and te
 
 ## Status
 
-Scaffold only — no audits shipped yet. Structure mirrors the case-studies workstream (`zamolxis72/ebs-case-study-system`).
+No audit pass shipped yet. The **entity layer is live** as of 2026-08-14: register seeded from the 17 live case studies, first GSC baseline snapshot pulled, health view generated, method recorded. Structure mirrors the case-studies workstream (`zamolxis72/ebs-case-study-system`).

@@ -8,12 +8,20 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
    Every known site problem (evidence, why it matters, owner, status) lives there; whichever
    workstream finds a site-health issue appends it THERE, never to its own library. Update statuses
    as fixes land.
-3. Read `intake/entity-register.md` — **the site-wide map of what every published surface claims,
-   and this repo owns it.** Read it before any new title is proposed anywhere; every workstream
-   appends its page's entities there once live, so a new title supports an existing cluster or opens
-   a new window rather than competing with our own page. Article *keyword* ownership stays with
-   `ebs-article-system/library/content-map.md`; the two reference each other and never merge.
+3. Read `intake/entity-health.md` — **the single read surface for entity status, and this repo owns
+   it.** Read it before any new title is proposed anywhere: it says per entity whether the site holds
+   it (OWNED), is splitting it (CONTESTED), lost it to a different page (MISOWNED), claims it without
+   ranking (UNPROVEN), or has never claimed it (OPEN) — and what may be done in each case. It is
+   **generated, never hand-edited**, from the claims in `intake/entity-register.md` joined to the
+   latest dated pull in `intake/snapshots/`. Method: `library/entity-health-method.md`. Producers
+   append their page's entities to the **register** once live; the health view is regenerated, not
+   written. Article *keyword* ownership stays with `ebs-article-system/library/content-map.md`; the
+   two reference each other and never merge.
 4. Pull current data from / into `intake/` — keyword portfolio, target pages, rankings snapshots.
+   **The entity-health refresh rides the ~2-week agenda ritual**, not a schedule of its own: re-run
+   the two GSC calls in `library/entity-health-method.md` (0 API units), write a new dated file to
+   `intake/snapshots/`, then regenerate `intake/entity-health.md` from it. Snapshots are immutable —
+   corrections go in the next one.
 
 ## Producing
 - Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
