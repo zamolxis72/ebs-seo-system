@@ -11,8 +11,7 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
 3. Pull current data from / into `intake/` — keyword portfolio, target pages, rankings snapshots.
 
 ## Producing
-- Use the `b2b-seo-audit`, `seo-strategy`, and `search-visibility-suite` skills
-  (`machine-signals` for markup/access fixes, `text-semantics` for on-page arrangement).
+- Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
 - Metrics come from Ahrefs / Search Console — live or a dated snapshot. Never invent a metric.
 - Research discovery follows the article workstream's `library/trusted-sources.md` (the
   cross-workstream discovery whitelist — it plays its own role and is never overridden by a
