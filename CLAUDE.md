@@ -4,11 +4,19 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
 
 ## Before any SEO work (in this exact order)
 1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method.
-2. Pull current data from / into `intake/` — keyword portfolio, target pages, rankings snapshots.
+2. Read `reports/site-problems-log.md` — **the living site/SEO health log, and this repo owns it.**
+   Every known site problem (evidence, why it matters, owner, status) lives there; whichever
+   workstream finds a site-health issue appends it THERE, never to its own library. Update statuses
+   as fixes land.
+3. Pull current data from / into `intake/` — keyword portfolio, target pages, rankings snapshots.
 
 ## Producing
-- Use the `b2b-seo-audit`, `seo-strategy`, and `search-visibility-suite` skills.
+- Use the `b2b-seo-audit`, `seo-strategy`, and `search-visibility-suite` skills
+  (`machine-signals` for markup/access fixes, `text-semantics` for on-page arrangement).
 - Metrics come from Ahrefs / Search Console — live or a dated snapshot. Never invent a metric.
+- Research discovery follows the article workstream's `library/trusted-sources.md` (the
+  cross-workstream discovery whitelist — it plays its own role and is never overridden by a
+  skill's bundled source list; those are suggestions).
 - Feed keyword and gap findings to the articles workstream by reference, not by copying content.
 
 ## Shipping
