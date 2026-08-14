@@ -58,7 +58,9 @@ Declared owner is the registered page. Observed values are from the snapshot.
 | AI call intelligence | `system-converting-calls-to-insights` | — | — | below floor | **UNPROVEN** | as above |
 | omnichannel retail ERP | `digital-optical-showroom-application` | — | — | below floor | **UNPROVEN** | as above |
 
-**Five OWNED, twelve UNPROVEN, zero CONTESTED, zero MISOWNED.**
+**Seventeen surfaces: five OWNED** (three outright, two marked *weakly* — held, but by a branded or
+narrow probe rather than by demand) **, twelve UNPROVEN, zero CONTESTED, zero MISOWNED.** *Weakly* is
+a qualifier on OWNED, not a sixth state.
 
 ## Entities the site actually holds — and who holds them
 
