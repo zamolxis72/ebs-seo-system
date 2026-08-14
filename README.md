@@ -15,7 +15,7 @@ The SEO workstream of the EBS marketing system: keyword strategy, on-page and te
 ## How it connects
 
 - Planning cadence comes from the umbrella's marketing agenda (in `zamolxis72/ebs-marketing-system`, `planning/`).
-- Production uses the `b2b-seo-audit`, `seo-strategy`, and `search-visibility-suite` skills; live metrics come from the Ahrefs tools, never invented.
+- Production uses `b2b-seo-audit` (diagnosis) plus `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship); live metrics come from the Ahrefs tools, never invented.
 - The articles workstream (`zamolxis72/ebs-article-system`) consumes this repo's keyword and gap findings by reference.
 
 ## Status
