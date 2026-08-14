@@ -14,7 +14,9 @@ The SEO workstream of the EBS marketing system: keyword strategy, on-page and te
 
 ### The entity layer, in one line each
 
-Read **`intake/entity-health.md`** before any new title is proposed anywhere on the site. It says, per entity, whether we hold it, are splitting it, lost it to another of our pages, claim it without ranking, or have never claimed it — and what may be done in each case. It is generated from the claims in `entity-register.md` joined to the latest dated pull in `snapshots/`, and it is never hand-edited. The split exists because claims stay true for a year and metrics are wrong in a fortnight; keeping them in one file is how a stale number ends up deciding a title.
+Read **`intake/entity-health.md`** before any new title is proposed anywhere on the site. It says, per entity, whether we hold it, are splitting it, lost it to another of our pages, claim it without ranking, or have never claimed it — and what may be done in each case. Its state tables are written by `scripts/build_entity_health.py` from the claims in `entity-register.md` joined to the newest pull in `snapshots/`; the prose around them is human. The split exists because claims stay true for a year and metrics are wrong in a fortnight, and keeping them in one file is how a stale number ends up deciding a title.
+
+Refresh: record a new pull into `intake/snapshots/gsc-<date>.json`, run `python3 scripts/build_entity_health.py`, read the diff. Method and state rules: `library/entity-health-method.md`.
 
 ## How it connects
 

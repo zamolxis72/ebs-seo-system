@@ -10,7 +10,7 @@ Evidence-based issues found during article pipeline work. Each item: evidence, w
 **On robots.txt:** NOT sufficient alone. robots.txt only asks crawlers not to crawl; it does not remove indexed URLs (Google keeps them, un-crawled) and does not stop humans. Correct order: (1) GitLab Admin → Visibility and access controls → restrict "Public" visibility (or VPN/IP-allowlist the instance), (2) GSC property for pages.* → Removals, (3) robots.txt disallow-all as belt-and-braces AFTER access is closed. Disavow is irrelevant here (that tool is for external spam backlinks only).
 **Owner:** DevOps + management (confidentiality call). **Status: OPEN — investigate first.**
 
-**Corroborated from Search Console, 2026-08-14** (`intake/snapshots/gsc-2026-08-14.md`): `pages.ebs-integrator.com` is not merely crawlable, it is **earning impressions in Google**. `pages.ebs-integrator.com/explore/projects/topics/meapp` drew 248 impressions at position 11.0, and `pages.ebs-integrator.com/` a further 47. The query `site:ebs-integrator.com` returns **324 URLs** with a GitLab project-topic page as `top_url`. The "my fetch returned empty, unconfirmed" caveat above is now resolved: it is indexed, and someone is running site: queries against the domain. Severity holds at HIGH.
+**Corroborated from Search Console, 2026-08-14** (`intake/snapshots/gsc-2026-08-14.json`): `pages.ebs-integrator.com` is not merely crawlable, it is **earning impressions in Google**. `pages.ebs-integrator.com/explore/projects/topics/meapp` drew 248 impressions at position 11.0, and `pages.ebs-integrator.com/` a further 47. The query `site:ebs-integrator.com` returns **324 URLs** with a GitLab project-topic page as `top_url`. The "my fetch returned empty, unconfirmed" caveat above is now resolved: it is indexed, and someone is running site: queries against the domain. Severity holds at HIGH.
 
 ## P2 — 95 internal links point to a 404 — SEVERITY: HIGH
 
@@ -57,7 +57,7 @@ Evidence-based issues found during article pipeline work. Each item: evidence, w
 
 ## P8 — Two URL variants of the homepage rank independently — SEVERITY: MEDIUM
 
-**Evidence (Search Console via Ahrefs project 9118279, 90 days to 2026-08-13, `intake/snapshots/gsc-2026-08-14.md`):** both `https://ebs-integrator.com/en/home` (139 keywords, 1,851 impressions, 340 clicks, avg pos 14.3) and `http://www.ebs-integrator.com/` (54 keywords, 1,249 impressions, 19 clicks, avg pos 7.4) earn impressions, and both report `ebs integrator` as their top keyword. Two protocol/host variants of the same destination are being served and measured separately.
+**Evidence (Search Console via Ahrefs project 9118279, 90 days to 2026-08-13, `intake/snapshots/gsc-2026-08-14.json`):** both `https://ebs-integrator.com/en/home` (139 keywords, 1,851 impressions, 340 clicks, avg pos 14.3) and `http://www.ebs-integrator.com/` (54 keywords, 1,249 impressions, 19 clicks, avg pos 7.4) earn impressions, and both report `ebs integrator` as their top keyword. Two protocol/host variants of the same destination are being served and measured separately.
 
 **Why it matters:** the `www` + `http` variant carries a *better* average position than the canonical one but converts at 1.5% CTR against 18.4%, so the variant Google sometimes prefers is the weaker experience. Signals that should accumulate on one URL are being reported against two, and the split is invisible on the page itself.
 

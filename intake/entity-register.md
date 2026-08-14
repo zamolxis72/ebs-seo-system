@@ -58,23 +58,23 @@ below that snapshot's reporting floor: absent, not proven zero.
 
 | Slug | Live title | Primary entity | Supporting entities | Cluster | Observed probe |
 |---|---|---|---|---|---|
-| `non-bank-factoring-digitalization` | A factoring lender that transformed funding into a 70%-faster edge | factoring digitalization | non-bank lender, straight-through processing, KYC, e-invoicing, credit bureau | Credit & lending | factoring cloud · factoring platform |
-| `online-credit-system-for-individuals-and-businesses` | Digital credit platform that approves loans 60% faster for a bank | digital credit platform | loan origination, SME lending, bank | Credit & lending | ebs loans *(brand)* |
-| `1c-crm-integration-credit-management` | A low-code CRM on top of 1C, that grew a lender's credit portfolio by 33.5% | credit management CRM | low-code, 1C integration, loan portfolio | Credit & lending | integrated credit reporting |
-| `banking-app-psd2-ips-compliance` | A modern mobile banking app delivered under urgent PSD2 and IPS rules | mobile banking app | PSD2, instant payments (IPS), regulatory deadline | Banking & payments | — |
-| `mobile-wallet-for-offline-crypto-payments` | A mobile app that transforms cryptocurrency into everyday payments | crypto payments wallet | POS integration, offline payments, EU/Asia | Banking & payments | ebs wallet *(brand)* |
-| `digital-tax-returns-germany-diaspora` | A tax-return platform that lets the German diaspora file in under 20 minutes | digital tax return platform | Elster integration, cross-border finance, diaspora, multilingual UX | Cross-border finance | — |
-| `educational-platform-for-an-online-english-school` | An educational platform for Moldova's leading English-language school | education platform | online school, systems integration, Moldova | Education | — |
-| `academic-management-system-for-multi-campus-institution` | Replacing a 15-year-old PHP system academic system for a global education organization | academic management system | legacy replacement, multi-campus, scheduling | Education | integrated campus management |
-| `educational-app-and-platform-for-parents-on-web` | A platform that brought science-based parenting to 2M+ parents | parenting education app | subscription product, consumer scale | Education | — |
-| `e-admission-system-for-moldova` | A platform unifying MD's university admissions for students, universities, and the ministry | university admissions system | e-gov, ministry, multi-stakeholder platform, Moldova | E-gov / public sector | e admi |
-| `queue-system-for-md-customs` | A digital queue system that lets truck drivers book border crossings in advance | border crossing queue system | customs, logistics, e-gov, Moldova | E-gov / public sector | — |
-| `postal-service-digital-transformation` | A postal transformation that made international shipping affordable | postal digital transformation | international shipping, state operator, logistics | E-gov / public sector | e postal service · innovative postal services |
-| `ecommerce-marketplace-for-classified-ads` | A redesigned, mobile-first marketplace built for Tanzania's mobile majority | classifieds marketplace | mobile-first redesign, data migration, Tanzania / emerging market | Marketplace & commerce | *(`site:` operator — no usable probe)* |
-| `marketplace-to-help-pets-find-their-home` | A pet adoption marketplace with AI, escrow, and native apps | pet adoption marketplace | escrow, payment processing, AI, native apps | Marketplace & commerce | pets4homes payment fee *(competitor brand)* |
-| `digital-optical-showroom-application` | A unified ERP and app connecting Lensa's optical stores and e-commerce | omnichannel retail ERP | optical retail, e-commerce, in-store app, Lensa | Marketplace & commerce | — |
-| `gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
-| `system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
+| `/en/case-studies/non-bank-factoring-digitalization` | A factoring lender that transformed funding into a 70%-faster edge | factoring digitalization | non-bank lender, straight-through processing, KYC, e-invoicing, credit bureau | Credit & lending | factoring cloud · factoring platform |
+| `/en/case-studies/online-credit-system-for-individuals-and-businesses` | Digital credit platform that approves loans 60% faster for a bank | digital credit platform | loan origination, SME lending, bank | Credit & lending | ebs loans *(brand)* |
+| `/en/case-studies/1c-crm-integration-credit-management` | A low-code CRM on top of 1C, that grew a lender's credit portfolio by 33.5% | credit management CRM | low-code, 1C integration, loan portfolio | Credit & lending | integrated credit reporting |
+| `/en/case-studies/banking-app-psd2-ips-compliance` | A modern mobile banking app delivered under urgent PSD2 and IPS rules | mobile banking app | PSD2, instant payments (IPS), regulatory deadline | Banking & payments | — |
+| `/en/case-studies/mobile-wallet-for-offline-crypto-payments` | A mobile app that transforms cryptocurrency into everyday payments | crypto payments wallet | POS integration, offline payments, EU/Asia | Banking & payments | ebs wallet *(brand)* |
+| `/en/case-studies/digital-tax-returns-germany-diaspora` | A tax-return platform that lets the German diaspora file in under 20 minutes | digital tax return platform | Elster integration, cross-border finance, diaspora, multilingual UX | Cross-border finance | — |
+| `/en/case-studies/educational-platform-for-an-online-english-school` | An educational platform for Moldova's leading English-language school | education platform | online school, systems integration, Moldova | Education | — |
+| `/en/case-studies/academic-management-system-for-multi-campus-institution` | Replacing a 15-year-old PHP system academic system for a global education organization | academic management system | legacy replacement, multi-campus, scheduling | Education | integrated campus management |
+| `/en/case-studies/educational-app-and-platform-for-parents-on-web` | A platform that brought science-based parenting to 2M+ parents | parenting education app | subscription product, consumer scale | Education | — |
+| `/en/case-studies/e-admission-system-for-moldova` | A platform unifying MD's university admissions for students, universities, and the ministry | university admissions system | e-gov, ministry, multi-stakeholder platform, Moldova | E-gov / public sector | e admi |
+| `/en/case-studies/queue-system-for-md-customs` | A digital queue system that lets truck drivers book border crossings in advance | border crossing queue system | customs, logistics, e-gov, Moldova | E-gov / public sector | — |
+| `/en/case-studies/postal-service-digital-transformation` | A postal transformation that made international shipping affordable | postal digital transformation | international shipping, state operator, logistics | E-gov / public sector | e postal service · innovative postal services |
+| `/en/case-studies/ecommerce-marketplace-for-classified-ads` | A redesigned, mobile-first marketplace built for Tanzania's mobile majority | classifieds marketplace | mobile-first redesign, data migration, Tanzania / emerging market | Marketplace & commerce | *(`site:` operator — no usable probe)* |
+| `/en/case-studies/marketplace-to-help-pets-find-their-home` | A pet adoption marketplace with AI, escrow, and native apps | pet adoption marketplace | escrow, payment processing, AI, native apps | Marketplace & commerce | pets4homes payment fee *(competitor brand)* |
+| `/en/case-studies/digital-optical-showroom-application` | A unified ERP and app connecting Lensa's optical stores and e-commerce | omnichannel retail ERP | optical retail, e-commerce, in-store app, Lensa | Marketplace & commerce | — |
+| `/en/case-studies/gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
+| `/en/case-studies/system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
 
 ## 2. Live service and industry pages (13 + 2 hubs, as of 2026-08-04)
 
@@ -88,17 +88,17 @@ Slugs from the same 2026-08-04 nav capture. Observed probes from snapshot `gsc-2
 
 | Slug | Primary entity | Supporting entities | Observed probe |
 |---|---|---|---|
-| *(hub)* `/en/it-services` | IT services | — | ebs *(brand)* |
-| `digital-transformation` | digital transformation consulting | DX strategy, modernisation | *(`site:` operator — no usable probe)* |
-| `ai-consulting` | AI consulting | AI strategy, adoption | — |
-| `consulting` | IT consulting | advisory | ebs integrator *(brand)* |
-| `consulting/cto-as-a-service` | CTO as a service | fractional CTO, technical leadership | cto consulting services |
-| `consulting/business-analysis` | business analysis | requirements, discovery | business analysis integration services |
-| `software-development` | custom software development | product engineering | *(`site:` operator — no usable probe)* |
-| `cloud-engineering` | cloud engineering | cloud migration, infrastructure | — |
-| `data-engineering-ai` | data engineering and AI | data integration, pipelines | engineering data integration services |
-| `agile-development-teams` | agile development teams | dedicated teams, delivery | *(`site:` operator — no usable probe)* |
-| `staff-augmentation` | staff augmentation | dedicated engineers, capacity | engineering staff augmentation services |
+| `/en/it-services` *(hub)* | IT services | — | ebs *(brand)* |
+| `/en/it-services/digital-transformation` | digital transformation consulting | DX strategy, modernisation | *(`site:` operator — no usable probe)* |
+| `/en/it-services/ai-consulting` | AI consulting | AI strategy, adoption | — |
+| `/en/it-services/consulting` | IT consulting | advisory | ebs integrator *(brand)* |
+| `/en/it-services/consulting/cto-as-a-service` | CTO as a service | fractional CTO, technical leadership | cto consulting services |
+| `/en/it-services/consulting/business-analysis` | business analysis | requirements, discovery | business analysis integration services |
+| `/en/it-services/software-development` | custom software development | product engineering | *(`site:` operator — no usable probe)* |
+| `/en/it-services/cloud-engineering` | cloud engineering | cloud migration, infrastructure | — |
+| `/en/it-services/data-engineering-ai` | data engineering and AI | data integration, pipelines | engineering data integration services |
+| `/en/it-services/agile-development-teams` | agile development teams | dedicated teams, delivery | *(`site:` operator — no usable probe)* |
+| `/en/it-services/staff-augmentation` | staff augmentation | dedicated engineers, capacity | engineering staff augmentation services |
 
 `consulting/cto-as-a-service` and `consulting/business-analysis` were **not in the captured nav** —
 they surfaced in the GSC pull. They are live and earning impressions but sit outside the main
@@ -111,11 +111,11 @@ is the main reason these pages belong in the register.
 
 | Slug | Primary entity | Case-study cluster it should anchor | Observed probe |
 |---|---|---|---|
-| *(hub)* `/en/industries` | industries served | — | ebs-integrator *(brand)* |
-| `fintech` | fintech software development | **Credit & lending (3), Banking & payments (2), Cross-border finance (1)** — the deepest vertical, 6 cases | ebs fintech *(brand)* |
-| `retail-ecommerce` | retail and ecommerce software | **Marketplace & commerce (4)** | integrated ecommerce solutions for your business |
-| `egov-public-sector` | e-gov and public sector software | **E-gov / public sector (3)** | egov service remote |
-| `edtech` | edtech software development | **Education (4)** | *(`site:` operator — no usable probe)* |
+| `/en/industries` *(hub)* | industries served | — | ebs-integrator *(brand)* |
+| `/en/industries/fintech` | fintech software development | **Credit & lending (3), Banking & payments (2), Cross-border finance (1)** — the deepest vertical, 6 cases | ebs fintech *(brand)* |
+| `/en/industries/retail-ecommerce` | retail and ecommerce software | **Marketplace & commerce (4)** | integrated ecommerce solutions for your business |
+| `/en/industries/egov-public-sector` | e-gov and public sector software | **E-gov / public sector (3)** | egov service remote |
+| `/en/industries/edtech` | edtech software development | **Education (4)** | *(`site:` operator — no usable probe)* |
 
 **Every case study in section 1 has an industry hub to route into, and one cluster has none.** The
 AI & data cluster (`system-converting-calls-to-insights`) has no matching industry page; its natural

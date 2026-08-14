@@ -19,9 +19,11 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
    two reference each other and never merge.
 4. Pull current data from / into `intake/` — keyword portfolio, target pages, rankings snapshots.
    **The entity-health refresh rides the ~2-week agenda ritual**, not a schedule of its own: re-run
-   the two GSC calls in `library/entity-health-method.md` (0 API units), write a new dated file to
-   `intake/snapshots/`, then regenerate `intake/entity-health.md` from it. Snapshots are immutable —
-   corrections go in the next one.
+   the two GSC calls in `library/entity-health-method.md` (0 API units), record the rows into a new
+   `intake/snapshots/gsc-<date>.json`, then run `python3 scripts/build_entity_health.py` and read the
+   diff — the states that moved are the point. Snapshots are immutable; corrections go in the next
+   one. Never hand-edit between the `BEGIN GENERATED` markers, and if a state rule needs changing,
+   change the script and the method file in the same commit.
 
 ## Producing
 - Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
