@@ -8,7 +8,12 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
    Every known site problem (evidence, why it matters, owner, status) lives there; whichever
    workstream finds a site-health issue appends it THERE, never to its own library. Update statuses
    as fixes land.
-3. Pull current data from / into `intake/` — keyword portfolio, target pages, rankings snapshots.
+3. Read `intake/entity-register.md` — **the site-wide map of what every published surface claims,
+   and this repo owns it.** Read it before any new title is proposed anywhere; every workstream
+   appends its page's entities there once live, so a new title supports an existing cluster or opens
+   a new window rather than competing with our own page. Article *keyword* ownership stays with
+   `ebs-article-system/library/content-map.md`; the two reference each other and never merge.
+4. Pull current data from / into `intake/` — keyword portfolio, target pages, rankings snapshots.
 
 ## Producing
 - Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
