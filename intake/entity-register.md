@@ -31,11 +31,17 @@ register tells it what the rest of the site is already standing on.
 - Entities below are **derived from live titles and slugs**, captured from the saved page captures of
   **2026-08-04** (`ebs-case-study-system/intake/*.html`, gitignored). Reading a title for what it
   claims is interpretation of published fact; it is not a metric.
-- **No volumes, no difficulty, no positions.** Ahrefs and Search Console were not pulled for this
-  pass. Any such column stays empty until it is pulled live or quoted from a dated snapshot, per
-  `intake/README.md`.
+- **No volumes, no difficulty, no positions here.** The only measured column in this file is the
+  observed probe, and it is a query rather than a number. Everything else lives in `entity-health.md`
+  against its snapshot date, per `intake/README.md`.
 - The 17 live case studies come from the "Latest Case Studies" strip, which appeared identically on
   both captured pages. Treat the set as **complete as of 2026-08-04**, not as guaranteed exhaustive.
+- The **service and industry pages come from the site navigation** in the same capture, so that set is
+  as complete as the nav was. Two consulting sub-pages exist outside the nav and were found in the
+  GSC pull instead; there may be more, and only a crawl would settle it.
+- **Blog posts are deliberately absent.** `ebs-article-system/library/content-map.md` holds the blog
+  inventory and its collision notes. Duplicating them here would create the competing registry this
+  file exists to avoid.
 - Overlaps recorded under "Observations" are **observed facts about what is claimed**. Whether an
   overlap costs anything is unmeasured, and nothing here forecasts a ranking.
 
@@ -70,7 +76,52 @@ below that snapshot's reporting floor: absent, not proven zero.
 | `gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
 | `system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
 
-## 2. In the pipeline, not live
+## 2. Live service and industry pages (13 + 2 hubs, as of 2026-08-04)
+
+The permanent commercial surfaces. Unlike case studies these are not added to over time, so the
+register's job here is different: it records **which hub each case-study cluster should be routing
+into**, and which service entities the site claims but does not yet hold.
+
+Slugs from the same 2026-08-04 nav capture. Observed probes from snapshot `gsc-2026-08-14`.
+
+### Services — `/en/it-services/<slug>`
+
+| Slug | Primary entity | Supporting entities | Observed probe |
+|---|---|---|---|
+| *(hub)* `/en/it-services` | IT services | — | ebs *(brand)* |
+| `digital-transformation` | digital transformation consulting | DX strategy, modernisation | *(`site:` operator — no usable probe)* |
+| `ai-consulting` | AI consulting | AI strategy, adoption | — |
+| `consulting` | IT consulting | advisory | ebs integrator *(brand)* |
+| `consulting/cto-as-a-service` | CTO as a service | fractional CTO, technical leadership | cto consulting services |
+| `consulting/business-analysis` | business analysis | requirements, discovery | business analysis integration services |
+| `software-development` | custom software development | product engineering | *(`site:` operator — no usable probe)* |
+| `cloud-engineering` | cloud engineering | cloud migration, infrastructure | — |
+| `data-engineering-ai` | data engineering and AI | data integration, pipelines | engineering data integration services |
+| `agile-development-teams` | agile development teams | dedicated teams, delivery | *(`site:` operator — no usable probe)* |
+| `staff-augmentation` | staff augmentation | dedicated engineers, capacity | engineering staff augmentation services |
+
+`consulting/cto-as-a-service` and `consulting/business-analysis` were **not in the captured nav** —
+they surfaced in the GSC pull. They are live and earning impressions but sit outside the main
+navigation, which is worth knowing before anything is linked to them.
+
+### Industries — `/en/industries/<slug>`
+
+Each industry hub is the **link target for a case-study cluster** recorded in section 1. That mapping
+is the main reason these pages belong in the register.
+
+| Slug | Primary entity | Case-study cluster it should anchor | Observed probe |
+|---|---|---|---|
+| *(hub)* `/en/industries` | industries served | — | ebs-integrator *(brand)* |
+| `fintech` | fintech software development | **Credit & lending (3), Banking & payments (2), Cross-border finance (1)** — the deepest vertical, 6 cases | ebs fintech *(brand)* |
+| `retail-ecommerce` | retail and ecommerce software | **Marketplace & commerce (4)** | integrated ecommerce solutions for your business |
+| `egov-public-sector` | e-gov and public sector software | **E-gov / public sector (3)** | egov service remote |
+| `edtech` | edtech software development | **Education (4)** | *(`site:` operator — no usable probe)* |
+
+**Every case study in section 1 has an industry hub to route into, and one cluster has none.** The
+AI & data cluster (`system-converting-calls-to-insights`) has no matching industry page; its natural
+home is a service page (`ai-consulting` or `data-engineering-ai`) rather than an industry hub.
+
+## 3. In the pipeline, not live
 
 **Build Green — carbon platform refactor.** Status per `ebs-case-study-system/case-studies/build-green/locked-content.md`:
 `noindex` on, excluded from the sitemap, unlinked. Locked SEO fields:
@@ -91,7 +142,7 @@ the fintech spoke is FINAL and unpublished, the DX pillar draft is parked. The b
 currently rank, and their three recorded collision notes, are in that file's "Existing article
 inventory (Ahrefs audit, 2026-07-16)".
 
-## 3. Observations for the next title decision
+## 4. Observations for the next title decision
 
 Not verdicts. Overlap is recorded because it should be seen before a title is chosen, not because a
 cost has been measured.
@@ -119,13 +170,22 @@ cost has been measured.
 - **Fintech is the deepest vertical here** — factoring, credit, banking, crypto payments,
   cross-border tax — and `content-map.md` Cluster 2 already interlinks into `/en/industries/fintech`.
   That page is the natural hub for these cases.
+- **The service pages claim entities they do not hold.** Four of the eleven are found only by `site:`
+  enumeration or a brand term, including `digital-transformation` and `software-development` — the
+  two most commercially load-bearing. A service entity is claimed by having a page; it is held by
+  ranking for the service, and on this evidence most are not. New titles cannot lean on a service
+  page as an authority target until that changes.
+- **Every case cluster has a hub except AI & data.** Section 2 maps the four industry hubs to their
+  clusters. The AI case study has no industry page, and the site's AI weight sits entirely in the
+  article clusters, so an AI hub is a structural gap rather than a title collision.
 
-## 4. How to append
+## 5. How to append
 
 When a surface ships, add its row in the same session, not later:
 
-1. **Before titles are proposed:** read sections 1 and 3. State which existing cluster the new
-   surface supports, or which entity nothing here claims yet.
+1. **Before titles are proposed:** read `entity-health.md` first, then sections 1, 2 and 4 here.
+   State which existing cluster the new surface supports, or which entity nothing here claims yet.
+   For a case study, name the industry hub it routes into (section 2); if none fits, say so.
 2. **Where two surfaces would claim the same primary entity:** surface it as a decision —
    consolidate, differentiate the mechanism, or accept the overlap and record why. Never resolve it
    silently.

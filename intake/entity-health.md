@@ -5,7 +5,8 @@
 snapshot is what changes — an edit here would be a fourth hand-maintained file, and it would rot.
 Method: `../library/entity-health-method.md`.
 
-**Built from:** snapshot `gsc-2026-08-14` · window 2026-05-14 → 2026-08-13 · **baseline pass.**
+**Built from:** snapshot `gsc-2026-08-14` · window 2026-05-14 → 2026-08-13 · **baseline pass**,
+extended 2026-08-14 with the service and industry pages once they entered the register.
 There is no prior snapshot, so the flip test cannot fire yet and every CONTESTED verdict below would
 rest on `urls_count` alone. None does. The second pass is what makes trend readable.
 
@@ -62,10 +63,40 @@ Declared owner is the registered page. Observed values are from the snapshot.
 narrow probe rather than by demand) **, twelve UNPROVEN, zero CONTESTED, zero MISOWNED.** *Weakly* is
 a qualifier on OWNED, not a sixth state.
 
-## Entities the site actually holds — and who holds them
+## Service and industry pages — state per registered surface
 
-Not in the register, because the register covers case studies and articles. These are what earns the
-impressions, and any new title has to be chosen against them.
+Registered in `entity-register.md` §2. These are the permanent commercial surfaces and the hubs that
+case-study clusters route into, so their state governs whether a cluster has an authority target.
+
+| Entity (registered) | Page | Observed probe | Impr / Pos | State | What can be done |
+|---|---|---|---|---|---|
+| retail and ecommerce software | `/en/industries/retail-ecommerce` | integrated ecommerce solutions… | 1,139 / 59.7 | **OWNED**, weak | The only hub earning real impressions. Anchor for the four Marketplace & commerce cases, though position 59.7 means it is held loosely |
+| data engineering and AI | `/en/it-services/data-engineering-ai` | engineering data integration services | 315 / 76.3 | **OWNED**, weak | Holds a long-tail service phrase at the bottom of page 7 |
+| CTO as a service | `/en/it-services/consulting/cto-as-a-service` | cto consulting services | 320 / 54.1 | **OWNED**, weak | Highest-impression service page. Outside the main nav |
+| fintech software development | `/en/industries/fintech` | ebs fintech *(brand)* | 125 / 16.7 | **UNPROVEN** on demand | **The deepest vertical's hub holds no non-brand entity.** Six fintech cases route into a page found only by brand |
+| e-gov and public sector software | `/en/industries/egov-public-sector` | egov service remote | 44 / 11.0 | **UNPROVEN** | Near the floor, but position 11.0 on its probe |
+| business analysis | `/en/it-services/consulting/business-analysis` | business analysis integration services | 51 / 44.4 | **UNPROVEN** | Outside the main nav |
+| staff augmentation | `/en/it-services/staff-augmentation` | engineering staff augmentation services | 49 / 53.2 | **UNPROVEN** | — |
+| IT services *(hub)* | `/en/it-services` | ebs *(brand)* | 202 / 3.7 | **UNPROVEN** on demand | Found by brand only |
+| IT consulting | `/en/it-services/consulting` | ebs integrator *(brand)* | 183 / 11.1 | **UNPROVEN** on demand | Found by brand only |
+| industries *(hub)* | `/en/industries` | ebs-integrator *(brand)* | 62 / 6.3 | **UNPROVEN** on demand | Found by brand only |
+| digital transformation consulting | `/en/it-services/digital-transformation` | `site:` operator | 45 / 10.8 | **UNPROVEN** | **No usable probe.** Corroborates P3 — the pillar's conversion target is found only by domain enumeration |
+| custom software development | `/en/it-services/software-development` | `site:` operator | 57 / 28.6 | **UNPROVEN** | **No usable probe.** The most commercially load-bearing service page holds nothing |
+| agile development teams | `/en/it-services/agile-development-teams` | `site:` operator | 27 / 41.8 | **UNPROVEN** | No usable probe |
+| edtech software development | `/en/industries/edtech` | `site:` operator | 39 / 6.0 | **UNPROVEN** | No usable probe. Four education cases route into it |
+| AI consulting | `/en/it-services/ai-consulting` | — | below floor | **UNPROVEN** | Absent from the pull. **The site's AI service page holds nothing**, while AI is the spine of both article clusters |
+| cloud engineering | `/en/it-services/cloud-engineering` | — | below floor | **UNPROVEN** | Absent from the pull |
+
+**Sixteen surfaces: three OWNED** (all *weakly* — held by a long-tail service phrase, none outright)
+**, thirteen UNPROVEN, zero CONTESTED, zero MISOWNED.** Of the sixteen, **four have no usable probe
+at all** (a `site:` operator), **four are found only by brand**, and **two are below the floor
+entirely** — so ten of sixteen commercial pages are not found by demand.
+
+## Blog — the entities that actually earn the impressions
+
+Deliberately **not** in the register: `content-map.md` holds the blog inventory and its collision
+notes, and duplicating it would create a competing registry. Listed here because any new title has to
+be chosen against these, and because they are what the site's search presence actually consists of.
 
 | Entity | Holder | Impr / Pos | State | What can be done |
 |---|---|---|---|---|
@@ -73,11 +104,13 @@ impressions, and any new title has to be chosen against them.
 | retail technology & store digitalization | `/en/blog/how-technology-and-data-helps-your-store…` | 1,837 / 23.8 | **OWNED** | Second retail holder. Any retail spoke has two incumbents to route around, not one |
 | customer pain points | `/en/blog/customer-pain-points` | 1,534 / 42.7 | **OWNED**, weak | Held at a poor position |
 | data-centric vs data-driven | `/en/blog/basics-data-centric-vs-data-driven…` | 1,240 / 33.9 | **OWNED** | Adjacent to the DX pillar's territory. Interlink, do not re-target |
-| banking process automation | `/en/blog/what-is-banking-process-automation…` | 1,199 / 21.7 | **OWNED** | Already flagged in `content-map.md` as adjacent to reserved "ai in banking". **This post, not the banking case study, is the site's banking entity holder** |
-| integrated ecommerce / retail ERP | `/en/industries/retail-ecommerce` | 1,139 / 59.7 | **OWNED**, weak | An industry hub that ranks; the natural hub for the optical-retail case |
-| dx digital transformation | `/en/blog/what-digital-transformation-dx-is-for-business-today` | 846 / 15.4 | **OWNED** | **The planned DX pillar has an incumbent.** Resolve ownership before the pillar publishes |
 | django orm vs sqlalchemy | `/en/blog/django-orm-vs-sql-alchemy` | 1,222 / 9.2 | **OWNED** | Off-cluster dev topic, ranks well. Protect, ignore |
-| fintech (branded) | `/en/industries/fintech` | 125 / 16.7 | **UNPROVEN** on demand | Found as "ebs fintech". `content-map.md` Cluster 2 interlinks here; the hub itself holds no non-brand entity yet |
+| banking process automation | `/en/blog/what-is-banking-process-automation…` | 1,199 / 21.7 | **OWNED** | Already flagged in `content-map.md` as adjacent to reserved "ai in banking". **This post, not the banking case study, is the site's banking entity holder** |
+| dx digital transformation | `/en/blog/what-digital-transformation-dx-is-for-business-today` | 846 / 15.4 | **OWNED** | **The planned DX pillar has an incumbent.** Resolve ownership before the pillar publishes |
+
+**The shape of the site, in one line:** the blog holds the entities, the service and industry pages
+hold almost nothing, and the case studies sit between the two. A blog post outranks the service page
+it should be feeding.
 
 ## What this changes
 
@@ -91,8 +124,17 @@ impressions, and any new title has to be chosen against them.
    support that post rather than compete with it.
 4. **Three case studies have no usable probe** — their observed `top_keyword` is a `site:` operator
    or a competitor's brand. They are findable by name, not by demand.
-5. **Two service pages are found only by domain enumeration** (`/en/it-services/digital-transformation`,
-   `/en/it-services/software-development`), which independently corroborates P3 in the problems log.
+5. **The commercial layer holds almost nothing.** Of sixteen service and industry pages, three are
+   OWNED weakly and none outright. Four are found only by `site:` enumeration —
+   `digital-transformation`, `software-development`, `agile-development-teams` and `edtech` — which
+   corroborates P3 in the problems log and extends it well beyond the one page P3 named.
+6. **Every cluster's hub is weaker than the cluster.** Six fintech cases route into a hub found only
+   as "ebs fintech"; four education cases route into an edtech page with no usable probe. Linking a
+   case to its hub is still right, but the hub is not currently an authority target — it is a
+   destination that needs building.
+7. **AI is a structural gap, not a collision.** `ai-consulting` is below the floor, the one AI case
+   study is below the floor, and there is no AI industry hub. The site's entire AI weight sits in
+   `content-map.md`'s article clusters, which have not published yet.
 
 ## Next pass
 
