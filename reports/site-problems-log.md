@@ -1,6 +1,6 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-08-14** (P8 added; P1 and P3 corroborated from Search Console).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-08-21** (P9-P12 added from a sitemap reconciliation run by the article workstream; P3 and P4 corroborated; P6 partially RESOLVED).
 
 ## P1 — GitLab instance publicly exposed and dominating the link graph — SEVERITY: HIGH
 
@@ -26,6 +26,12 @@ Evidence-based issues found during article pipeline work. Each item: evidence, w
 **Fix direction:** add to services nav/footer alongside the other six services; link from /en/it-services hub; pillar article will add 1 more.
 **Owner:** web dev (nav change — trivial). **Status: OPEN, HIGH-PRIORITY, cheap fix.**
 
+**Corroborated from the live site, 2026-08-21:** the defect is wider than DX. `/en/it-services` links
+**7 of the 10 live service pages**. Not linked from their own index: `digital-transformation`,
+`consulting/cto-as-a-service`, `consulting/business-analysis` — all three live with real content
+(H1s verified). So the "3 internal links" figure for DX has a visible cause: its own index page does
+not list it. The fix for P3 should cover all three, not just DX.
+
 **Corroborated from Search Console, 2026-08-14:** over the 90 days to 2026-08-13 the page drew **45 impressions and 0 clicks**, and its `top_keyword` is the operator `site:ebs-integrator.com` — meaning the only query reliably surfacing it is somebody enumerating the domain, not demand. The same pattern holds for `/en/it-services/software-development` (57 impressions, same operator probe). "Ranks for zero keywords" is now measured rather than inferred.
 
 ## P4 — Case-studies listing renders client-side only — SEVERITY: MEDIUM
@@ -34,6 +40,11 @@ Evidence-based issues found during article pipeline work. Each item: evidence, w
 **Why it matters:** case studies are EBS's best proof assets and interlink targets for the whole article strategy.
 **Fix direction:** SSR/prerender the listing, or add static links (footer sitemap page). Verify in Google Search Console: which case URLs are indexed.
 **Owner:** web dev. **Status: OPEN — verify indexation in GSC first.**
+
+**Still true on 2026-08-21:** a fetch of `/en/case-studies` returned navigation and footer only —
+zero case-study links in the served HTML. Indexation itself is not the problem (the sitemap lists
+every case URL and GSC reports impressions for nine of them); the listing page is simply not a
+crawlable path to them, so all internal discovery depends on the sitemap and the homepage rail.
 
 ## P5 — Redirect-hop internal links — SEVERITY: LOW
 
@@ -46,7 +57,12 @@ Evidence-based issues found during article pipeline work. Each item: evidence, w
 
 **Evidence:** German diaspora tax-return case shown on homepage rail but its page is a noindex placeholder (no discoverable URL). Legacy URL patterns (/case-studies/cloud-schedule/, /en/about/case-studies/*) still indexed by Google.
 **Fix direction:** publish or remove the tax case; 301 legacy patterns to current URLs.
-**Owner:** web dev + content. **Status: OPEN.**
+**Owner:** web dev + content. **Status: PARTIALLY RESOLVED 2026-08-21.**
+
+**The tax case is published.** `/en/case-studies/digital-tax-returns-germany-diaspora` is live with
+real content and its own results (-67% time to declare, -80% input errors, 1,000+ declarations daily,
+1M+ users per year), and it is in the sitemap. The "noindex placeholder" half of this item is closed.
+The legacy-URL half stands: not re-verified in this pass.
 
 ## P7 — robots.txt + structured data (schema) audit on the main site — SEVERITY: MEDIUM (enhancement)
 
@@ -66,6 +82,108 @@ Evidence-based issues found during article pipeline work. Each item: evidence, w
 **Fix direction:** confirm `http://` and `www.` both 301 to the canonical `https://ebs-integrator.com/en/home` in one hop, and confirm the canonical tag agrees. Check whether the GSC property set covers both variants (it evidently reports them separately). Verify with a redirect trace before changing anything — this may already be configured and mis-measured rather than genuinely duplicated.
 
 **Owner:** web dev / DevOps. **Status: OPEN — verify the redirect chain first.**
+
+## P9 — Case studies published on `test-page` slugs, and BuildGreen indexed while believed unpublished — SEVERITY: HIGH
+
+**Evidence (sitemap + direct fetches, 2026-08-21):** the sitemap's case-study section holds **19**
+URLs. Seventeen are the real cases in `intake/entity-register.md`. The other two are live, carry real
+content, and sit on throwaway slugs:
+
+| URL | H1 as served |
+|---|---|
+| `/en/case-studies/test-page` | *"FDA-compliant software that saves sales by remote 20%"* |
+| `/en/case-studies/test-page-case-1` | *"Refactored carbon and CSRD platform for green building certification"* |
+
+**The second one is BuildGreen.** Section 3 of `intake/entity-register.md` declares BuildGreen
+*"`noindex` on, excluded from the sitemap, unlinked"* at slug `carbon-management-platform-refactor`.
+All three of those are contradicted: it is live, it **is** in the sitemap, and it is on a test slug.
+The intended slug `/en/case-studies/carbon-management-platform-refactor` serves site chrome with no
+case-study content — a soft 404 in appearance, though HTTP status was not confirmed by fetching.
+
+**Why it matters:** a workstream believes an asset is unpublished while Google is being invited to
+index it, under a URL nobody would choose. The first H1 also reads as unfinished or mangled copy
+(*"saves sales by remote 20%"*), which is a live client-facing page. And the entity register — the
+file every new title is checked against — is wrong about a case study's state, so decisions taken
+from it inherit the error.
+
+**Fix direction:** decide per page whether it ships or goes. If it ships, move it to a real slug and
+301 the test URL; if not, remove it from the sitemap and return 410/404. Then correct the register's
+section 3 to match whatever is true. Check the CMS for how a test slug reached the sitemap at all —
+if drafts are sitemap-eligible, this will recur.
+
+**Owner:** content + web dev; register correction is the SEO workstream's. **Status: OPEN.**
+
+**Note:** the article workstream has **dropped all three URLs** from the content system
+(`ebs-article-system/library/content-map.md`, 2026-08-21) so nothing is planned or interlinked
+against them. That does not unpublish them, which is why this item exists.
+
+## P10 — The `ai-consulting` hub is absent from the sitemap — SEVERITY: HIGH
+
+**Evidence (sitemap + direct fetch, 2026-08-21):** the sitemap lists **9** service pages and
+`/en/it-services/ai-consulting` is **not among them**. The page is live — H1 *"Integrating AI takes 8
+levels"*, title *"AI adoption and consulting for business | EBS Integrator"* — and it **is** linked
+from `/en/it-services`. Every other service page appears in the sitemap.
+
+**Why it matters:** this is the commercial destination for the AI content programme. Six planned
+keywords route into it (`ai readiness assessment`, `ai governance framework`, `ai roi`,
+`ai training for employees`, `ai change management`, `eu ai act compliance` — see the article
+workstream's map). A hub omitted from the sitemap is a hub Google discovers only by crawling, on a
+site whose listing pages already render client-side.
+
+**Why it is separate from P3:** P3 is about *internal links* to service pages. This is about *sitemap
+inclusion*, and it affects a different page. The two together mean the service layer is discoverable
+inconsistently: some pages are in the sitemap but not the index page, and one is in the index page
+but not the sitemap.
+
+**Fix direction:** find why this URL is excluded — CMS flag, sitemap generator rule, or manual list —
+and confirm no other commercial page is missing. Compare the sitemap against a crawl rather than
+against the nav.
+
+**Owner:** web dev. **Status: OPEN.**
+
+## P11 — Duplicate URLs, both submitted for indexing — SEVERITY: MEDIUM
+
+**Evidence (sitemap 2026-08-21; GSC pull 2026-08-20, project 9118279):**
+
+1. **The same article on two slugs.** `/en/blog/ecommerce-audit-guide-eu-stores-2025` (41 impressions)
+   and `/en/blog/ecommerce-audit-guide-eu-stores` (3 impressions). **Both are in the sitemap.**
+2. **The same article on two paths.** `/en/blog/education-management-systems-without-integration`
+   (11 impressions) and `/blog/education-management-systems-without-integration` (6 impressions) both
+   earn impressions. Only the `/en/` form is in the sitemap, so the non-`/en/` form is indexed without
+   being declared.
+
+**Why it matters:** two URLs for one article split whatever signal it earns, and case 1 is worse than
+an accident of redirects — both are declared in the sitemap, so the site is actively asking for both
+to be indexed.
+
+**Fix direction:** pick the canonical slug for each, 301 the other, and remove the loser from the
+sitemap. Case 2 is the `/en/` prefix inconsistency also behind P5; a single rule for prefixing would
+fix both.
+
+**Owner:** web dev. **Status: OPEN.**
+
+## P12 — Sitemap hygiene and an orphaned live article — SEVERITY: LOW
+
+**Evidence (sitemap 2026-08-21):**
+
+- **A live article nothing links to.** `/en/blog/scalable-it-solutions-business-growth` — H1
+  *"Building scalable IT solutions that deliver results"*, published May 2023. It is in the sitemap,
+  it is **not** on the `/en/blog` listing (30 articles shown), and it drew **no impressions above the
+  25-impression floor** in the 90 days to 2026-08-19. Live, undiscoverable, unread.
+- **A stray URL:** `/en/blog/blogs` is in the sitemap and is not an article.
+- **An unencoded character:** `/en/blog/why-omnichannel-your-online-&-physical-stores` carries a raw
+  `&` in the path. It earns impressions (258), so it resolves, but a bare `&` in a URL is fragile
+  across parsers and sharing contexts.
+- **Scale, for context:** the sitemap lists **45** blog URLs. Only **27** earned any impressions in
+  the window, and the whole blog drew **14,418 impressions for 10 clicks** in 90 days — four pages
+  account for all ten. That is a titles-and-intent problem owned by the article workstream, not a
+  site defect, and is recorded here only so the 45-vs-27 gap is not later mistaken for an indexation
+  failure.
+
+**Fix direction:** decide whether the orphaned article is worth linking or removing; drop
+`/en/blog/blogs` from the sitemap; percent-encode or re-slug the `&` URL.
+
+**Owner:** web dev + content. **Status: OPEN.**
 
 ---
 

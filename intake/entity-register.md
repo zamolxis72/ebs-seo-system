@@ -132,6 +132,19 @@ home is a service page (`ai-consulting` or `data-engineering-ai`) rather than an
   emissions management software · software refactoring · legacy platform modernisation ·
   green construction · building certification
 
+⚠ **CORRECTION 2026-08-21 — the status above is contradicted by the live site.** BuildGreen is
+**live and in the sitemap**, at `/en/case-studies/test-page-case-1`, serving H1 *"Refactored carbon
+and CSRD platform for green building certification"*. So `noindex` / excluded-from-sitemap / unlinked
+are all untrue as stated, and the declared slug
+`/en/case-studies/carbon-management-platform-refactor` serves site chrome with no case-study content.
+The locked-content file in `ebs-case-study-system` has not been re-read here, so it is unknown whether
+it is also stale or whether the site diverged from it.
+
+**Nothing above is edited, because what it should say depends on a decision that has not been taken:**
+does this case ship at a real slug, or come down? Filed as **P9** in
+`reports/site-problems-log.md`. The keyword claims below are left as recorded — they were the plan for
+a page at the declared slug, and that page does not exist yet.
+
 **This one opens a new window.** No live surface claims carbon, ESG, CSRD or emissions. Its only
 adjacency to the existing map is *legacy platform modernisation*, which
 `academic-management-system-for-multi-campus-institution` also claims (15-year-old PHP replacement) —
