@@ -41,7 +41,7 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
 Cross-workstream planning lives in the umbrella agenda. Do not fold this repo into the umbrella, and do not copy this repo's data there.
 
 ## Reporting — feed the activity log
-Work shipped or decided here is a loggable activity. At the END of a session, use the `pack-chat` skill to record it to `~/activity-log`, tagged:
+Work shipped or decided here is a loggable activity. At the END of a session, use the `pack-chat` skill to record it to `~/Personal/activity-log`, tagged:
 - **Area:** `Marketing / SEO`
 - **Objective:** the specific outcome this session served (the "why").
 
