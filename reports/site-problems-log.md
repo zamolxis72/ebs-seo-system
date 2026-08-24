@@ -211,3 +211,34 @@ delivered no significant financial benefit, on-whitelist Tier 1B), or remove it.
 **Suggested next step when ready:** run the full b2b-seo-audit skill against the site — P1/P2/P3 found incidentally; a systematic pass will catch the rest.
 
 **GSC access now exists** (Ahrefs project 9118279, verified; `gsc-pages` and `gsc-keywords` cost 0 API units), so the P4 verification noted here as blocked is now cheap to run. Snapshots land in `intake/snapshots/`; the standing method is `library/entity-health-method.md`.
+
+---
+
+## P14 — llms.txt unreachable: locale middleware 404s the machine-access layer (2026-08-25)
+
+**Found during** the ai-seo skill evaluation in the article workstream; logged here because site
+health is this repo's ground.
+
+**The audit** (live fetches, 2026-08-25):
+
+- **PASS** — article content is present in the initial HTML: agents and AI crawlers that never
+  execute JavaScript read the full text. This is the single most important agent-access property
+  and the site has it.
+- **PASS** — AI crawlers reachable: robots.txt is allow-all and a fetch as `GPTBot/1.0` returned
+  HTTP 200. No explicit AI-crawler stance is declared, which is acceptable but implicit.
+- **MINOR** — robots.txt points at `https://ebs-integrator.com/sitemap.xml`, which 307-redirects to
+  `/en/sitemap.xml` (which resolves, fresh lastmod). Crawlers handle it; pointing at the final URL
+  is cleaner.
+- **FAIL** — `/llms.txt` returns **404**, and the locale middleware redirects the request to
+  `/en/llms.txt` first, meaning a machine-readable file at the domain root cannot currently be
+  served at all without a routing exception. `/llms-full.txt` same.
+
+**Fix shape:** a routing exception for root-level machine files (`/llms.txt`, later
+`/llms-full.txt`), then an llms.txt naming what EBS is, who it serves, and the handful of pages an
+answer engine should read first (the AI consulting hub, the maturity ladder, the live articles).
+Non-Google engines read it; Google needs nothing (their AIO requires no special files, per their
+own guidance).
+
+**Deliberately not raised as problems:** OKF bundles (v0.1, nothing consumes them yet) and
+`/pricing.md` (EBS sells engagements, not tiers). Both parked with triggers in
+`ebs-marketing-skills/skills/ebs-discoverability/references/ai-visibility.md`.
