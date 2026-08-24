@@ -185,6 +185,27 @@ fix both.
 
 **Owner:** web dev + content. **Status: OPEN.**
 
+## P13 — AI page carries an unsourced statistic ("91%") — SEVERITY: MEDIUM
+
+**Evidence (verification pass for article A0, 2026-08-22/24):** the AI consulting page states
+"91% of companies cannot show what AI delivered." A `verified-facts` pass found no source
+supporting this claim. The closest real 91% is a **different assertion about a different
+population** (91% of 1,800 legal/tax/audit/compliance professionals say organisations aren't
+realising AI's full value — Thomson-Reuters-adjacent professional survey). Nothing supports the
+sentence as published.
+
+**Why it matters:** the page anchors the AI-maturity ladder — the framework the whole article
+series stands on. An unsourced hero statistic on that page is exactly the credibility failure the
+articles are being built to avoid, and any article citing the page inherits it (A0 has already
+declined to reuse the number for this reason; decision on record in
+`ebs-article-system/articles/is-ai-overhyped/review/evidence-pack-v1.md`).
+
+**Fix direction:** either source the 91% to a real primary, replace it with a verified equivalent
+(candidate found during the same pass: PwC 2026 Global CEO Survey — 56% of 4,454 CEOs report AI
+delivered no significant financial benefit, on-whitelist Tier 1B), or remove it.
+
+**Owner:** web dev + content. **Status: OPEN.**
+
 ---
 
 **Suggested next step when ready:** run the full b2b-seo-audit skill against the site — P1/P2/P3 found incidentally; a systematic pass will catch the rest.
