@@ -28,9 +28,11 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
 ## Producing
 - Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
 - Metrics come from Ahrefs / Search Console — live or a dated snapshot. Never invent a metric.
-- Research discovery follows the article workstream's `library/trusted-sources.md` (the
-  cross-workstream discovery whitelist — it plays its own role and is never overridden by a
-  skill's bundled source list; those are suggestions).
+- Research follows the article workstream's `library/trusted-sources.md`, the system's **single
+  source authority** and cross-workstream by design: Part 1 is the tiered discovery whitelist (where
+  research may look), Part 2 is per-industry anchoring and volatility traps (what can prove a
+  decision-grade claim). It plays its own role and is never overridden by a skill's bundled source
+  list; those are suggestions layered under it.
 - Feed keyword and gap findings to the articles workstream by reference, not by copying content.
 
 ## Shipping
