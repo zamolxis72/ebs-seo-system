@@ -248,4 +248,4 @@ own guidance).
 
 **Deliberately not raised as problems:** OKF bundles (v0.1, nothing consumes them yet) and
 `/pricing.md` (EBS sells engagements, not tiers). Both parked with triggers in
-`ebs-marketing-skills/skills/ebs-discoverability/references/ai-visibility.md`.
+`ebs-seo-system/skills/ebs-discoverability/references/ai-visibility.md`.

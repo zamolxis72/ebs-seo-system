@@ -25,6 +25,21 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
    one. Never hand-edit between the `BEGIN GENERATED` markers, and if a state rule needs changing,
    change the script and the method file in the same commit.
 
+## The skills this repo owns (2026-08-28)
+
+**This repo is the single home of the SEO application layer.** Both skills live in `skills/` here
+and stay **globally symlinked** from `~/.claude/skills/`, because every content surface consumes
+them — but SEO responsibility, and the git source, is this system's:
+
+| Skill | Job | Fetched by |
+|---|---|---|
+| `skills/ebs-discoverability/` | the search/AEO layer — the ROUTER any surface runs to be found and cited | the article flow at R4 / E2 / B1 (per its ladder); case studies and pages standalone |
+| `skills/b2b-seo-audit/` | site-scope search diagnosis (crawl, indexation, CWV) | this workstream's audits; findings land in `reports/site-problems-log.md` |
+
+The four generic instruments the layer sequences (`text-semantics`, `geo-content`,
+`machine-signals`, `eeat-signals`) stay in `ebs-marketing-skills` — instruments are canon, the
+APPLICATION is this system's. Edit the two skills here, never through the symlink.
+
 ## Producing
 - Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
 - Metrics come from Ahrefs / Search Console — live or a dated snapshot. Never invent a metric.
