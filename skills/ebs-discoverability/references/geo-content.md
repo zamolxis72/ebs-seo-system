@@ -1,11 +1,11 @@
----
-name: geo-content
-description: Optimize content for citation by AI answer engines — Google AI Overviews/AI Mode and Gemini (grounded in Google's official 2026 generative-AI optimization guide, quoted verbatim in the bundled reference) plus ChatGPT and Perplexity (adaptation practices, honestly labeled). Use whenever the user wants content to rank in, appear in, or be cited by AI search, AI Overviews, ChatGPT, Gemini, or Perplexity; mentions GEO, AEO, answer engines, "AI visibility", query fan-out, topic clusters, or featured snippets; or is structuring an article, FAQ, or content strategy for search. Also run after eeat-signals and verified-facts when preparing YMYL content for publication.
----
+# geo-content — instrument layer (absorbed 2026-08-28, was a standalone skill)
+
+> One layer of ebs-discoverability. Former routing contract, first 200 chars: Optimize content for citation by AI answer engines — Google AI Overviews/AI Mode and Gemini (grounded in Google's official 2026 generative-AI optimization guide, quoted verbatim in the bundled referen…
+
 
 # GEO Content (AI-search citability)
 
-**First read `references/google-ai-search-rules.md`** — verbatim rules from Google's official AI-optimization guide (July 2026), including six officially debunked myths. Never recommend a debunked practice (llms.txt, special AI schema, mandatory chunking, inauthentic mentions) as if it were required; the reference's scope note separates Google rules from adaptation practices for other engines.
+**First read `google-ai-search-rules.md`** — verbatim rules from Google's official AI-optimization guide (July 2026), including six officially debunked myths. Never recommend a debunked practice (llms.txt, special AI schema, mandatory chunking, inauthentic mentions) as if it were required; the reference's scope note separates Google rules from adaptation practices for other engines.
 
 ## The mechanism you're optimizing for
 

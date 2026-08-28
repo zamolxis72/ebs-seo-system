@@ -21,7 +21,7 @@ Refresh: record a new pull into `intake/snapshots/gsc-<date>.json`, run `python3
 ## How it connects
 
 - Planning cadence comes from the umbrella's marketing agenda (in `zamolxis72/ebs-marketing-system`, `planning/`).
-- Production uses `b2b-seo-audit` (diagnosis) plus `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship); live metrics come from the Ahrefs tools, never invented.
+- Production uses the three-skill suite this repo owns — `seo-strategy` (demand), `ebs-discoverability` (execution, four instrument layers bundled), `b2b-seo-audit` (diagnosis) — plus `verified-facts` before ship; live metrics come from the Ahrefs tools, never invented.
 - The articles workstream (`zamolxis72/ebs-article-system`) consumes this repo's keyword and gap findings by reference.
 
 ## Status

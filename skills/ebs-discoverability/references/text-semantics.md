@@ -1,11 +1,11 @@
----
-name: text-semantics
-description: Format and adapt the text of a page — headings, paragraphs, titles, meta descriptions, vocabulary, anchor text, snippet-ready sections — so search engines and AI systems can parse, snippet, and quote it, grounded in Google's official documentation (quoted verbatim in the bundled reference). Use whenever writing or editing web copy, restructuring an article, writing titles or meta descriptions, or when the user mentions formatting for SEO, snippets, featured snippets, readability for robots, heading structure, semantic or syntactic adaptation, or "what robots love". Owns the machine-parseability ARRANGEMENT of text only, applied after the voice is settled — voice and register belong to ebs-integrator-communication-style (the canon, which always wins on wording), editing craft to b2b-copy-editing, and this skill never rewrites either, it restructures for parsing and snippeting; markup and technical signals belong to machine-signals.
----
+# text-semantics — instrument layer (absorbed 2026-08-28, was a standalone skill)
+
+> One layer of ebs-discoverability. Former routing contract, first 200 chars: Format and adapt the text of a page — headings, paragraphs, titles, meta descriptions, vocabulary, anchor text, snippet-ready sections — so search engines and AI systems can parse, snippet, and quote …
+
 
 # Text Semantics (how to write text machines can lift)
 
-**First read `references/google-text-rules.md`** — verbatim rules from Google's current docs, including officially debunked folklore (heading order doesn't matter to Search; no ideal word count; featured snippets can't be requested). Cite the doc when recommending; never dress accessibility practice up as a ranking trick.
+**First read `google-text-rules.md`** — verbatim rules from Google's current docs, including officially debunked folklore (heading order doesn't matter to Search; no ideal word count; featured snippets can't be requested). Cite the doc when recommending; never dress accessibility practice up as a ranking trick.
 
 ## Principles (each traceable to the reference)
 

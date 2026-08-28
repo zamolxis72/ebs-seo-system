@@ -1,11 +1,11 @@
----
-name: eeat-signals
-description: Audit or apply E-E-A-T (Experience, Expertise, Authoritativeness, Trust) using Google's official Search Quality Evaluator Guidelines, quoted verbatim with section numbers in the bundled reference. Use whenever content is written, reviewed, or audited for a YMYL topic (legal, financial, medical, safety, consumer rights) even if E-E-A-T is never mentioned, and whenever the user mentions trust signals, bylines, credibility, quality raters, YMYL, "will AI cite this", or wants content to look authoritative. Never fabricates credentials or experience — flags them as client inputs instead.
----
+# eeat-signals — instrument layer (absorbed 2026-08-28, was a standalone skill)
+
+> One layer of ebs-discoverability. Former routing contract, first 200 chars: Audit or apply E-E-A-T (Experience, Expertise, Authoritativeness, Trust) using Google's official Search Quality Evaluator Guidelines, quoted verbatim with section numbers in the bundled reference. Use…
+
 
 # E-E-A-T Signals (strict Google rules)
 
-**First read `references/google-eeat-rules.md`** — verbatim QRG (Sept 11, 2025) quotes with section numbers. Cite sections in every audit; never quote QRG rules from memory. The reference ends with two debunked third-party myths — don't reintroduce them.
+**First read `google-eeat-rules.md`** — verbatim QRG (Sept 11, 2025) quotes with section numbers. Cite sections in every audit; never quote QRG rules from memory. The reference ends with two debunked third-party myths — don't reintroduce them.
 
 ## Workflow (raters' own order)
 

@@ -35,7 +35,7 @@ Per keyword tier: rank tracking cadence, GSC queries/pages baselines, the **Gene
 
 ## Mode B: Diagnosis (rankings/traffic dropped)
 
-Follow the official taxonomy in order, cheapest checks first: (1) Data anomaly (Search Console data issues page), (2) seasonality (16-month range + Google Trends: is the drop web-wide?), (3) technical (Crawl Stats, Page Indexing, site-wide vs page-group via the Pages table), (4) security/spam (Security Issues, Manual Actions reports), (5) algorithmic update (check update timing; small position drop on a performing page → officially, don't make radical changes; large drop → whole-site people-first self-assessment, route to eeat-signals), (6) SERP change (new AI Overview/feature absorbing clicks — impressions stable + clicks down also implicates title/snippet, route to text-semantics). Deliver: diagnosis with evidence, severity, owner, and fix route.
+Follow the official taxonomy in order, cheapest checks first: (1) Data anomaly (Search Console data issues page), (2) seasonality (16-month range + Google Trends: is the drop web-wide?), (3) technical (Crawl Stats, Page Indexing, site-wide vs page-group via the Pages table), (4) security/spam (Security Issues, Manual Actions reports), (5) algorithmic update (check update timing; small position drop on a performing page → officially, don't make radical changes; large drop → whole-site people-first self-assessment, route to ebs-discoverability's trust layer), (6) SERP change (new AI Overview/feature absorbing clicks — impressions stable + clicks down also implicates title/snippet, route to ebs-discoverability's semantics layer). Deliver: diagnosis with evidence, severity, owner, and fix route.
 
 ## Output format
 
@@ -43,4 +43,4 @@ Portfolio mode: (1) scored keyword table with source-and-date column per metric,
 
 ## Composition
 
-**content-strategy** owns what to publish and why (this skill is its evidence engine — step 3); **geo-content** owns page-level citability once a keyword is assigned; **machine-signals** executes technical fixes found in diagnosis; **verified-facts** checks any market claim that ends up in client-facing strategy docs. This skill owns the numbers, the SERPs, and the monitoring loop.
+**content-strategy** owns what to publish and why (this skill is its evidence engine — step 3); **ebs-discoverability** owns page-level execution once a keyword is assigned (citability layer) and executes technical fixes found in diagnosis (machine layer); **verified-facts** checks any market claim that ends up in client-facing strategy docs. This skill owns the numbers, the SERPs, and the monitoring loop.

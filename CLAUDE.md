@@ -33,22 +33,19 @@ them — but SEO responsibility, and the git source, is this system's:
 
 | Skill | Job | Fetched by |
 |---|---|---|
-| `skills/ebs-discoverability/` | the search/AEO layer — the ROUTER any surface runs to be found and cited | the article flow at R4 / E2 / B1 (per its ladder); case studies and pages standalone |
+| `skills/ebs-discoverability/` | the search/AEO EXECUTION layer — carries its four instrument layers (semantics, citability, machine, trust) as bundled references, absorbed 2026-08-28 | the article flow at R4 / E2 / B1 (per its ladder); case studies and pages standalone |
 | `skills/b2b-seo-audit/` | site-scope search diagnosis (crawl, indexation, CWV) | this workstream's audits; findings land in `reports/site-problems-log.md` |
-| `skills/text-semantics/` | instrument: text ARRANGEMENT for parsing and snippeting (headings, titles, metas) | the layer's sweep 1; b2b-seo-audit fix routing; republish |
-| `skills/geo-content/` | instrument: citability by answer engines (AI Overviews, ChatGPT, Perplexity) | the layer's sweep 2; content-strategy |
-| `skills/machine-signals/` | instrument: schema, bylines, crawler access — the machine-readable layer | the layer's sweep 3; the article B1 |
-| `skills/eeat-signals/` | instrument: E-E-A-T against the quality-rater guidelines, YMYL bar | the layer's sweep 4; verified-facts and the JTBD wheel route to it |
 | `skills/seo-strategy/` | demand and measurement: keyword portfolio, SERP composition, prioritization math, rank/AI-citation tracking | the article ladder at R1/R3/B4; content-strategy's step 3 (demand evidence); b2b-seo-audit (SERP-shift evidence) |
 
-The whole search suite lives here (consolidated 2026-08-28): demand (`seo-strategy`), the two
-applications, and the four instruments they sequence — seven skills, all **globally symlinked**
+The whole search suite lives here (consolidated 2026-08-28): demand (`seo-strategy`), execution
+(`ebs-discoverability`, its four former instrument skills dissolved into its references), and
+diagnosis (`b2b-seo-audit`) — three skills, all **globally symlinked**
 so any surface can fetch them, all sourced from the system responsible for SEO. The strategy
 layer that CONSUMES the demand evidence (`content-strategy`, `marketing-plan`) lives with the
 planning system, `ebs-marketing-system`. Edit skills here, never through the symlink.
 
 ## Producing
-- Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
+- Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio) and `ebs-discoverability` (execution; its bundled layers own arrangement, machine access, AI visibility and E-E-A-T); `verified-facts` before ship.
 - Metrics come from Ahrefs / Search Console — live or a dated snapshot. Never invent a metric.
 - Research follows the article workstream's `library/trusted-sources.md`, the system's **single
   source authority** and cross-workstream by design: Part 1 is the tiered discovery whitelist (where

@@ -1,6 +1,6 @@
 ---
 name: ebs-discoverability
-description: "The EBS Integrator search and answer-engine layer. Owns one job for any EBS surface, article, service page, industry hub or case study: can it be FOUND by search and CITED by answer engines, to EBS's standard. Plugs into ebs-article-builder (project-scoped in ebs-article-system — open that repo to run the pipeline) at three named steps — R4 (collection), E2 (verification), B1 (generation from locked text) — per the canonical ladder in ebs-article-system/library/pipeline-steps.md, and standalone on any published or draft surface. Use for \"run the SEO pass\", \"optimise this for search\", \"will AI cite this\", \"AEO\", \"GEO\", \"schema for this page\", \"does this rank\", \"entity coverage\", \"why isn't this being cited\". It is a ROUTER plus the EBS adaptation: it sequences four instrument skills (text-semantics, geo-content, machine-signals, eeat-signals) plus b2b-seo-audit at site scope, and it supplies the EBS-specific logic none of them carry, inheriting voice from ebs-integrator-communication-style, source tiers from the article workstream's trusted-sources.md, keyword ownership from content-map.md, and stat classes from the Class S/F ledger. NOT portfolio or demand strategy (seo-strategy for demand, content-strategy for the publishing plan). NOT fact verification (verified-facts). NOT section-coverage auditing (the JTBD wheels, which are a separate instrument and not a pipeline step). NOT writing or editing the copy (communication-style for editorial, copywriting for conversion, b2b-copy-editing for the sweeps)."
+description: "The EBS Integrator search and answer-engine layer. Owns one job for any EBS surface, article, service page, industry hub or case study: can it be FOUND by search and CITED by answer engines, to EBS's standard. Plugs into ebs-article-builder (project-scoped in ebs-article-system — open that repo to run the pipeline) at three named steps — R4 (collection), E2 (verification), B1 (generation from locked text) — per the canonical ladder in ebs-article-system/library/pipeline-steps.md, and standalone on any published or draft surface. Use for \"run the SEO pass\", \"optimise this for search\", \"will AI cite this\", \"AEO\", \"GEO\", \"schema for this page\", \"does this rank\", \"is this YMYL\", \"byline and trust signals\", \"entity coverage\", \"why isn't this being cited\". It is THE search-execution skill: its four instrument layers — text-semantics (arrangement), geo-content (citability), machine-signals (schema/crawler access), eeat-signals (E-E-A-T and the YMYL bar) — are bundled references inside it (absorbed 2026-08-28; formerly standalone skills), read per pass and never run piecemeal; it routes to b2b-seo-audit at site scope, and it supplies the EBS-specific logic the official references cannot carry, inheriting voice from ebs-integrator-communication-style, source tiers from the article workstream's trusted-sources.md, keyword ownership from content-map.md, and stat classes from the Class S/F ledger. NOT portfolio or demand strategy (seo-strategy for demand, content-strategy for the publishing plan). NOT fact verification (verified-facts). NOT section-coverage auditing (the JTBD wheels, which are a separate instrument and not a pipeline step). NOT writing or editing the copy (communication-style for editorial, copywriting for conversion, b2b-copy-editing for the sweeps)."
 metadata:
   version: 1.0.0
 ---
@@ -13,7 +13,10 @@ That job was previously split across four thin, brand-neutral skills plus an on-
 fragment, none of them knowing anything about EBS. Running one of them and calling the step done is
 the failure this skill exists to prevent, and it happened: article A0 had its search pass "completed"
 on a check of title lengths and keyword counts, while the term **AI maturity** was missing from a
-piece whose entire argument is a maturity ladder.
+piece whose entire argument is a maturity ladder. The consolidation completed 2026-08-28: the four
+instruments are now this skill's own reference layers (`references/<name>.md`, each carrying the
+official documentation verbatim), so a piecemeal run is structurally impossible; the auditor stays
+a sibling skill, entered at site scope only.
 
 **This file carries no generic best practice.** The instruments own that, and they are read, not
 restated. What lives here is the sequence, the EBS adaptation, and the standing rules that generic
@@ -21,12 +24,12 @@ advice cannot know.
 
 ## The instruments (read them, don't restate them)
 
-| Layer | Instrument | The question it answers |
+| Layer | Reference (bundled here) | The question it answers |
 |---|---|---|
-| 1. Semantics | `text-semantics` | Does the piece carry the terms and entities a comprehensive answer is expected to hold, in load-bearing positions? |
-| 2. Citability | `geo-content` | Would an answer engine lift this, and what would it cite EBS **for**? |
-| 3. Machine | `machine-signals` | Can a crawler and an extractor parse it: schema, tables, headings, access? |
-| 4. Trust | `eeat-signals` | Would a quality rater trust it, and is the bar raised because the topic is YMYL? |
+| 1. Semantics | `references/text-semantics.md` | Does the piece carry the terms and entities a comprehensive answer is expected to hold, in load-bearing positions? |
+| 2. Citability | `references/geo-content.md` | Would an answer engine lift this, and what would it cite EBS **for**? |
+| 3. Machine | `references/machine-signals.md` (+ schema examples, official machine rules) | Can a crawler and an extractor parse it: schema, tables, headings, access? |
+| 4. Trust | `references/eeat-signals.md` (+ the rater guidelines verbatim) | Would a quality rater trust it, and is the bar raised because the topic is YMYL? |
 | 0. Mechanics | the surface's monitor · `text-semantics` | Title, meta, headings, internal links — MEASURED by script (for articles, `article_health.py`'s MECHANICS group); arrangement fixes are `text-semantics`'s, wording is the canon's. `b2b-seo-audit` enters at SITE scope only (live surfaces: crawl, indexation, CWV — findings to `ebs-seo-system`) |
 
 Run mechanics first because it is scripted and free, then semantics, citability, machine, trust. Trust last
