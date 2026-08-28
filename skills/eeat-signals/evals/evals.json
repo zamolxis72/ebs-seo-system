@@ -1,0 +1,11 @@
+{
+  "skill_name": "eeat-signals",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "We're a consumer protection law firm. Here's a draft blog post for our website about debt collector lawsuits (collector-lawsuit-draft.md). Review it and make it credible and authoritative before we publish — we want Google and AI tools to take it seriously.",
+      "expected_output": "A revised article plus an E-E-A-T audit: letter-by-letter signal table with Present/Partial/Missing, false absolutes removed ('always beat them', 'never lose', '$1,000 guaranteed'), FDCPA claims made accurate and hedged, CLIENT INPUT NEEDED list (byline, verifiable case stats) instead of invented credentials, primary-source citations added, off-page recommendations kept separate.",
+      "files": ["eeat-signals-workspace/test-inputs/collector-lawsuit-draft.md"]
+    }
+  ]
+}

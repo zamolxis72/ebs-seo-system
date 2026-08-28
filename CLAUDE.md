@@ -35,10 +35,16 @@ them — but SEO responsibility, and the git source, is this system's:
 |---|---|---|
 | `skills/ebs-discoverability/` | the search/AEO layer — the ROUTER any surface runs to be found and cited | the article flow at R4 / E2 / B1 (per its ladder); case studies and pages standalone |
 | `skills/b2b-seo-audit/` | site-scope search diagnosis (crawl, indexation, CWV) | this workstream's audits; findings land in `reports/site-problems-log.md` |
+| `skills/text-semantics/` | instrument: text ARRANGEMENT for parsing and snippeting (headings, titles, metas) | the layer's sweep 1; b2b-seo-audit fix routing; republish |
+| `skills/geo-content/` | instrument: citability by answer engines (AI Overviews, ChatGPT, Perplexity) | the layer's sweep 2; content-strategy |
+| `skills/machine-signals/` | instrument: schema, bylines, crawler access — the machine-readable layer | the layer's sweep 3; the article B1 |
+| `skills/eeat-signals/` | instrument: E-E-A-T against the quality-rater guidelines, YMYL bar | the layer's sweep 4; verified-facts and the JTBD wheel route to it |
 
-The four generic instruments the layer sequences (`text-semantics`, `geo-content`,
-`machine-signals`, `eeat-signals`) stay in `ebs-marketing-skills` — instruments are canon, the
-APPLICATION is this system's. Edit the two skills here, never through the symlink.
+The whole search suite lives here (consolidated 2026-08-28): the two applications and the four
+instruments they sequence, all **globally symlinked** so any surface can fetch them, all sourced
+from the system responsible for SEO. Edit them here, never through the symlink. What deliberately
+did NOT move: `seo-strategy` (demand/portfolio evidence) stays in `ebs-marketing-skills` because
+it feeds marketing PLANNING (content-strategy, marketing-plan) as much as SEO.
 
 ## Producing
 - Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
