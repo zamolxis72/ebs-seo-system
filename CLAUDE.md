@@ -39,12 +39,13 @@ them — but SEO responsibility, and the git source, is this system's:
 | `skills/geo-content/` | instrument: citability by answer engines (AI Overviews, ChatGPT, Perplexity) | the layer's sweep 2; content-strategy |
 | `skills/machine-signals/` | instrument: schema, bylines, crawler access — the machine-readable layer | the layer's sweep 3; the article B1 |
 | `skills/eeat-signals/` | instrument: E-E-A-T against the quality-rater guidelines, YMYL bar | the layer's sweep 4; verified-facts and the JTBD wheel route to it |
+| `skills/seo-strategy/` | demand and measurement: keyword portfolio, SERP composition, prioritization math, rank/AI-citation tracking | the article ladder at R1/R3/B4; content-strategy's step 3 (demand evidence); b2b-seo-audit (SERP-shift evidence) |
 
-The whole search suite lives here (consolidated 2026-08-28): the two applications and the four
-instruments they sequence, all **globally symlinked** so any surface can fetch them, all sourced
-from the system responsible for SEO. Edit them here, never through the symlink. What deliberately
-did NOT move: `seo-strategy` (demand/portfolio evidence) stays in `ebs-marketing-skills` because
-it feeds marketing PLANNING (content-strategy, marketing-plan) as much as SEO.
+The whole search suite lives here (consolidated 2026-08-28): demand (`seo-strategy`), the two
+applications, and the four instruments they sequence — seven skills, all **globally symlinked**
+so any surface can fetch them, all sourced from the system responsible for SEO. The strategy
+layer that CONSUMES the demand evidence (`content-strategy`, `marketing-plan`) lives with the
+planning system, `ebs-marketing-system`. Edit skills here, never through the symlink.
 
 ## Producing
 - Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio), `text-semantics` (arrangement), `machine-signals` (markup/access), `geo-content` (AI visibility), `verified-facts` (before ship).
