@@ -3,7 +3,11 @@
 Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). Separate repos, not a monorepo.
 
 ## Before any SEO work (in this exact order)
-1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method.
+1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method,
+   and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (E1–E6) with endpoint,
+   parameters and cost. Workstream recipes cite pulls by id and hold only their own RULES
+   (the article system's `collection-recipe.md` is the pattern); an endpoint restated outside
+   the engine is a fork.
 2. Read `reports/site-problems-log.md` — **the living site/SEO health log, and this repo owns it.**
    Every known site problem (evidence, why it matters, owner, status) lives there; whichever
    workstream finds a site-health issue appends it THERE, never to its own library. Update statuses

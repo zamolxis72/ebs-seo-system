@@ -141,7 +141,7 @@ Each of these was learned the expensive way. They are rules, not suggestions.
    May 2026 and their documentation removed. Ship valid schema, but never shape an editorial decision
    around a dead feature.
 9. **Measure the entity cluster; never ship it reasoned-only.** When Ahrefs is connected, pull
-   `keywords-explorer-related-terms` with `terms=also_talk_about` for the primary keyword: that is
+   engine pull E2 (`library/ahrefs-engine.md` in this repo — never restate its endpoint) for the primary keyword: that is
    what top-ranking pages actually discuss, against which the reasoned list is checked. The first
    time this was done (A0, 2026-08-24) the reasoned list was partly unsupported (hallucination was
    asserted as high-co-occurrence and is not) and missing the biggest measured terms (industrial
