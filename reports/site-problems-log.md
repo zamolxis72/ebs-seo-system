@@ -1,6 +1,13 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-08-21** (P9-P12 added from a sitemap reconciliation run by the article workstream; P3 and P4 corroborated; P6 partially RESOLVED).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-08-25** (P14 added — llms.txt 404s behind the locale middleware; before that P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
+
+**Fetching this log:** every item is `## P<n> — <title> — SEVERITY: <level>` with an
+`**Owner:** … **Status:** …` line, so one grep answers "what's open and whose is it":
+`grep '^## P\|Status:' reports/site-problems-log.md`. The statuses in the item bodies are the
+single source of truth — no summary table exists to drift from them. Fix owners named **web dev**
+are consumed by the `ebs-website-system` workstream, which points here rather than keeping its
+own issue stack.
 
 ## P1 — GitLab instance publicly exposed and dominating the link graph — SEVERITY: HIGH
 
