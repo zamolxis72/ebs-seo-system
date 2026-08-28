@@ -31,4 +31,4 @@
 
 ## Output
 
-A marked-up edit (or rewrite) plus a short table: | Element | Rule (doc) | Before | After |. Flag anything that needs the technical layer (DOM visibility, markup consistency) as a handoff to **machine-signals**; strategy-level structure (fan-out coverage, clusters) to **geo-content**; factual claims to **verified-facts**.
+A marked-up edit (or rewrite) plus a short table: | Element | Rule (doc) | Before | After |. Flag anything that needs the technical layer (DOM visibility, markup consistency) as a handoff to **machine-signals**; strategy-level structure (fan-out coverage, clusters) to **geo-content**; factual claims to **claim-verification**.

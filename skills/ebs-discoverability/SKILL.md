@@ -1,6 +1,6 @@
 ---
 name: ebs-discoverability
-description: "The EBS Integrator search and answer-engine layer. Owns one job for any EBS surface, article, service page, industry hub or case study: can it be FOUND by search and CITED by answer engines, to EBS's standard. Plugs into ebs-article-builder (project-scoped in ebs-article-system — open that repo to run the pipeline) at three named steps — R4 (collection), E2 (verification), B1 (generation from locked text) — per the canonical ladder in ebs-article-system/library/pipeline-steps.md, and standalone on any published or draft surface. Use for \"run the SEO pass\", \"optimise this for search\", \"will AI cite this\", \"AEO\", \"GEO\", \"schema for this page\", \"does this rank\", \"is this YMYL\", \"byline and trust signals\", \"entity coverage\", \"why isn't this being cited\". It is THE search-execution skill: its four instrument layers — text-semantics (arrangement), geo-content (citability), machine-signals (schema/crawler access), eeat-signals (E-E-A-T and the YMYL bar) — are bundled references inside it (absorbed 2026-08-28; formerly standalone skills), read per pass and never run piecemeal; it routes to b2b-seo-audit at site scope, and it supplies the EBS-specific logic the official references cannot carry, inheriting voice from ebs-integrator-communication-style, source tiers from the article workstream's trusted-sources.md, keyword ownership from content-map.md, and stat classes from the Class S/F ledger. NOT portfolio or demand strategy (seo-strategy for demand, content-strategy for the publishing plan). NOT fact verification (verified-facts). NOT section-coverage auditing (the JTBD wheels, which are a separate instrument and not a pipeline step). NOT writing or editing the copy (communication-style for editorial, copywriting for conversion, b2b-copy-editing for the sweeps)."
+description: "The EBS Integrator search and answer-engine layer. Owns one job for any EBS surface, article, service page, industry hub or case study: can it be FOUND by search and CITED by answer engines, to EBS's standard. Plugs into ebs-article-builder (project-scoped in ebs-article-system — open that repo to run the pipeline) at three named steps — R4 (collection), E2 (verification), B1 (generation from locked text) — per the canonical ladder in ebs-article-system/library/pipeline-steps.md, and standalone on any published or draft surface. Use for \"run the SEO pass\", \"optimise this for search\", \"will AI cite this\", \"AEO\", \"GEO\", \"schema for this page\", \"does this rank\", \"is this YMYL\", \"byline and trust signals\", \"entity coverage\", \"why isn't this being cited\". It is THE search-execution skill: its four instrument layers — text-semantics (arrangement), geo-content (citability), machine-signals (schema/crawler access), eeat-signals (E-E-A-T and the YMYL bar) — are bundled references inside it (absorbed 2026-08-28; formerly standalone skills), read per pass and never run piecemeal; it routes to b2b-seo-audit at site scope, and it supplies the EBS-specific logic the official references cannot carry, inheriting voice from ebs-integrator-communication-style, source tiers from the article workstream's trusted-sources.md, keyword ownership from content-map.md, and stat classes from the Class S/F ledger. NOT portfolio or demand strategy (seo-strategy for demand, content-strategy for the publishing plan). NOT fact verification (claim-verification). NOT section-coverage auditing (the JTBD wheels, which are a separate instrument and not a pipeline step). NOT writing or editing the copy (communication-style for editorial, copywriting for conversion, b2b-copy-editing for the sweeps)."
 metadata:
   version: 1.0.0
 ---
@@ -67,8 +67,9 @@ This pass works the bank in both directions:
   and AI-Overview positions). Canon voice always wins: a term that cannot be used naturally stays
   unused. One deliberate use beats three forced ones. Update the row's "Used by" column.
 - **Feed:** when the measured pull (rule 9) surfaces new qualifying terms, file them into the bank
-  in the same session, through its four entry filters (attaches to a registered area · not any
-  article's primary · distinctive, no generic tokens · provenance recorded and dated). A term used
+  in the same session, through its entry filters (attaches to a registered area · not any
+  article's primary · distinctive, no generic tokens · TYPED: keyword / long-tail / question /
+  entity, the reuse contract · provenance recorded and dated). A term used
   in an article without a bank row is drift.
 
 The bank renders into the Obsidian vault automatically: `build_cluster_graph.py` writes each area's
@@ -183,7 +184,7 @@ article; both made the audit describe itself wrongly.
 | Does the piece carry the terms a comprehensive answer holds? | semantics (`text-semantics`) | portfolio keyword ownership, settled at brief time |
 | Title, description, headings, internal links, slug | mechanics (measured by the monitor; arrangement fixes to `text-semantics`; `b2b-seo-audit` only at site scope) | citability, which is about the body |
 | Schema, table semantics, heading tree, crawler access | machine (`machine-signals`) | anything about wording |
-| Is the claim true, and does its source resolve? | evidence (`verified-facts`) | SEO. A corrected fact is an evidence fix |
+| Is the claim true, and does its source resolve? | evidence (`claim-verification`) | SEO. A corrected fact is an evidence fix |
 | Would a rater trust it, and is it signed? | trust (`eeat-signals`) | evidence. Rigorous sourcing on an unsigned page still fails |
 
 **The test when a finding is ambiguous:** name the skill that would have to fix it. That is the layer
@@ -206,7 +207,7 @@ One record per run, into the surface's `review/` folder:
 
 - **Demand and portfolio** are `seo-strategy` (which keywords have demand) and `content-strategy`
   (what to publish and in what order). Both are upstream of this and settled at brief time.
-- **Fact verification** is `verified-facts`. It checks whether a claim is true; this pass checks
+- **Fact verification** is `claim-verification`. It checks whether a claim is true; this pass checks
   whether a true claim can be found and cited. Note the gap between them, because it is real: claim
   verification checks figures, not the prose wrapping them, and three accuracy defects on A0 lived in
   that gap.

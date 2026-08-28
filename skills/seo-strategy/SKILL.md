@@ -43,4 +43,4 @@ Portfolio mode: (1) scored keyword table with source-and-date column per metric,
 
 ## Composition
 
-**content-strategy** owns what to publish and why (this skill is its evidence engine — step 3); **ebs-discoverability** owns page-level execution once a keyword is assigned (citability layer) and executes technical fixes found in diagnosis (machine layer); **verified-facts** checks any market claim that ends up in client-facing strategy docs. This skill owns the numbers, the SERPs, and the monitoring loop.
+**content-strategy** owns what to publish and why (this skill is its evidence engine — step 3); **ebs-discoverability** owns page-level execution once a keyword is assigned (citability layer) and executes technical fixes found in diagnosis (machine layer); **claim-verification** checks any market claim that ends up in client-facing strategy docs. This skill owns the numbers, the SERPs, and the monitoring loop.

@@ -52,4 +52,4 @@ Then: (1) crawler access matrix for this site (per engine: visible/blocked/unkno
 
 ## Composition
 
-**text-semantics** owns the words and their visible arrangement; this skill verifies and mirrors them. **eeat-signals** decides which trust signals should exist; this skill encodes the ones that do. **geo-content** consumes the access matrix in its eligibility gate. **verified-facts** has verified any factual claim before it gets marked up.
+**text-semantics** owns the words and their visible arrangement; this skill verifies and mirrors them. **eeat-signals** decides which trust signals should exist; this skill encodes the ones that do. **geo-content** consumes the access matrix in its eligibility gate. **claim-verification** has verified any factual claim before it gets marked up.

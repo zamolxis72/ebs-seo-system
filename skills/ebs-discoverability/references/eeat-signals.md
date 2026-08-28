@@ -50,4 +50,4 @@ Then: (1) YMYL classification with harm-test reasoning, (2) Lowest tripwires fou
 
 ## Composition with sibling skills
 
-This skill owns E-E-A-T judgment only. Delegate when available: **verified-facts** (claim-by-claim accuracy against primary sources — feeds Trust), **geo-content** (extraction structure, question headings, schema, clustering, off-page entity building — feeds AI citability). Without them, note accuracy verification and GEO structure as out-of-scope recommendations rather than doing them ad hoc.
+This skill owns E-E-A-T judgment only. Delegate when available: **claim-verification** (claim-by-claim accuracy against primary sources — feeds Trust), **geo-content** (extraction structure, question headings, schema, clustering, off-page entity building — feeds AI citability). Without them, note accuracy verification and GEO structure as out-of-scope recommendations rather than doing them ad hoc.

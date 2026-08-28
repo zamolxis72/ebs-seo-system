@@ -49,7 +49,7 @@ layer that CONSUMES the demand evidence (`content-strategy`, `marketing-plan`) l
 planning system, `ebs-marketing-system`. Edit skills here, never through the symlink.
 
 ## Producing
-- Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio) and `ebs-discoverability` (execution; its bundled layers own arrangement, machine access, AI visibility and E-E-A-T); `verified-facts` before ship.
+- Use `b2b-seo-audit` (diagnosis) with `seo-strategy` (demand/portfolio) and `ebs-discoverability` (execution; its bundled layers own arrangement, machine access, AI visibility and E-E-A-T); `claim-verification` before ship.
 - Metrics come from Ahrefs / Search Console — live or a dated snapshot. Never invent a metric.
 - Research follows the article workstream's `library/trusted-sources.md`, the system's **single
   source authority** and cross-workstream by design: Part 1 is the tiered discovery whitelist (where

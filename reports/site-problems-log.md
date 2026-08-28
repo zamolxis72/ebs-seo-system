@@ -195,7 +195,7 @@ fix both.
 ## P13 — AI page carries an unsourced statistic ("91%") — SEVERITY: MEDIUM
 
 **Evidence (verification pass for article A0, 2026-08-22/24):** the AI consulting page states
-"91% of companies cannot show what AI delivered." A `verified-facts` pass found no source
+"91% of companies cannot show what AI delivered." A `claim-verification` pass found no source
 supporting this claim. The closest real 91% is a **different assertion about a different
 population** (91% of 1,800 legal/tax/audit/compliance professionals say organisations aren't
 realising AI's full value — Thomson-Reuters-adjacent professional survey). Nothing supports the

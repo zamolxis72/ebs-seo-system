@@ -22,7 +22,7 @@ Indexed and snippet-eligible; robots.txt/CDN not blocking; no accidental `nosnip
 
 ### 2. Uniqueness gate (Google's #1 stated factor)
 
-"Unique, compelling, and useful" content outweighs every structural trick — commodity content ("7 Tips for…") is officially named as what loses. Require at least one element competitors can't copy: a unique expert take, first-hand observation, original data, or named-source specificity (the exact statute section, the exact deadline). If the content has none, send it back for substance before formatting; structure cannot rescue commodity content. This gate is where **eeat-signals** (experience/expertise evidence) and **verified-facts** (exact, sourced, current facts) plug in — run them here.
+"Unique, compelling, and useful" content outweighs every structural trick — commodity content ("7 Tips for…") is officially named as what loses. Require at least one element competitors can't copy: a unique expert take, first-hand observation, original data, or named-source specificity (the exact statute section, the exact deadline). If the content has none, send it back for substance before formatting; structure cannot rescue commodity content. This gate is where **eeat-signals** (experience/expertise evidence) and **claim-verification** (exact, sourced, current facts) plug in — run them here.
 
 ### 3. Extraction structure (adaptation layer — labeled as such)
 
@@ -52,7 +52,7 @@ When auditing or structuring content, produce:
 | Unique POV / non-commodity element | Official | ? | … |
 | Fan-out map covered (sections/cluster) | Official mechanism | ? | … |
 | Answer-first blocks under question H2s | Adaptation | ? | … |
-| Citable specifics verified | Adaptation (verified-facts) | ? | … |
+| Citable specifics verified | Adaptation (claim-verification) | ? | … |
 | Schema matches visible text | Official best practice | ? | … |
 | Earned off-page presence | Adaptation | ? | … |
 
@@ -60,4 +60,4 @@ Then: the fan-out map itself (head question → subqueries → where each is ans
 
 ## Composition
 
-**verified-facts** supplies the citable specifics (AI grounding selects for accuracy and freshness — officially part of the RAG definition). **eeat-signals** supplies the trust/uniqueness substance (Google's "unique expert or experienced takes"). **text-semantics** executes the sentence-level formatting (snippet-ready sections, titles, vocabulary). **machine-signals** executes the markup and crawler-access layer (schema, author chain, dates, bot matrix). This skill owns retrieval strategy — fan-out mapping, clusters, eligibility, uniqueness — and delegates execution.
+**claim-verification** supplies the citable specifics (AI grounding selects for accuracy and freshness — officially part of the RAG definition). **eeat-signals** supplies the trust/uniqueness substance (Google's "unique expert or experienced takes"). **text-semantics** executes the sentence-level formatting (snippet-ready sections, titles, vocabulary). **machine-signals** executes the markup and crawler-access layer (schema, author chain, dates, bot matrix). This skill owns retrieval strategy — fan-out mapping, clusters, eligibility, uniqueness — and delegates execution.
