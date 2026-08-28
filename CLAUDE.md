@@ -4,7 +4,7 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
 
 ## Before any SEO work (in this exact order)
 1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method,
-   and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (E1–E6) with endpoint,
+   and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (AH1–AH6) with endpoint,
    parameters and cost. Workstream recipes cite pulls by id and hold only their own RULES
    (the article system's `collection-recipe.md` is the pattern); an endpoint restated outside
    the engine is a fork.

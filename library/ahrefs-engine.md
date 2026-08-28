@@ -17,7 +17,7 @@ class). Before a new expensive pull class, verify unit cost against
 
 ## The pulls
 
-**E1 — Demand and SERP overview.** `keywords-explorer-overview` · country `us` · select
+**AH1 — Demand and SERP overview.** `keywords-explorer-overview` · country `us` · select
 `keyword,volume,difficulty,parent_topic,traffic_potential,serp_features`.
 Answers: is this ground one page or two (parent topic), is there SERP evidence at all, what
 features gate the SERP. Semantics: **parent topic** is the keyword sending the most traffic to the
@@ -26,29 +26,29 @@ parents need separate pages. A keyword returning **null KD / null parent / null 
 evidence**. `ai_overview` + `question` in serp_features means question-shaped headings are
 checked, not preferred.
 
-**E2 — What winning pages DISCUSS.** `keywords-explorer-related-terms` · `terms=also_talk_about` ·
+**AH2 — What winning pages DISCUSS.** `keywords-explorer-related-terms` · `terms=also_talk_about` ·
 `view_for=top_10` · US, for the target keyword. The entity cluster measured rather than reasoned.
 (Reference run: 1,260 units / 60 rows, 2026-08-24.)
 
-**E3 — What Google actually REWARDS.** `serp-overview` for the target keyword to get the winning
+**AH3 — What Google actually REWARDS.** `serp-overview` for the target keyword to get the winning
 URLs, then `site-explorer-organic-keywords` on the **top 3 only** (cap it). Discussion data and
-outcome data are different evidence: E2 says what a page talks about, E3 says what Google ranks it
+outcome data are different evidence: AH2 says what a page talks about, AH3 says what Google ranks it
 for. A term in both is the strongest candidate there is.
 
-**E4 — Level every survivor.** `keywords-explorer-overview` on the surviving candidates for
+**AH4 — Level every survivor.** `keywords-explorer-overview` on the surviving candidates for
 `parent_topic, volume, difficulty`. This is what keeps topic and entity clustering ONE vocabulary:
 a candidate whose parent is the target's parent is in-page vocabulary; a candidate whose parent is
 its own is a topic in its own right.
 
-**E5 — The question set.** `keywords-explorer-matching-terms` · `match_mode=terms` on the target
+**AH5 — The question set.** `keywords-explorer-matching-terms` · `match_mode=terms` on the target
 keyword's stem, filtered to question forms — real queries people ran, each with volume and date,
 never invented.
 
-**E6 — Measurement (post-publish).** Rank and AI-citation tracking per `seo-strategy`'s method;
+**AH6 — Measurement (post-publish).** Rank and AI-citation tracking per `seo-strategy`'s method;
 GSC pulls for entity health per `entity-health-method.md` (0 API units).
 
 ## Who runs what
 
-`seo-strategy` runs E1/E4/E6 (demand, leveling, measurement); `ebs-discoverability` runs E2/E3/E5
+`seo-strategy` runs AH1/AH4/AH6 (demand, leveling, measurement); `ebs-discoverability` runs AH2/AH3/AH5
 (the entity engine and the question set). Consumers cite pulls by id — a workstream recipe that
 restates an endpoint here has forked the engine.

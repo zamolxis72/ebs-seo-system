@@ -23,7 +23,7 @@ Start from content-strategy's cohorts and topics (or gather them — audience be
 
 ### 3. Read the SERP, not just the metrics
 
-For every priority keyword, pull the live SERP (engine pull E3's first half — `library/ahrefs-engine.md` — or a search): who ranks (DR, page type), which features show (`ai_overview`, PAA, local pack), and what format wins. Classify the realistic win: **rankable** (commercial/modest-DR winners), **citation play** (high-DR institutional domination — target the AI Overview/PAA slot), or **local play** (local pack). Date every SERP snapshot; PAA and AI Overviews are rotating pools.
+For every priority keyword, pull the live SERP (engine pull AH3's first half — `library/ahrefs-engine.md` — or a search): who ranks (DR, page type), which features show (`ai_overview`, PAA, local pack), and what format wins. Classify the realistic win: **rankable** (commercial/modest-DR winners), **citation play** (high-DR institutional domination — target the AI Overview/PAA slot), or **local play** (local pack). Date every SERP snapshot; PAA and AI Overviews are rotating pools.
 
 ### 4. Prioritize with transparent math
 
