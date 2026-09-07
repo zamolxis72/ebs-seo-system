@@ -1,6 +1,6 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-08-25** (P14 added — llms.txt 404s behind the locale middleware; before that P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
 
 **Fetching this log:** every item is `## P<n> — <title> — SEVERITY: <level>` with an
 `**Owner:** … **Status:** …` line, so one grep answers "what's open and whose is it":
@@ -249,3 +249,186 @@ own guidance).
 **Deliberately not raised as problems:** OKF bundles (v0.1, nothing consumes them yet) and
 `/pricing.md` (EBS sells engagements, not tiers). Both parked with triggers in
 `ebs-seo-system/skills/ebs-discoverability/references/ai-visibility.md`.
+
+## P15 — The blog shows two different tag sets for the same article — SEVERITY: MEDIUM (2026-09-07)
+
+**Found during** blog tag curation in the article workstream; logged here because the fix is
+front-end, not editorial. Curation record and full per-article table:
+`ebs-article-system/library/blog-tag-taxonomy.md`.
+
+**The defect.** The tag chips on a blog index card and the chips on the article's own page are
+populated from two different CMS fields. Of the 34 live articles where both are readable, **22
+disagree**. Verified in the browser 2026-09-07 on
+`/en/blog/data-privacy-protection-and-why-it-matters-for-ecommerce`: the index card reads
+`Data Analytics & AI · Software Security`, the article hero reads `DevOps · Data engineering` —
+no overlap at all.
+
+**Why it matters.** A reader filters the blog by one vocabulary and lands on a page asserting a
+different one. It also means retagging alone cannot fix what a reader sees: whichever field the
+CMS is curated in, the other surface keeps rendering the stale one.
+
+**Fix direction:** decide which field is authoritative, point both the index card and the article
+hero at it, and retire the other. Confirm against a page with a known disagreement (the one above)
+rather than a page where the two happen to match.
+**Owner:** web dev (decide the authoritative field) + marketing (curate it once, per the taxonomy
+record). **Status: OPEN — much smaller after the 7-Sep retag.**
+
+**Re-verified 2026-09-07 after the retag** (`ebs-article-system/intake/snapshots/blog-tags-2026-09-07.json`):
+the disagreement is down from **22 of 34** to **6 of 38** — `ai-big-data-fintech-pilot-to-production`,
+`education-data-silos-higher-education-administration`, `how-ar-lets-you-try-before-you-buy`,
+`how-businesses-sell-modern-commerce`, `is-ai-overhyped`,
+`what-is-banking-process-automation-and-why-it-matters`. The page named in the original evidence now
+agrees on both surfaces. One of the six is the worse case: `education-data-silos-…` renders **two chips
+on its card and none on its page**. The underlying defect is unchanged — two fields, one reader — and
+curating in one field will keep producing this until the front end reads a single field.
+
+## P16 — 14 of 45 live blog articles are unreachable from the blog index — SEVERITY: MEDIUM (2026-09-07)
+
+**Found during** blog tag curation in the article workstream.
+
+**The defect.** `/en/blog` server-renders 31 post cards and offers **no pagination control** — the
+accessibility tree contains none, and `?page=2` returns the client-side shell with zero posts. The
+sitemap declares 45 blog URLs. So 14 live articles can be reached only by direct URL, search, or a
+related-articles strip.
+
+Not reachable from the index (2026-09-07): `a-look-at-the-future-of-transport-and-logistics`,
+`a-transition-story-clean-desk-and-clean-screen-policy`,
+`blockchain-and-its-future-with-digital-transformation`,
+`chatbots-artificial-intelligence-and-customer-service`,
+`cross-platform-vs-hybrid-two-different-stories`, `customer-pain-points`,
+`digital-transformation-workshop-for-empowering-moldovan-smes`,
+`eastern-europe-postal-service-transformation`, `ecommerce-audit-guide-eu-stores`,
+`fintech-is-changing-the-future-of-financial-services`,
+`government-and-technology-continue-to-create-a-better-life-for-citizens-in-2024`,
+`scalable-it-solutions-business-growth`, `shopping-is-good`,
+`technology-your-retail-needs-to-grow-in-2024`.
+
+**Why it matters.** It caps the value of any tag work: a curated tag on an article the index never
+lists sorts nothing. It also compounds **P12** (orphaned live article).
+
+**Fix direction:** add pagination or infinite scroll to `/en/blog`, server-rendered so the
+additional pages are crawlable. Verify by counting cards reachable without JavaScript against the
+sitemap's 45.
+**Owner:** web dev. **Status: RESOLVED 2026-09-07** — re-measured after the retag: `/en/blog` serves
+**38 cards** in the payload and the sitemap declares the same 38 blog articles (plus the junk
+`/blog/blogs` page, still listed). Nothing is index-unreachable any more. It resolved by the
+inventory shrinking rather than by pagination arriving: seven of the 45 were withdrawn (see **P19**),
+so a future 39th article may bring the cap straight back. Re-check the card count against the
+sitemap the next time an article ships.
+
+## P17 — A test post is live and indexed on the blog — SEVERITY: HIGH (2026-09-07)
+
+**Found during** blog tag curation in the article workstream.
+
+**The defect.** `/en/blog/shopping-is-good` is live, in the sitemap, and its H1 reads
+**"This is the coolest title and is H1"**. It carries a real tag (`Cloud Application Engineering`)
+and a real posted date (2025-02-24). GSC recorded 5 impressions at avg position 70.2, so it is
+indexed, not merely live.
+
+**Why it matters.** Same class as **P9** (case studies on `test-page` slugs): placeholder content
+published under the brand, reachable by search.
+
+**Fix direction:** unpublish and remove from the sitemap, or replace with real content. If the URL
+earned any links, 301 it rather than 404 it. Confirm no other placeholder titles are live by
+scanning the sitemap's blog set for template strings.
+**Owner:** marketing (unpublish call) + web dev (sitemap/redirect). **Status: RESOLVED 2026-09-07**
+— `/en/blog/shopping-is-good` is off the index and off the sitemap. The unpublish half is done; the
+URL half is not: it returns **HTTP 200 with an empty page** rather than a 404, 410 or redirect, which
+is **P19**.
+
+## P18 — A draft article and two unlisted records are served to readers — SEVERITY: HIGH (2026-09-07)
+
+**Found during** the second-pass blog tag verification. Evidence:
+`ebs-article-system/intake/snapshots/blog-tags-2026-09-07.json`.
+
+**The defect.** Draft state in the CMS does not keep an article off the public surfaces.
+`/en/blog/customer-pain-points` carries `"status":"draft"` in the served payload and is rendered on
+`/en/blog` anyway. Separately, three records that appear on **no** listing — not the index, not the
+sitemap — are still served as related-article cards: `a` (a junk slug, on 2 pages),
+`boost-your-business-with-optimized-work-processes-for-it-solutions-and-products` (9 pages), and
+`digital-transformation-workshop-for-empowering-moldovan-smes` (14 pages, and its own page is empty
+— **P19**).
+
+**Why it matters.** Unfinished and undeclared content is publicly reachable and linkable, and the
+editorial inventory cannot be trusted: the blog is 38 articles by the index and at least 41 records
+by what the front end will actually render. It also means "set it to draft" is not a working
+withdrawal mechanism for marketing.
+
+**Fix direction:** the status field must gate every surface, not just the index — the listing, the
+related strip, the homepage feed and the sitemap read one published-only query. Verify with the two
+named cases: `customer-pain-points` must disappear from `/en/blog`, and `boost-your-business-…` must
+disappear from the nine pages that show it.
+**Owner:** web dev. **Status: OPEN.** Tracked on the marketing board as `M7.blogdraft`.
+
+## P19 — Seven withdrawn blog URLs return HTTP 200 with an empty page — SEVERITY: MEDIUM (2026-09-07)
+
+**Found during** the second-pass blog tag verification.
+
+**The defect.** Seven articles withdrawn in the 7-Sep pass still answer on their URLs: HTTP 200, a
+~96KB shell with no `<h1>`, no body copy and no chips. `digital-transformation-workshop-for-empowering-moldovan-smes`,
+`eastern-europe-postal-service-transformation`, `ecommerce-audit-guide-eu-stores`,
+`government-and-technology-continue-to-create-a-better-life-for-citizens-in-2024`,
+`scalable-it-solutions-business-growth`, `shopping-is-good`,
+`technology-your-retail-needs-to-grow-in-2024`.
+
+**Why it matters.** A soft 404 is the one response a crawler cannot act on: Google keeps the URL and
+eventually flags it as a soft-404 rather than dropping or redirecting it. One of the seven is worse
+than that — the workshop article leads the related strip on 14 live pages (**P18**), so readers are
+sent to an empty page from a third of the blog. `ecommerce-audit-guide-eu-stores` is the duplicate of
+`…-2025` and had accumulated its own history, so it wants a 301, not a 404.
+
+**Fix direction:** an unpublished article must return 410 (gone) or 301 to its replacement, never 200.
+Decide per URL: 301 the duplicate to `ecommerce-audit-guide-eu-stores-2025`, 410 the test post, and
+either restore or 410 the five real articles — the three eGov ones took the entire
+`egov-public-sector` industry off the blog with them.
+**Owner:** web dev (response codes) + marketing (restore-or-retire call on the five).
+**Status: OPEN.**
+
+## P20 — The related-articles strip is out of date order and uses half the blog — SEVERITY: MEDIUM (2026-09-07)
+
+**Found during** the second-pass blog tag verification. Measured on all 38 article pages, in DOM order.
+
+**The defect.** The strip is not ordered by publish date and does not reach most of the blog:
+
+- **26 of 38** strips are not newest-first.
+- On **23 of 38** the first card is one of the three undeclared records from **P18**.
+- On **1 of 38** is the first card the latest article sharing a tag.
+- The strip only ever draws from **19 of the 38** live articles; the other 19 are never shown as a
+  related card anywhere on the site.
+- The cards link to `/blog/<slug>` without `/en/` — corroborates **P11**.
+
+The ordering it does follow looks like CMS record age: the three leaders were all last modified
+2023-12-27, the oldest records in the collection.
+
+**Why it matters.** The strip is the only internal path to the 19 articles the index shows last, and
+it currently spends that link equity on a junk slug and an empty page. For a reader, "read next"
+offers a 2023 post before a 2026 one on the same subject.
+
+**Fix direction:** select on the shared tag, exclude anything not published, order by publish date
+descending, cap at N. Verify on a page whose tag has a recent sibling — the first card must be the
+newest article carrying that tag. Note that date ordering is only as sound as the date it sorts on,
+which is why this pairs with the hand-typed publish date (marketing board `M7.blogdate`).
+**Owner:** web dev. **Status: OPEN.** Tracked on the marketing board as `M7.blogtagorder`.
+
+## P21 — The blog filters offer four terms nobody carries and hide four that articles do — SEVERITY: LOW (2026-09-07)
+
+**Found during** the second-pass blog tag verification. Filter vocabularies read in the browser on
+`/en/blog`; applied terms read from the served payload of all 38 articles.
+
+**The defect.** The filter vocabulary and the applied vocabulary have drifted apart in both
+directions. Offered but carried by no article: `Business Strategy & Growth`,
+`Regulatory & Compliance Advisory`, `Operational Efficiency`, and `Egovernment` on the industry axis
+— four filters that return an empty blog. Carried by articles but not offered:
+`Agile Project Management`, `Retail & Consumer Goods`, `Data Engineering` (a second term differing
+from `Data engineering` only in case), `AR/VR` — four chips a reader can see but cannot filter by.
+`All Capabilities` and `All Industries` are still offered as options, and `All Industries` is also
+stored as a real value on 18 of 38 articles.
+
+**Why it matters.** A filter that returns nothing reads as a broken site, and a chip that filters
+nothing reads as a broken tag. Both are cheap to fix once the vocabulary is one list.
+
+**Fix direction:** the filter options should be derived from the terms actually in use, not from a
+term collection that keeps retired entries. The editorial half — which term each article should
+carry, and the collapse onto the site's 14 hubs — is
+`ebs-article-system/library/blog-tag-taxonomy.md`; this item is the front-end half.
+**Owner:** web dev (derive the options) + marketing (apply the taxonomy). **Status: OPEN.**
