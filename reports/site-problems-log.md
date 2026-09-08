@@ -358,6 +358,12 @@ withdrawal mechanism for marketing.
 related strip, the homepage feed and the sitemap read one published-only query. Verify with the two
 named cases: `customer-pain-points` must disappear from `/en/blog`, and `boost-your-business-…` must
 disappear from the nine pages that show it.
+
+**But read the activity before acting on `customer-pain-points` (2026-09-08):** it earns **1,577
+impressions at position 42** over the 90 days to 13 Aug — the third most-seen blog URL, top query
+*business pain point*. The draft state is the defect, not the article. Publish it properly (tags:
+Business Strategy · IT Consulting, Cross-industry) rather than hide it; hiding it throws away the
+blog's third-largest search footprint. `boost-your-business-…`, by contrast, has zero impressions.
 **Owner:** web dev. **Status: OPEN.** Tracked on the marketing board as `M7.blogdraft`.
 
 ## P19 — Seven withdrawn blog URLs return HTTP 200 with an empty page — SEVERITY: MEDIUM (2026-09-07)
@@ -383,6 +389,19 @@ either restore or 410 the five real articles — the three eGov ones took the en
 `egov-public-sector` industry off the blog with them.
 **Owner:** web dev (response codes) + marketing (restore-or-retire call on the five).
 **Status: OPEN.**
+
+**Activity read 2026-09-08** from `ebs-article-system/intake/snapshots/gsc-blog-2026-08-20.json`
+(Search Console, 90 days to 2026-08-13), so the retire-or-restore call rests on numbers rather than
+sentiment. `technology-your-retail-…` 14 impressions, `eastern-europe-postal-…` 12,
+`digital-transformation-workshop-…` 12, `shopping-is-good` 5, `government-and-technology-…` 4,
+`ecommerce-audit-guide-eu-stores` 3 — every one of them with `site:ebs-integrator.com` as its top
+query except the workshop piece, meaning the only thing surfacing them was somebody enumerating the
+domain. `scalable-it-solutions-…`, `boost-your-business-…`, `a` and `/blog/blogs` do not appear at
+all: zero impressions. **On activity, all of these are 410s** (the duplicate audit guide a 301); the
+two eGov pieces are the only ones with an editorial reason to restore, and it is coverage, not
+demand. **The exception is not on this list — it is in P18:** `customer-pain-points`, the draft
+that renders anyway, earns **1,577 impressions at position 42**, the third most-seen blog URL. That
+one is published, not removed.
 
 ## P20 — The related-articles strip is out of date order and uses half the blog — SEVERITY: MEDIUM (2026-09-07)
 
