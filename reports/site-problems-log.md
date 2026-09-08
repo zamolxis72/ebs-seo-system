@@ -1,6 +1,6 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-08** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
 
 **Fetching this log:** every item is `## P<n> — <title> — SEVERITY: <level>` with an
 `**Owner:** … **Status:** …` line, so one grep answers "what's open and whose is it":
@@ -432,3 +432,22 @@ term collection that keeps retired entries. The editorial half — which term ea
 carry, and the collapse onto the site's 14 hubs — is
 `ebs-article-system/library/blog-tag-taxonomy.md`; this item is the front-end half.
 **Owner:** web dev (derive the options) + marketing (apply the taxonomy). **Status: OPEN.**
+
+## P22 — Two blog articles ship the same meta description — SEVERITY: MEDIUM (2026-09-08)
+
+**Found while** assigning tags from each article's own title and summary.
+
+**The defect.** `/en/blog/is-ai-overhyped` and `/en/blog/ai-big-data-fintech-pilot-to-production`
+carry an identical `description` in the CMS, word for word: *"AI in fintech is everywhere, yet few
+systems would survive an audit. Why projects stall, what regulators expect, and the three steps
+that fix it."* The text belongs to the fintech article; it was copy-pasted onto the AI-hype one.
+
+**Why it matters.** These are the two newest AI articles and the entry points to the AI ladder, so
+the duplication sits on exactly the pages the AI-page cluster depends on. A shared description means
+Google picks its own snippet for at least one of them and the two pages read as near-duplicates to
+an answer engine deciding which to cite.
+
+**Fix direction:** rewrite the `is-ai-overhyped` description against its own argument (the refusal
+rung: whether the hype is justified and what to do about it). Then sweep the other 36 descriptions
+for repeats — a copy-paste that happened once usually happened twice.
+**Owner:** marketing (rewrite in the CMS). **Status: OPEN.**
