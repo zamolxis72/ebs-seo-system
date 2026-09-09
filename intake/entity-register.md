@@ -76,7 +76,7 @@ below that snapshot's reporting floor: absent, not proven zero.
 | `/en/case-studies/gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
 | `/en/case-studies/system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
 
-## 2. Live service and industry pages (13 + 2 hubs, as of 2026-08-04)
+## 2. Live service and industry pages (14 + 2 hubs, as of 2026-08-04)
 
 The permanent commercial surfaces. Unlike case studies these are not added to over time, so the
 register's job here is different: it records **which hub each case-study cluster should be routing
@@ -151,9 +151,8 @@ adjacency to the existing map is *legacy platform modernisation*, which
 worth an internal link, not a conflict, since the verticals do not touch.
 
 **Articles.** Statuses live in `ebs-article-system/library/content-map.md` and are not restated here:
-the fintech spoke is FINAL and unpublished, the DX pillar draft is parked. The blog pages that
-currently rank, and their three recorded collision notes, are in that file's "Existing article
-inventory (Ahrefs audit, 2026-07-16)".
+the fintech spoke is live at `/en/blog/ai-big-data-fintech-pilot-to-production`, the DX pillar draft is
+parked. The blog pages that currently rank are in that file's "Live blog inventory (GSC pull 2026-08-20)".
 
 ## 4. Observations for the next title decision
 
@@ -178,10 +177,10 @@ cost has been measured.
 - **E-gov and public sector carries three**, all Moldova-adjacent, all distinct services
   (admissions, customs, post). The entity holding them together is the sector, not a product.
 - **AI is claimed once on the case-study side** (`system-converting-calls-to-insights`) and is the
-  spine of the article side (Cluster 1 and 2 in `content-map.md`). Any new AI case study should be
+  spine of the article side (the AI hub tables in `content-map.md`). Any new AI case study should be
   chosen to feed those clusters as evidence, since they are the surfaces built to rank for it.
 - **Fintech is the deepest vertical here** — factoring, credit, banking, crypto payments,
-  cross-border tax — and `content-map.md` Cluster 2 already interlinks into `/en/industries/fintech`.
+  cross-border tax — and `content-map.md`'s fintech hub table already interlinks into `/en/industries/fintech`.
   That page is the natural hub for these cases.
 - **The service pages claim entities they do not hold.** Four of the eleven are found only by `site:`
   enumeration or a brand term, including `digital-transformation` and `software-development` — the
