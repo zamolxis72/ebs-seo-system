@@ -117,9 +117,18 @@ is the main reason these pages belong in the register.
 | `/en/industries/egov-public-sector` | e-gov and public sector software | **E-gov / public sector (3)** | egov service remote |
 | `/en/industries/edtech` | edtech software development | **Education (4)** | *(`site:` operator — no usable probe)* |
 
-**Every case study in section 1 has an industry hub to route into, and one cluster has none.** The
-AI & data cluster (`system-converting-calls-to-insights`) has no matching industry page; its natural
-home is a service page (`ai-consulting` or `data-engineering-ai`) rather than an industry hub.
+### Service pages anchoring a case cluster
+
+A cluster with no industry page routes into a service page instead. Same table shape as above, so the
+cluster graph build (`ebs-article-system/scripts/build_cluster_graph.py`) reads it by the same rule.
+
+| Slug | Primary entity | Case-study cluster it should anchor | Observed probe |
+|---|---|---|---|
+| `/en/it-services/data-engineering-ai` | data engineering and AI | **AI & data (1)** — decided 2026-09-09 (Andrei) | engineering data integration services |
+
+**Every case study in section 1 has a hub to route into.** The AI & data cluster
+(`system-converting-calls-to-insights`) has no industry page; its hub is the `data-engineering-ai` service
+page, decided 2026-09-09 and recorded in the table above.
 
 ## 3. In the pipeline, not live
 
@@ -140,9 +149,10 @@ are all untrue as stated, and the declared slug
 The locked-content file in `ebs-case-study-system` has not been re-read here, so it is unknown whether
 it is also stale or whether the site diverged from it.
 
-**Nothing above is edited, because what it should say depends on a decision that has not been taken:**
-does this case ship at a real slug, or come down? Filed as **P9** in
-`reports/site-problems-log.md`. The keyword claims below are left as recorded — they were the plan for
+**Decision 2026-09-09 (Andrei): unlisted until finished.** `test-page-case-1` gets `noindex` and leaves
+the sitemap now (DevOps action, tracked as **P9** in `reports/site-problems-log.md`); the case publishes at
+the locked slug with a 301 from the test URL once recapture, card and OG images ship. Hub:
+`software-development`, recorded in the case record. The keyword claims below are left as recorded — they were the plan for
 a page at the declared slug, and that page does not exist yet.
 
 **This one opens a new window.** No live surface claims carbon, ESG, CSRD or emissions. Its only
@@ -187,9 +197,10 @@ cost has been measured.
   two most commercially load-bearing. A service entity is claimed by having a page; it is held by
   ranking for the service, and on this evidence most are not. New titles cannot lean on a service
   page as an authority target until that changes.
-- **Every case cluster has a hub except AI & data.** Section 2 maps the four industry hubs to their
-  clusters. The AI case study has no industry page, and the site's AI weight sits entirely in the
-  article clusters, so an AI hub is a structural gap rather than a title collision.
+- **Every case cluster has a hub; AI & data routes into a service page.** Section 2 maps the four
+  industry hubs to their clusters and, since 2026-09-09, `data-engineering-ai` to AI & data. The site's AI
+  weight still sits in the article clusters, so an AI industry hub remains a structural gap rather than a
+  title collision.
 
 ## 5. How to append
 

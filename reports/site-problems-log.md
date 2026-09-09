@@ -1,6 +1,6 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-08** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-09** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
 
 **Fetching this log:** every item is `## P<n> — <title> — SEVERITY: <level>` with an
 `**Owner:** … **Status:** …` line, so one grep answers "what's open and whose is it":
@@ -118,7 +118,7 @@ from it inherit the error.
 section 3 to match whatever is true. Check the CMS for how a test slug reached the sitemap at all —
 if drafts are sitemap-eligible, this will recur.
 
-**Owner:** content + web dev; register correction is the SEO workstream's. **Status: OPEN.**
+**Owner:** content + web dev; register correction is the SEO workstream's. **Status: DECIDED 2026-09-09 (Andrei) — BuildGreen (`test-page-case-1`) is unlisted until finished: `noindex` + out of the sitemap now, then publish at the locked slug with a 301; DevOps action pending. `test-page` (the FDA H1) still undecided; register section 3 corrected.**
 
 **Note:** the article workstream has **dropped all three URLs** from the content system
 (`ebs-article-system/library/content-map.md`, 2026-08-21) so nothing is planned or interlinked
