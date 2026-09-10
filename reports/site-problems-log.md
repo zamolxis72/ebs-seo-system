@@ -470,3 +470,44 @@ an answer engine deciding which to cite.
 rung: whether the hype is justified and what to do about it). Then sweep the other 36 descriptions
 for repeats — a copy-paste that happened once usually happened twice.
 **Owner:** marketing (rewrite in the CMS). **Status: OPEN.**
+
+## P23 — A0 shipped with a different H1, the fintech meta description, no FAQ schema and a wrong publish date — SEVERITY: MEDIUM (2026-09-10)
+
+**Found while** running B3v (verify live) on `/en/blog/is-ai-overhyped-how-to-make-most-of-it` in
+`ebs-article-system` (`articles/is-ai-overhyped/review/b3v-verify-live-2026-09-10.md`).
+
+**The defects.** Five, all in the CMS layer, none in the locked text: (1) the H1 was rewritten at
+entry and no longer carries the primary keyword; (2) the `description` — meta tag, `og:description`
+and JSON-LD alike — is the fintech article's, word for word (P22, still open); (3) the JSON-LD
+`datePublished` reads 2026-09-09, the day the tag pass ran, while the CMS `posted_at` is 2026-08-26 —
+the schema generator appears to write the last-modified date into both fields; (4) no `FAQPage`
+block ships although the page carries three FAQ questions; (5) the AI consulting hub links to the
+blog index and to the fintech spoke but not to A0, so the newest article on that hub has no hub
+back-link. Also confirmed: the planned short slug `/en/blog/is-ai-overhyped` answers **200 with the
+empty catch-all page** — the P19 pattern on a URL that was never published.
+
+**Why it matters.** The two newest AI articles are the AI ladder's entry pages; a shared description
+and a wrong publish date on one of them are exactly the signals an answer engine uses to pick which
+page to cite and how fresh it is. Item 3 is likely systemic: if `datePublished` follows the modified
+date on every article, every republish resets the site's freshness record.
+
+**Fix direction:** the five pastes are listed in the article's `cms-paste.md` § *Post-publish
+corrections (2026-09-10)*. Site-side: check whether `datePublished` is generated from `updated_at`
+across the blog template (one query in the CMS), and add the hub back-link slot the wiring hand-off
+describes. **Owner:** marketing (pastes), front end (schema dates, hub back-link). **Status: OPEN.**
+
+## P24 — One query splits across two blog URLs — SEVERITY: LOW (2026-09-10)
+
+**Found while** refreshing the blog inventory in `ebs-article-system` from `gsc-keywords` (window
+2026-06-11 → 2026-09-09, `intake/snapshots/gsc-keywords-2026-09-10.json`).
+
+**The defect.** `urls_count` = 2 on exactly one query, *real time in store purchase data into marketing
+platforms* (71 impressions, avg position 15.7); the top URL is
+`/en/blog/how-technology-and-data-helps-your-store-adapt-to-market-changes`, the second is another
+retail page (GSC names only the top). Every other query in the pull, 112 of them, resolves to one URL.
+
+**Why it matters.** Little today: a 13-word, assistant-shaped query on two legacy pages. It is
+recorded because the audit in `ebs-article-system` errors on any measured split and this one is
+**accepted on record** in that repo's content map (Andrei, 2026-09-10), with the AI × retail pillar
+named as the future owner of the ground. **Owner:** articles workstream. **Status: ACCEPTED, re-check
+when the AI × retail pillar publishes.**
