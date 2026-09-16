@@ -47,7 +47,7 @@ register tells it what the rest of the site is already standing on.
 
 ---
 
-## 1. Live case studies (17, as of 2026-08-04)
+## 1. Live case studies (18 — 17 as of 2026-08-04, plus ai-powered-business-analysis published 2026-09-16)
 
 URL pattern: `/en/case-studies/<slug>`.
 
@@ -75,6 +75,7 @@ below that snapshot's reporting floor: absent, not proven zero.
 | `/en/case-studies/digital-optical-showroom-application` | A unified ERP and app connecting Lensa's optical stores and e-commerce | omnichannel retail ERP | optical retail, e-commerce, in-store app, Lensa | Marketplace & commerce | — |
 | `/en/case-studies/gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
 | `/en/case-studies/system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
+| `/en/case-studies/ai-powered-business-analysis` | AI-powered business analysis, where agents do the volume and people decide | ai-powered business analysis | ai business analysis, ai consulting, business analysis automation, ai in software delivery, requirements automation, ai agents in business analysis | AI & data | *(published 2026-09-16, after the 2026-08-14 snapshot — no probe yet)* |
 
 ## 2. Live service and industry pages (14 + 2 hubs, as of 2026-08-04)
 
@@ -159,6 +160,23 @@ a page at the declared slug, and that page does not exist yet.
 adjacency to the existing map is *legacy platform modernisation*, which
 `academic-management-system-for-multi-campus-institution` also claims (15-year-old PHP replacement) —
 worth an internal link, not a conflict, since the verticals do not touch.
+
+**AI-powered business analysis — SHIPPED 2026-09-16.** Published at
+`/en/case-studies/ai-powered-business-analysis`; its row is now in section 1 and it left the pipeline.
+The entity decision it carried is kept here because section 1 has no column for it:
+
+**Overlap accepted, not consolidated** (owner, 2026-09-15). The declared keywords claim the head terms
+of two live service pages, `/en/it-services/ai-consulting` (*AI consulting*) and
+`/en/it-services/consulting/business-analysis` (*business analysis*). The case claims the compound
+entity *ai-powered business analysis*, which neither holds, and is proof rather than a service offer,
+so it supports both rather than competing for either. Internal links run case → service, not the
+reverse.
+
+⚠ **Hub still unresolved.** The case record carries `hub: ai-consulting`, from the case's own decision
+of 2026-09-01. Section 2 routes the **AI & data** cluster into `data-engineering-ai` (decided
+2026-09-09 for `system-converting-calls-to-insights`). The cluster now holds two cases and the two
+rules disagree: either the hub becomes per-case, or this case moves to `data-engineering-ai`. Shipping
+did not resolve it, it only made it load-bearing — the Class C ledger row records `ai-consulting`.
 
 **Articles.** Statuses live in `ebs-article-system/library/content-map.md` and are not restated here:
 the fintech spoke is live at `/en/blog/ai-big-data-fintech-pilot-to-production`, the DX pillar draft is
