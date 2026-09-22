@@ -75,7 +75,7 @@ below that snapshot's reporting floor: absent, not proven zero.
 | `/en/case-studies/digital-optical-showroom-application` | A unified ERP and app connecting Lensa's optical stores and e-commerce | omnichannel retail ERP | optical retail, e-commerce, in-store app, Lensa | Marketplace & commerce | — |
 | `/en/case-studies/gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
 | `/en/case-studies/system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
-| `/en/case-studies/ai-powered-business-analysis` | AI-powered business analysis, where agents do the volume and people decide | ai-powered business analysis | ai business analysis, ai consulting, business analysis automation, ai in software delivery, requirements automation, ai agents in business analysis | AI & data | *(published 2026-09-16, after the 2026-08-14 snapshot — no probe yet)* |
+| `/en/case-studies/ai-powered-business-analysis` | AI-powered business analysis, where agents do the volume and people decide | ai-powered business analysis | ai business analysis, business analysis automation, ai in software delivery, requirements automation, ai agents in business analysis | AI & data | *(published 2026-09-16, after the 2026-08-14 snapshot — no probe yet)* |
 
 ## 2. Live service and industry pages (14 + 2 hubs, as of 2026-08-04)
 
@@ -168,12 +168,7 @@ worth an internal link, not a conflict, since the verticals do not touch.
 `/en/case-studies/ai-powered-business-analysis`; its row is now in section 1 and it left the pipeline.
 The entity decision it carried is kept here because section 1 has no column for it:
 
-**Overlap accepted, not consolidated** (owner, 2026-09-15). The declared keywords claim the head terms
-of two live service pages, `/en/it-services/ai-consulting` (*AI consulting*) and
-`/en/it-services/consulting/business-analysis` (*business analysis*). The case claims the compound
-entity *ai-powered business analysis*, which neither holds, and is proof rather than a service offer,
-so it supports both rather than competing for either. Internal links run case → service, not the
-reverse.
+**Overlap REVERSED 2026-09-22 (Andrei): the duplicate claim is removed, not accepted.** The 2026-09-15 decision let this case keep *ai consulting* as a supporting entity alongside the live service page `/en/it-services/ai-consulting`, which holds it as its PRIMARY. Two surfaces claiming one head term is a dedupe whichever way it is reasoned about, and the case does not need it: it claims the compound entity *ai-powered business analysis*, which no service page holds, plus *ai business analysis*, *business analysis automation*, *ai in software delivery*, *requirements automation* and *ai agents in business analysis*. Bare *ai consulting* is struck from its supporting list here and in `case-record.json`. The service page keeps the term outright. Nothing else about the case's entities changes, and the case→service internal link direction is unaffected — it is still proof pointing at an offer.
 
 ✅ **Hub RESOLVED 2026-09-22 (Andrei): `ai-consulting`, and the hub is PER CASE.** The case record keeps `hub: ai-consulting` from its 2026-09-01 decision and gains `hub_secondary: data-engineering-ai`, because the case genuinely touches both: it is an AI consulting capability that also does data engineering work. Section 2's mapping of the **AI & data** cluster into `data-engineering-ai` stands for `system-converting-calls-to-insights` and is not a cluster-wide rule — a cluster routes its cases individually where they legitimately differ. The Class C ledger row recording `ai-consulting` is correct as it stands.
 
