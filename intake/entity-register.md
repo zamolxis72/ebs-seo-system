@@ -127,9 +127,12 @@ cluster graph build (`ebs-article-system/scripts/build_cluster_graph.py`) reads 
 |---|---|---|---|
 | `/en/it-services/data-engineering-ai` | data engineering and AI | **AI & data (1)** — decided 2026-09-09 (Andrei) | engineering data integration services |
 
-**Every case study in section 1 has a hub to route into.** The AI & data cluster
-(`system-converting-calls-to-insights`) has no industry page; its hub is the `data-engineering-ai` service
-page, decided 2026-09-09 and recorded in the table above.
+**Every case study in section 1 has a hub to route into, and a cluster may route its cases
+individually.** The AI & data cluster has no industry page, so `system-converting-calls-to-insights`
+routes to the `data-engineering-ai` service page, decided 2026-09-09 and recorded above. That is a
+decision for THAT case, not a rule for the cluster: `ai-powered-business-analysis` routes to
+`ai-consulting` with `data-engineering-ai` as its secondary, decided 2026-09-22 (Andrei), because it
+touches both. Where a cluster's cases differ in substance, the hub follows the case.
 
 ## 3. In the pipeline, not live
 
@@ -172,11 +175,7 @@ entity *ai-powered business analysis*, which neither holds, and is proof rather 
 so it supports both rather than competing for either. Internal links run case → service, not the
 reverse.
 
-⚠ **Hub still unresolved.** The case record carries `hub: ai-consulting`, from the case's own decision
-of 2026-09-01. Section 2 routes the **AI & data** cluster into `data-engineering-ai` (decided
-2026-09-09 for `system-converting-calls-to-insights`). The cluster now holds two cases and the two
-rules disagree: either the hub becomes per-case, or this case moves to `data-engineering-ai`. Shipping
-did not resolve it, it only made it load-bearing — the Class C ledger row records `ai-consulting`.
+✅ **Hub RESOLVED 2026-09-22 (Andrei): `ai-consulting`, and the hub is PER CASE.** The case record keeps `hub: ai-consulting` from its 2026-09-01 decision and gains `hub_secondary: data-engineering-ai`, because the case genuinely touches both: it is an AI consulting capability that also does data engineering work. Section 2's mapping of the **AI & data** cluster into `data-engineering-ai` stands for `system-converting-calls-to-insights` and is not a cluster-wide rule — a cluster routes its cases individually where they legitimately differ. The Class C ledger row recording `ai-consulting` is correct as it stands.
 
 **Articles.** Statuses live in `ebs-article-system/library/content-map.md` and are not restated here:
 the fintech spoke is live at `/en/blog/ai-big-data-fintech-pilot-to-production`, the DX pillar draft is
