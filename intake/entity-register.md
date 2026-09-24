@@ -153,11 +153,7 @@ are all untrue as stated, and the declared slug
 The locked-content file in `ebs-case-study-system` has not been re-read here, so it is unknown whether
 it is also stale or whether the site diverged from it.
 
-**Decision 2026-09-09 (Andrei): unlisted until finished.** `test-page-case-1` gets `noindex` and leaves
-the sitemap now (DevOps action, tracked as **P9** in `reports/site-problems-log.md`); the case publishes at
-the locked slug with a 301 from the test URL once recapture, card and OG images ship. Hub:
-`software-development`, recorded in the case record. The keyword claims below are left as recorded — they were the plan for
-a page at the declared slug, and that page does not exist yet.
+**Decision 2026-09-24 (Andrei), superseding 2026-09-09: the test URL is DROPPED, not redirected.** `test-page-case-1` is irrelevant to this case and comes down outright — remove the page and let the URL 410; there is nothing worth preserving into a 301. BuildGreen publishes at its own locked slug `carbon-management-platform-refactor` when client validation completes, which may take up to three months and keeps the case in draft until then. Hub: `software-development`. The keyword claims below were the plan for a page at the declared slug, and that page still does not exist.
 
 **This one opens a new window.** No live surface claims carbon, ESG, CSRD or emissions. Its only
 adjacency to the existing map is *legacy platform modernisation*, which

@@ -118,7 +118,7 @@ from it inherit the error.
 section 3 to match whatever is true. Check the CMS for how a test slug reached the sitemap at all —
 if drafts are sitemap-eligible, this will recur.
 
-**Owner:** content + web dev; register correction is the SEO workstream's. **Status: DECIDED 2026-09-09 (Andrei) — BuildGreen (`test-page-case-1`) is unlisted until finished: `noindex` + out of the sitemap now, then publish at the locked slug with a 301; DevOps action pending. `test-page` (the FDA H1) still undecided; register section 3 corrected.**
+**Owner:** content + web dev; register correction is the SEO workstream's. **Status: DECIDED 2026-09-24 (Andrei) — `test-page-case-1` is DROPPED OUTRIGHT, not redirected.** The slug is irrelevant to the BuildGreen case, which publishes at its own locked slug whenever client validation completes (up to 3 months). This supersedes the 2026-09-09 plan to noindex it now and 301 it at publish: there is nothing to preserve, so remove the page and let the URL 410. `test-page` (the FDA H1) is still undecided and is NOT covered by this.
 
 **Note:** the article workstream has **dropped all three URLs** from the content system
 (`ebs-article-system/library/content-map.md`, 2026-08-21) so nothing is planned or interlinked
