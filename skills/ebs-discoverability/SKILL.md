@@ -199,7 +199,8 @@ One record per run, into the surface's `review/` folder:
 1. **Findings per layer**, each with its exact location and a specific fix, ordered by value.
 2. **Word cost or saving per fix.** EBS pieces run to a length tier, and an entity pass that silently
    inflates a draft past its tier has traded one constraint for another. State the net.
-3. **Paste-ready artifacts** for packaging: JSON-LD, semantic table HTML, meta description; the OG
+3. **Paste-ready artifacts** for packaging: semantic table HTML, meta description, and JSON-LD only where the surface's
+   CMS does not emit it (EBS blog articles: it does, so no JSON-LD; article system ship checklist item 1); the OG
    copy tags come from `ebs-og-meta`, which owns that craft (ceilings, alt template) — route to it,
    never restate it. These go to `cms-paste.md`, never into the draft.
 4. **Named inputs EBS must supply**, especially byline and framework provenance.
