@@ -31,7 +31,7 @@ Google says special formatting isn't *required* for its AI; these practices stil
 - **Answer-first blocks**: a 1–3 sentence direct answer immediately under the H1 and under each question heading, then the elaboration
 - **Question-phrased H2s** matching how people prompt assistants, each section self-contained (heading + answer stands alone when lifted)
 - **Formatted data** where data exists: numbered steps for processes, comparison tables for options — never padding (Google: "there's no ideal page length")
-- **Citable specifics**: sourced numbers, named provisions, dates — models quote the passage that lets them cite a fact, not the vaguest paraphrase
+- **Citable specifics**: sourced numbers, named provisions, dates — models quote the passage that lets them cite a fact, not the vaguest paraphrase. *EBS adaptation (2026-10-09):* the answer block under the H1 (the lede and "The short version") states the answer without a citation; the first H2 carries the sourced proof (article system rule 21)
 - **Schema** as SEO (rich-result eligibility, entity clarity): `Article`, `FAQPage`, `Person`/`Organization` matching visible text — never sold as an AI-features requirement
 
 ### 4. Off-page entity (adaptation layer, with the official caveat)
