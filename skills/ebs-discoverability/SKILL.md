@@ -97,10 +97,12 @@ PSD2, DORA; e-gov answers touch the national digitalisation strategy and the rel
 anything AI touches the AI Act and its current dates. An article that argues well and names none of
 its domain's authorities reads as an opinion piece to both a rater and a model.
 
-### Local evidence is Moldova
+### Local evidence follows the brief's scope
 
-Where a piece needs a local layer, the local layer is **Moldova**, not Romania. Romania enters only
-on explicit request. EU-wide data is fine as the EU layer; a Romanian cut of it is not the local one.
+There is no default local layer (2026-10-09). The brief declares `scope:` (geography · industry · size); local data
+enters only where the scope names that place and a reader there would want something different (law, prices, the
+local market, a local case). Law is always the reader's own jurisdiction. When the scope names the region, the local
+layer is Moldova, never Romania unless asked.
 
 ## AI visibility: the ladder and the access layer
 
