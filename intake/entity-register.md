@@ -47,7 +47,7 @@ register tells it what the rest of the site is already standing on.
 
 ---
 
-## 1. Live case studies (17, as of 2026-08-04)
+## 1. Live case studies (18 — 17 as of 2026-08-04, plus ai-powered-business-analysis published 2026-09-16)
 
 URL pattern: `/en/case-studies/<slug>`.
 
@@ -75,6 +75,7 @@ below that snapshot's reporting floor: absent, not proven zero.
 | `/en/case-studies/digital-optical-showroom-application` | A unified ERP and app connecting Lensa's optical stores and e-commerce | omnichannel retail ERP | optical retail, e-commerce, in-store app, Lensa | Marketplace & commerce | — |
 | `/en/case-studies/gift-giving-application` | A digital gifting app that makes sending a gift as easy as a text | digital gifting app | consumer app, campaign mechanics | Marketplace & commerce | prsnt *(product name)* |
 | `/en/case-studies/system-converting-calls-to-insights` | AI call intelligence that made QA review 80% faster for a trading firm | AI call intelligence | speech analytics, QA automation, CRM sync, trading firm | AI & data | — |
+| `/en/case-studies/ai-powered-business-analysis` | AI-powered business analysis, where agents do the volume and people decide | ai-powered business analysis | ai business analysis, business analysis automation, ai in software delivery, requirements automation, ai agents in business analysis | AI & data | *(published 2026-09-16, after the 2026-08-14 snapshot — no probe yet)* |
 
 ## 2. Live service and industry pages (14 + 2 hubs, as of 2026-08-04)
 
@@ -126,9 +127,12 @@ cluster graph build (`ebs-article-system/scripts/build_cluster_graph.py`) reads 
 |---|---|---|---|
 | `/en/it-services/data-engineering-ai` | data engineering and AI | **AI & data (1)** — decided 2026-09-09 (Andrei) | engineering data integration services |
 
-**Every case study in section 1 has a hub to route into.** The AI & data cluster
-(`system-converting-calls-to-insights`) has no industry page; its hub is the `data-engineering-ai` service
-page, decided 2026-09-09 and recorded in the table above.
+**Every case study in section 1 has a hub to route into, and a cluster may route its cases
+individually.** The AI & data cluster has no industry page, so `system-converting-calls-to-insights`
+routes to the `data-engineering-ai` service page, decided 2026-09-09 and recorded above. That is a
+decision for THAT case, not a rule for the cluster: `ai-powered-business-analysis` routes to
+`ai-consulting` with `data-engineering-ai` as its secondary, decided 2026-09-22 (Andrei), because it
+touches both. Where a cluster's cases differ in substance, the hub follows the case.
 
 ## 3. In the pipeline, not live
 
@@ -149,16 +153,20 @@ are all untrue as stated, and the declared slug
 The locked-content file in `ebs-case-study-system` has not been re-read here, so it is unknown whether
 it is also stale or whether the site diverged from it.
 
-**Decision 2026-09-09 (Andrei): unlisted until finished.** `test-page-case-1` gets `noindex` and leaves
-the sitemap now (DevOps action, tracked as **P9** in `reports/site-problems-log.md`); the case publishes at
-the locked slug with a 301 from the test URL once recapture, card and OG images ship. Hub:
-`software-development`, recorded in the case record. The keyword claims below are left as recorded — they were the plan for
-a page at the declared slug, and that page does not exist yet.
+**Decision 2026-09-24 (Andrei), superseding 2026-09-09: the test URL is DROPPED, not redirected.** `test-page-case-1` is irrelevant to this case and comes down outright — remove the page and let the URL 410; there is nothing worth preserving into a 301. BuildGreen publishes at its own locked slug `carbon-management-platform-refactor` when client validation completes, which may take up to three months and keeps the case in draft until then. Hub: `software-development`. The keyword claims below were the plan for a page at the declared slug, and that page still does not exist.
 
 **This one opens a new window.** No live surface claims carbon, ESG, CSRD or emissions. Its only
 adjacency to the existing map is *legacy platform modernisation*, which
 `academic-management-system-for-multi-campus-institution` also claims (15-year-old PHP replacement) —
 worth an internal link, not a conflict, since the verticals do not touch.
+
+**AI-powered business analysis — SHIPPED 2026-09-16.** Published at
+`/en/case-studies/ai-powered-business-analysis`; its row is now in section 1 and it left the pipeline.
+The entity decision it carried is kept here because section 1 has no column for it:
+
+**Overlap REVERSED 2026-09-22 (Andrei): the duplicate claim is removed, not accepted.** The 2026-09-15 decision let this case keep *ai consulting* as a supporting entity alongside the live service page `/en/it-services/ai-consulting`, which holds it as its PRIMARY. Two surfaces claiming one head term is a dedupe whichever way it is reasoned about, and the case does not need it: it claims the compound entity *ai-powered business analysis*, which no service page holds, plus *ai business analysis*, *business analysis automation*, *ai in software delivery*, *requirements automation* and *ai agents in business analysis*. Bare *ai consulting* is struck from its supporting list here and in `case-record.json`. The service page keeps the term outright. Nothing else about the case's entities changes, and the case→service internal link direction is unaffected — it is still proof pointing at an offer.
+
+✅ **Hub RESOLVED 2026-09-22 (Andrei): `ai-consulting`, and the hub is PER CASE.** The case record keeps `hub: ai-consulting` from its 2026-09-01 decision and gains `hub_secondary: data-engineering-ai`, because the case genuinely touches both: it is an AI consulting capability that also does data engineering work. Section 2's mapping of the **AI & data** cluster into `data-engineering-ai` stands for `system-converting-calls-to-insights` and is not a cluster-wide rule — a cluster routes its cases individually where they legitimately differ. The Class C ledger row recording `ai-consulting` is correct as it stands.
 
 **Articles.** Statuses live in `ebs-article-system/library/content-map.md` and are not restated here:
 the fintech spoke is live at `/en/blog/ai-big-data-fintech-pilot-to-production`, the DX pillar draft is
