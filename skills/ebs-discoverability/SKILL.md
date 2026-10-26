@@ -131,8 +131,11 @@ Each of these was learned the expensive way. They are rules, not suggestions.
    ("in a 2,500-person survey run by GoTo, 62% of respondents...") is a complete, liftable unit and
    is usually the strongest property an EBS piece has. Cutting the n to save words is the single most
    damaging edit available.
-4. **Name every source in-sentence, not only in the footnote.** A lifted passage does not carry the
-   reference list with it, so a statistic sourced only at `[4]` travels as an unattributed number.
+4. **Attribution is the footnote; name a source in-sentence only where its identity matters (Andrei,
+   2026-10-26, replacing "name every source in-sentence").** A figure carries its `[n]`. The sentence names the source
+   only when who said it changes what the claim means: a third party's commercial interest (rule 5, always), an
+   authority the claim rests on (a regulator, the law), or a passage whose point is who found it. "In an NBER study…"
+   on every figure turns the explanation into a citation list; a lifted figure losing its footnote is accepted.
 5. **Name the commercial interest, including our own.** EBS names GoTo's and ManageEngine's interest
    in-sentence. A piece that does that and then presents its own framework and links its own service
    page without disclosing that EBS sells the service has an asymmetry a rater notices.
