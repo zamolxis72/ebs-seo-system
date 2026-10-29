@@ -544,6 +544,11 @@ get the HTML.
 **Fix direction.** Front end: revalidate the article path (on-demand `revalidatePath`/tag) on every CMS publish,
 or a short `s-maxage`; give marketing a way to purge one URL. **Owner:** front end. **Status: OPEN.**
 
+**Corroborated the same day, later:** three fetches in a row returned two different versions of the HTML (two with the
+old first H2 and images, one with the new), while the page data was the new one throughout: more than one cached copy is
+served at once. `ebs-article-system/scripts/check_live.py` now reports this as a stale-copy problem (images or headings
+in the page data that the HTML lacks).
+
 ## P27 — The image store serves SVG uncompressed, and in-article images are not lazy-loaded — SEVERITY: MEDIUM (2026-10-29)
 
 **Evidence.** `minio.skalx.ai` returns SVG with no `Content-Encoding` even for `Accept-Encoding: gzip, br`
