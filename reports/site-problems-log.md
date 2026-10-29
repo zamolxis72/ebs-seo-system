@@ -1,6 +1,6 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-09** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-10-29** (P25–P28 added from the S3 live check — filename alts, a stale cached page after publish, uncompressed SVG and no lazy loading, no pause control for looping visuals). Before that: **2026-09-09** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
 
 **Fetching this log:** every item is `## P<n> — <title> — SEVERITY: <level>` with an
 `**Owner:** … **Status:** …` line, so one grep answers "what's open and whose is it":
@@ -511,3 +511,61 @@ recorded because the audit in `ebs-article-system` errors on any measured split 
 **accepted on record** in that repo's content map (Andrei, 2026-09-10), with the AI × retail pillar
 named as the future owner of the ground. **Owner:** articles workstream. **Status: ACCEPTED, re-check
 when the AI × retail pillar publishes.**
+
+## P25 — Blog images publish with their filename as alt text — SEVERITY: HIGH (2026-10-29)
+
+**Found while** checking S3 live (`/en/blog/ai-adoption-challenges-how-to-fix-them`, `ebs-article-system`
+`check_live.py`, 2026-10-29). All ten article images render `alt="<filename>.svg"` (e.g.
+`alt="m2b-solo-and-shared.svg"`), in the cached HTML and in the freshly published page data alike. The written alts
+(one or two sentences with the image's figures, `articles/uneven-ai-adoption/assets/*.txt` → `alt:`) never reached
+the page.
+
+**Why it matters.** Answer engines and screen readers read the alt, never the picture (research:
+`ebs-article-system/articles/uneven-ai-adoption/review/understanding/image-search-research-2026-10-29.md`). A
+filename alt is worse than none: it is announced aloud and tells a crawler nothing. Likely systemic: every article
+inserted the same way carries it.
+
+**Fix direction.** Front end: the editor either has no alt field on an inserted image or falls back to the
+filename when it is empty; give the image block a visible alt field, never default it to the filename, and also keep
+`role="img"`, `width`/`height` and `decoding="async"` from the pasted markup. Then marketing re-enters S3's ten alts
+from the upload dashboard. **Owner:** front end (editor), marketing (re-entry). **Status: OPEN** (Andrei, 2026-10-29:
+"register this for the future as task for frontend to solve").
+
+## P26 — A published edit does not reach the served HTML — SEVERITY: MEDIUM (2026-10-29)
+
+**Evidence (2026-10-29, S3).** After Andrei republished the article (an image swapped, a missing image inserted),
+the page data (`RSC: 1` request) carried the new version while the full HTML stayed the old one across four fetches:
+`cache-control: s-maxage=31536000, stale-while-revalidate`, `x-nextjs-cache: HIT`. A first visit and every crawler
+get the HTML.
+
+**Why it matters.** A correction is invisible to search and to new readers for as long as the cached copy lives
+(up to a year by that header); P23's wrong date could persist the same way.
+
+**Fix direction.** Front end: revalidate the article path (on-demand `revalidatePath`/tag) on every CMS publish,
+or a short `s-maxage`; give marketing a way to purge one URL. **Owner:** front end. **Status: OPEN.**
+
+## P27 — The image store serves SVG uncompressed, and in-article images are not lazy-loaded — SEVERITY: MEDIUM (2026-10-29)
+
+**Evidence.** `minio.skalx.ai` returns SVG with no `Content-Encoding` even for `Accept-Encoding: gzip, br`
+(checked 2026-10-29 on S2 and S3); the blog HTML itself is Brotli. S3's ten images weigh 606 KB as served.
+`check_live.py` also found in-article `<img>`s rendered without `loading="lazy"`.
+
+**Why it matters.** SVG is text: Brotli or gzip saves 70–90%, which would bring every article's images under
+the house budget (MEDIA-SPEC V26, ~400 KB a page) without touching a file. Lazy loading keeps below-the-fold
+images off the first load (never on the first screen's image: LCP).
+
+**Fix direction.** DevOps/front end: enable Brotli/gzip for `image/svg+xml` on the store (nginx `gzip_types` /
+`brotli_types`); render article images with `loading="lazy" decoding="async"` past the first screen. Optionally
+an image sitemap. **Owner:** front end + DevOps. **Status: OPEN.**
+
+## P28 — Looping article animations have no pause control — SEVERITY: LOW (2026-10-29)
+
+**Evidence.** EBS article visuals are SMIL SVGs that loop (owner decision 2026-10-05, kept 2026-10-29: "loop in my
+view is better"); four of S3's run over 5 s before their hold (m2a 8.1, m6 18.4, m7 8.0, c1 9.1 s).
+
+**Why it matters.** WCAG 2.2.2 (Level A) asks for a way to pause anything that moves on its own for more than
+5 seconds. The loop stays; the page supplies the pause.
+
+**Fix direction.** Front end: a page-level "Pause animations" control (pauses SMIL via `svg.pauseAnimations()` on
+inline SVG, or swaps each `<img>` to its still), honouring `prefers-reduced-motion` by default. **Owner:** front end.
+**Status: OPEN.**
