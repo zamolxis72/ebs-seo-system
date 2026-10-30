@@ -33,6 +33,20 @@ Visible, prominently placed, labeled date ("Published" / "Last updated") + `date
 
 `Article` (or `BlogPosting`) with headline (concise), images (16x9/4x3/1x1, ≥50K px), dates, authors per best practices; `FAQPage` only if visible Q&A exists; `Organization`/`LegalService` for the responsible entity. "The more recommended properties … the higher quality" — but completeness never overrides the mirror law. Validate (Rich Results Test) and note: rich results are never guaranteed.
 
+## Images (EBS, 2026-10-29; the article system's rule 24ah, B2s)
+
+Answer engines read the HTML, not the picture: the alt, the caption and the text beside an image carry what it shows.
+- **Alt by type**, one or two sentences, ~40 words at most (W3C WAI: as concise as possible; longer goes to the caption):
+  chart = measure, exact figures with base, source · process = input, steps, output · screenshot = product, what's on
+  screen, what the user does · concept = what's drawn, what it stands for. No "chart showing data".
+- **Every figure an image prints is also in the text or the caption.** Real text in the SVG, never outlines.
+- **An `<img>` SVG's own `<title>`/`<desc>` reach neither search nor screen readers** (HTML-AAM); don't count on them.
+- **Markup:** `role="img"` on SVG `<img>` (VoiceOver), width and height, `loading="lazy"` below the first screen,
+  `decoding="async"`; descriptive kebab-case filenames.
+- **Weight as served:** the EBS CMS image store serves SVG uncompressed; count bytes on disk; ask for Brotli/gzip on
+  `image/svg+xml` (70–90% saved).
+- **Motion:** a loop that runs over 5 s needs a page-level pause to meet WCAG 2.2.2; reduced motion gets the still.
+
 ## Paste-ready examples
 
 `schema-examples.md` — the EBS-shaped JSON-LD blocks (absorbed 2026-08-25 from the

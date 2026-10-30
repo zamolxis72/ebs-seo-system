@@ -1,6 +1,6 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-09** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-10-29** (P25–P28 added from the S3 live check — filename alts, a stale cached page after publish, uncompressed SVG and no lazy loading, no pause control for looping visuals). Before that: **2026-09-09** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
 
 **Fetching this log:** every item is `## P<n> — <title> — SEVERITY: <level>` with an
 `**Owner:** … **Status:** …` line, so one grep answers "what's open and whose is it":
@@ -118,7 +118,7 @@ from it inherit the error.
 section 3 to match whatever is true. Check the CMS for how a test slug reached the sitemap at all —
 if drafts are sitemap-eligible, this will recur.
 
-**Owner:** content + web dev; register correction is the SEO workstream's. **Status: DECIDED 2026-09-09 (Andrei) — BuildGreen (`test-page-case-1`) is unlisted until finished: `noindex` + out of the sitemap now, then publish at the locked slug with a 301; DevOps action pending. `test-page` (the FDA H1) still undecided; register section 3 corrected.**
+**Owner:** content + web dev; register correction is the SEO workstream's. **Status: DECIDED 2026-09-24 (Andrei) — `test-page-case-1` is DROPPED OUTRIGHT, not redirected.** The slug is irrelevant to the BuildGreen case, which publishes at its own locked slug whenever client validation completes (up to 3 months). This supersedes the 2026-09-09 plan to noindex it now and 301 it at publish: there is nothing to preserve, so remove the page and let the URL 410. `test-page` (the FDA H1) is still undecided and is NOT covered by this.
 
 **Note:** the article workstream has **dropped all three URLs** from the content system
 (`ebs-article-system/library/content-map.md`, 2026-08-21) so nothing is planned or interlinked
@@ -470,3 +470,107 @@ an answer engine deciding which to cite.
 rung: whether the hype is justified and what to do about it). Then sweep the other 36 descriptions
 for repeats — a copy-paste that happened once usually happened twice.
 **Owner:** marketing (rewrite in the CMS). **Status: OPEN.**
+
+## P23 — A0 shipped with a different H1, the fintech meta description, no FAQ schema and a wrong publish date — SEVERITY: MEDIUM (2026-09-10)
+
+**Found while** running B3v (verify live) on `/en/blog/is-ai-overhyped-how-to-make-most-of-it` in
+`ebs-article-system` (`articles/is-ai-overhyped/review/b3v-verify-live-2026-09-10.md`).
+
+**The defects.** Five, all in the CMS layer, none in the locked text: (1) the H1 was rewritten at
+entry and no longer carries the primary keyword; (2) the `description` — meta tag, `og:description`
+and JSON-LD alike — is the fintech article's, word for word (P22, still open); (3) the JSON-LD
+`datePublished` reads 2026-09-09, the day the tag pass ran, while the CMS `posted_at` is 2026-08-26 —
+the schema generator appears to write the last-modified date into both fields; (4) no `FAQPage`
+block ships although the page carries three FAQ questions; (5) the AI consulting hub links to the
+blog index and to the fintech spoke but not to A0, so the newest article on that hub has no hub
+back-link. Also confirmed: the planned short slug `/en/blog/is-ai-overhyped` answers **200 with the
+empty catch-all page** — the P19 pattern on a URL that was never published.
+
+**Why it matters.** The two newest AI articles are the AI ladder's entry pages; a shared description
+and a wrong publish date on one of them are exactly the signals an answer engine uses to pick which
+page to cite and how fresh it is. Item 3 is likely systemic: if `datePublished` follows the modified
+date on every article, every republish resets the site's freshness record.
+
+**Fix direction:** the five pastes are listed in the article's `cms-paste.md` § *Post-publish
+corrections (2026-09-10)*. Site-side: check whether `datePublished` is generated from `updated_at`
+across the blog template (one query in the CMS), and add the hub back-link slot the wiring hand-off
+describes. **Owner:** marketing (pastes), front end (schema dates, hub back-link). **Status: OPEN.**
+
+## P24 — One query splits across two blog URLs — SEVERITY: LOW (2026-09-10)
+
+**Found while** refreshing the blog inventory in `ebs-article-system` from `gsc-keywords` (window
+2026-06-11 → 2026-09-09, `intake/snapshots/gsc-keywords-2026-09-10.json`).
+
+**The defect.** `urls_count` = 2 on exactly one query, *real time in store purchase data into marketing
+platforms* (71 impressions, avg position 15.7); the top URL is
+`/en/blog/how-technology-and-data-helps-your-store-adapt-to-market-changes`, the second is another
+retail page (GSC names only the top). Every other query in the pull, 112 of them, resolves to one URL.
+
+**Why it matters.** Little today: a 13-word, assistant-shaped query on two legacy pages. It is
+recorded because the audit in `ebs-article-system` errors on any measured split and this one is
+**accepted on record** in that repo's content map (Andrei, 2026-09-10), with the AI × retail pillar
+named as the future owner of the ground. **Owner:** articles workstream. **Status: ACCEPTED, re-check
+when the AI × retail pillar publishes.**
+
+## P25 — Blog images publish with their filename as alt text — SEVERITY: HIGH (2026-10-29)
+
+**Found while** checking S3 live (`/en/blog/ai-adoption-challenges-how-to-fix-them`, `ebs-article-system`
+`check_live.py`, 2026-10-29). All ten article images render `alt="<filename>.svg"` (e.g.
+`alt="m2b-solo-and-shared.svg"`), in the cached HTML and in the freshly published page data alike. The written alts
+(one or two sentences with the image's figures, `articles/uneven-ai-adoption/assets/*.txt` → `alt:`) never reached
+the page.
+
+**Why it matters.** Answer engines and screen readers read the alt, never the picture (research:
+`ebs-article-system/articles/uneven-ai-adoption/review/understanding/image-search-research-2026-10-29.md`). A
+filename alt is worse than none: it is announced aloud and tells a crawler nothing. Likely systemic: every article
+inserted the same way carries it.
+
+**Fix direction.** Front end: the editor either has no alt field on an inserted image or falls back to the
+filename when it is empty; give the image block a visible alt field, never default it to the filename, and also keep
+`role="img"`, `width`/`height` and `decoding="async"` from the pasted markup. Then marketing re-enters S3's ten alts
+from the upload dashboard. **Owner:** front end (editor), marketing (re-entry). **Status: OPEN** (Andrei, 2026-10-29:
+"register this for the future as task for frontend to solve").
+
+## P26 — A published edit does not reach the served HTML — SEVERITY: MEDIUM (2026-10-29)
+
+**Evidence (2026-10-29, S3).** After Andrei republished the article (an image swapped, a missing image inserted),
+the page data (`RSC: 1` request) carried the new version while the full HTML stayed the old one across four fetches:
+`cache-control: s-maxage=31536000, stale-while-revalidate`, `x-nextjs-cache: HIT`. A first visit and every crawler
+get the HTML.
+
+**Why it matters.** A correction is invisible to search and to new readers for as long as the cached copy lives
+(up to a year by that header); P23's wrong date could persist the same way.
+
+**Fix direction.** Front end: revalidate the article path (on-demand `revalidatePath`/tag) on every CMS publish,
+or a short `s-maxage`; give marketing a way to purge one URL. **Owner:** front end. **Status: OPEN.**
+
+**Corroborated the same day, later:** three fetches in a row returned two different versions of the HTML (two with the
+old first H2 and images, one with the new), while the page data was the new one throughout: more than one cached copy is
+served at once. `ebs-article-system/scripts/check_live.py` now reports this as a stale-copy problem (images or headings
+in the page data that the HTML lacks).
+
+## P27 — The image store serves SVG uncompressed, and in-article images are not lazy-loaded — SEVERITY: MEDIUM (2026-10-29)
+
+**Evidence.** `minio.skalx.ai` returns SVG with no `Content-Encoding` even for `Accept-Encoding: gzip, br`
+(checked 2026-10-29 on S2 and S3); the blog HTML itself is Brotli. S3's ten images weigh 606 KB as served.
+`check_live.py` also found in-article `<img>`s rendered without `loading="lazy"`.
+
+**Why it matters.** SVG is text: Brotli or gzip saves 70–90%, which would bring every article's images under
+the house budget (MEDIA-SPEC V26, ~400 KB a page) without touching a file. Lazy loading keeps below-the-fold
+images off the first load (never on the first screen's image: LCP).
+
+**Fix direction.** DevOps/front end: enable Brotli/gzip for `image/svg+xml` on the store (nginx `gzip_types` /
+`brotli_types`); render article images with `loading="lazy" decoding="async"` past the first screen. Optionally
+an image sitemap. **Owner:** front end + DevOps. **Status: OPEN.**
+
+## P28 — Looping article animations have no pause control — SEVERITY: LOW (2026-10-29)
+
+**Evidence.** EBS article visuals are SMIL SVGs that loop (owner decision 2026-10-05, kept 2026-10-29: "loop in my
+view is better"); four of S3's run over 5 s before their hold (m2a 8.1, m6 18.4, m7 8.0, c1 9.1 s).
+
+**Why it matters.** WCAG 2.2.2 (Level A) asks for a way to pause anything that moves on its own for more than
+5 seconds. The loop stays; the page supplies the pause.
+
+**Fix direction.** Front end: a page-level "Pause animations" control (pauses SMIL via `svg.pauseAnimations()` on
+inline SVG, or swaps each `<img>` to its still), honouring `prefers-reduced-motion` by default. **Owner:** front end.
+**Status: OPEN.**
