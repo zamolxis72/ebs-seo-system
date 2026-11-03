@@ -2,12 +2,29 @@
 
 Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). Separate repos, not a monorepo.
 
+**This repo is the AI SEO system (SEO · AEO · GEO), and it serves the others** (2026-11-03). It owns the research,
+the rules and the numbers; the systems that make things apply them through one service file each:
+`services/writing.md` (articles, case studies, copy), `services/auditing.md` (the live site, this repo's own job)
+and `services/web-design.md` (templates, components, rendering). `library/ai-seo-map.md` is the index: every
+concept, its research, its rule, what checks it and which system it serves. A new rule lands here and its row
+in the map in the same session; a consumer points to its service file and never restates it.
+
+## One session, one worktree (E54, 2026-11-03)
+
+The main checkout is Andrei's. A session that will **write** works in its own `git worktree` on its own branch
+off `origin/main`, and never switches the branch of the main checkout or commits on it; finding the checkout on
+someone else's branch, it says so and leaves it alone. Before any commit: `git branch --show-current`. Full rule:
+`ebs-marketing-system/CLAUDE.md` § Rules (2026-10-29); recorded as E54 in
+`ebs-article-system/library/error-classes.md` after one session switched five repos' checkouts.
+
 ## Before any SEO work (in this exact order)
 1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method,
-   and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (AH1–AH6) with endpoint,
+   and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (AH1–AH7) with endpoint,
    parameters and cost. Workstream recipes cite pulls by id and hold only their own RULES
    (the article system's `collection-recipe.md` is the pattern); an endpoint restated outside
-   the engine is a fork.
+   the engine is a fork. **`library/ai-seo-limits.md` is the single home of every measurable limit**,
+   split SEO · AEO · GEO under the umbrella AI SEO; the article and case-study scripts read its
+   `## Machine values` block. Change a number there, never in a script.
 2. Read `reports/site-problems-log.md` — **the living site/SEO health log, and this repo owns it.**
    Every known site problem (evidence, why it matters, owner, status) lives there; whichever
    workstream finds a site-health issue appends it THERE, never to its own library. Update statuses

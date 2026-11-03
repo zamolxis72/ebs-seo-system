@@ -1,0 +1,19 @@
+{
+  "snapshot": "2026-11-03",
+  "kind": "ai-citations baseline (AH6, first run)",
+  "source": "Ahrefs site-explorer-ai-responses-count, target ebs-integrator.com, mode subdomains, latest available date",
+  "call": "site-explorer-ai-responses-count(target=ebs-integrator.com, mode=subdomains, select=all_platforms,google_ai_overviews,google_ai_mode,chatgpt,perplexity,gemini,copilot,grok)",
+  "api_units": 120,
+  "platforms": {
+    "all_platforms": {"citations": 1, "pages": 1},
+    "google_ai_overviews": {"citations": 0, "pages": 0},
+    "google_ai_mode": {"citations": 0, "pages": 0},
+    "chatgpt": {"citations": 1, "pages": 1},
+    "perplexity": {"citations": 0, "pages": 0},
+    "gemini": {"citations": 0, "pages": 0},
+    "copilot": {"citations": 0, "pages": 0},
+    "grok": {"citations": 0, "pages": 0}
+  },
+  "reading": "Ahrefs' sample of AI answers cites ebs-integrator.com once, in ChatGPT, on one page. Every other engine: zero. This is Ahrefs' tracked prompt sample, not every AI answer; a zero here means absent from the sample, not proven never cited. Which page was cited is not in this call.",
+  "not_measured": "Google Search Console's Generative AI performance report (not exposed through the Ahrefs integration; read it in Search Console by hand). Brand Radar mentions (needs a configured report)."
+}

@@ -4,12 +4,17 @@ The SEO workstream of the EBS marketing system: keyword strategy, on-page and te
 
 > **Part of the EBS marketing system.** This is the *SEO* workstream — one repository among several, coordinated by the umbrella repo [`zamolxis72/ebs-marketing-system`](https://github.com/zamolxis72/ebs-marketing-system). Boundary: cross-workstream planning lives in the umbrella; SEO data and outputs live here and only here. Deliberately separate repos, not a monorepo — do not fold this repo into the umbrella and do not copy its data there.
 
+**The AI SEO system.** It serves three others: **writing** (`services/writing.md`), **auditing**
+(`services/auditing.md`) and **web design** (`services/web-design.md`). `library/ai-seo-map.md` lists every concept
+with its research, rule, check and the system it serves; `library/ai-seo-limits.md` holds the numbers.
+
 ## Structure
 
 | Path | Role |
 |---|---|
 | `intake/` | The facts: keyword portfolio, target pages, and current rankings data. Also the entity layer — `entity-register.md` (claims), `snapshots/` (dated GSC pulls, immutable), and `entity-health.md` (the generated read surface). |
 | `library/` | The reference: audit checklist, on-page and schema templates, the prioritization method, and `entity-health-method.md`. |
+| `services/` | One file per served system: writing, auditing, web design. What each applies, where, and what checks it. |
 | `reports/` | The outputs: shipped audits and recommendation sets, one folder per pass, plus the living `site-problems-log.md`. |
 
 ### The entity layer, in one line each

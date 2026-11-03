@@ -30,7 +30,13 @@ advice cannot know.
 | 2. Citability | `references/geo-content.md` | Would an answer engine lift this, and what would it cite EBS **for**? |
 | 3. Machine | `references/machine-signals.md` (+ schema examples, official machine rules) | Can a crawler and an extractor parse it: schema, tables, headings, access? |
 | 4. Trust | `references/eeat-signals.md` (+ the rater guidelines verbatim) | Would a quality rater trust it, and is the bar raised because the topic is YMYL? |
-| 0. Mechanics | the surface's monitor · `text-semantics` | Title, meta, headings, internal links — MEASURED by script (for articles, `article_health.py`'s MECHANICS group); arrangement fixes are `text-semantics`'s, wording is the canon's. `b2b-seo-audit` enters at SITE scope only (live surfaces: crawl, indexation, CWV — findings to `ebs-seo-system`) |
+| 0. Mechanics | the surface's monitor · `text-semantics` · the numbers in `library/ai-seo-limits.md` | Title, meta, headings, internal links, answer block, FAQ count, key references — MEASURED by script (for articles, `article_health.py`'s MECHANICS group); arrangement fixes are `text-semantics`'s, wording is the canon's. `b2b-seo-audit` enters at SITE scope only (live surfaces: crawl, indexation, CWV — findings to `ebs-seo-system`) |
+
+**AI SEO: the umbrella, in three parts (2026-11-03).** Every limit is SEO (found and ranked), AEO (lifted as the
+direct answer) or GEO (cited by a generative engine), and its number lives once, in
+`ebs-seo-system/library/ai-seo-limits.md`. The layers map onto the parts: mechanics and machine are mostly **SEO**;
+semantics serves **SEO** (entity coverage) and **AEO** (answer blocks, paragraph shape); citability is **AEO** and
+**GEO**; trust is **GEO**. A number restated in this skill, a reference or a script is a fork.
 
 Run mechanics first because it is scripted and free, then semantics, citability, machine, trust. Trust last
 because its findings are usually the ones that need a human input rather than an edit.
@@ -131,8 +137,11 @@ Each of these was learned the expensive way. They are rules, not suggestions.
    ("in a 2,500-person survey run by GoTo, 62% of respondents...") is a complete, liftable unit and
    is usually the strongest property an EBS piece has. Cutting the n to save words is the single most
    damaging edit available.
-4. **Name every source in-sentence, not only in the footnote.** A lifted passage does not carry the
-   reference list with it, so a statistic sourced only at `[4]` travels as an unattributed number.
+4. **Attribution is the footnote; name a source in-sentence only where its identity matters (Andrei,
+   2026-10-26, replacing "name every source in-sentence").** A figure carries its `[n]`. The sentence names the source
+   only when who said it changes what the claim means: a third party's commercial interest (rule 5, always), an
+   authority the claim rests on (a regulator, the law), or a passage whose point is who found it. "In an NBER study…"
+   on every figure turns the explanation into a citation list; a lifted figure losing its footnote is accepted.
 5. **Name the commercial interest, including our own.** EBS names GoTo's and ManageEngine's interest
    in-sentence. A piece that does that and then presents its own framework and links its own service
    page without disclosing that EBS sells the service has an asymmetry a rater notices.
