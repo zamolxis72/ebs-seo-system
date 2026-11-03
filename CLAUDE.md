@@ -2,6 +2,13 @@
 
 Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). Separate repos, not a monorepo.
 
+**This repo is the AI SEO system (SEO · AEO · GEO), and it serves the others** (2026-11-03). It owns the research,
+the rules and the numbers; the systems that make things apply them through one service file each:
+`services/writing.md` (articles, case studies, copy), `services/auditing.md` (the live site, this repo's own job)
+and `services/web-design.md` (templates, components, rendering). `library/ai-seo-map.md` is the index: every
+concept, its research, its rule, what checks it and which system it serves. A new rule lands here and its row
+in the map in the same session; a consumer points to its service file and never restates it.
+
 ## Before any SEO work (in this exact order)
 1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method,
    and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (AH1–AH7) with endpoint,

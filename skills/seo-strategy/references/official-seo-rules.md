@@ -35,3 +35,39 @@ Diagnostics: "If both impressions and clicks dropped, check the … most common 
 ## 5. Evidence discipline (suite rule)
 
 Every number in a strategy deliverable is either pulled live from a named tool, quoted from GSC, or flagged "unvalidated — requires keyword data." SERP claims (who ranks, AI Overview presence) must come from a live check, dated — SERPs and PAA are rotating pools, so snapshots are labeled as snapshots.
+
+## 6. Ranking systems, links and AI measurement (added 2026-11-03)
+
+Sources: **[RS]** Google Search Central, *A guide to Google Search ranking systems* · **[SP]** Google Search
+Central, *Spam policies for Google web search* § Link spam · **[BW]** Bing Webmaster Blog, *Introducing AI
+Performance in Bing Webmaster Tools Public Preview* (2026-02-10). Fetched 2026-11-03; quotes are short, as the
+fetch returned them; *(paraphrase)* marks the rest.
+
+- **Passage ranking [RS]:** "an AI system we use to identify individual sections or 'passages' of a web page."
+  → a section can rank on its own, which is why the AEO rules make every section self-contained and answer-first
+  (`ebs-discoverability/references/geo-content.md`).
+- **Link analysis [RS]:** "We have various systems that understand how pages link to each other as a way to
+  determine what pages are about." → internal links are a relevance signal, not only navigation.
+- **Freshness [RS]:** "designed to show fresher content for queries where it would be expected." → freshness is
+  query-dependent; a date bump without a substantive change is a warning sign (`ai-seo-limits.md` § Freshness).
+- **Link spam [SP]:** "creating links to or from a site primarily for the purpose of manipulating search
+  rankings." Examples *(paraphrase)*: buying or selling links that pass ranking credit; excessive link exchanges;
+  automated link creation; links required by contract; advertorials with ranking-passing or optimized-anchor
+  links; low-quality directories; keyword-rich widget or footer links; forum-signature links. Paid links are
+  acceptable when qualified `rel="sponsored"` or `rel="nofollow"`.
+  → **Link building at EBS is earning and qualifying, never buying**: client case studies, partner listings and
+  review platforms (board module M8), with sponsored links marked. AH7 watches the exact-match anchor share.
+- **Bing AI Performance [BW]:** Bing Webmaster Tools reports how a site appears in AI answers across Microsoft
+  Copilot, AI summaries in Bing and select partners: "Total Citations", average cited pages per day, grounding
+  queries (a sample), and page-level citations *(paraphrase)*. It measures how often content is cited, not
+  ranking. → the first-party source for Copilot and Bing AI citations, beside Ahrefs' sampled count (AH6) and
+  Google's Generative AI performance report.
+
+## 7. Zero-click: measured, not looked up (EBS adaptation, 2026-11-03)
+
+No official document defines a zero-click target. It is read from our own GSC data: a page or query with
+**impressions at or above the snapshot floor, a position on page 1 or 2, and zero clicks** is zero-click. Each
+snapshot reports them (the 2026-11-03 one: the banking automation article, 1,239 impressions at position 19.9,
+0 clicks). Two responses, chosen per case: the title and snippet fail the query (a title-and-intent fix, routed
+to the copy skills), or the answer is complete on the results page (AI Overview, featured snippet), in which case
+the measure becomes being **cited** there, not clicked.

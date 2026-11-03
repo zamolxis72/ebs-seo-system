@@ -132,6 +132,7 @@ international reference becomes mandatory the day a second locale ships.
 
 ## References
 
+- [references/official-site-rules.md](references/official-site-rules.md) — Google's page experience questions (what SXO means here), JavaScript SEO and rendering (SSR, static, CSR), and submission (IndexNow, Bing Webmaster Tools), fetched 2026-11-03, each with its EBS adaptation.
 - [references/international-seo.md](references/international-seo.md) — hreflang, cross-locale canonicalization, international sitemaps, locale URL structure, and content quality across locales, with evidence and source URLs.
 - [references/media-health-audit.md](references/media-health-audit.md) — the page-health test method and its reporting interface (benchmark → instruments → gap → options as effort tiers), plus the local Lighthouse runbook, measurement traps, generic verification gates, and the animated-format ladder. General method; its bracketed figures are worked-example magnitudes, not specs.
 
