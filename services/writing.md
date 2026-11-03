@@ -20,7 +20,8 @@ scripts read them from there.
 | Title, meta, H1, slug | SEO | `ai-seo-limits.md` § SEO | `article_health.py` MECHANICS · `check_case_copy.py` |
 | One keyword, one page | SEO | article `content-map.md`; site `intake/entity-register.md` | `check_keyword.py` |
 | Internal links | SEO | interlink obligations per hub | `article_health.py` |
-| Answer blocks, question headings, paragraph shape | AEO | `ai-seo-limits.md` § AEO; `disc/geo-content.md` | `article_health.py` · `check_structure.py` |
+| Fan-out coverage: the sub-questions answered | AEO GEO | the fan-out set in `article-map.md`; `disc/geo-content.md` | `article_health.py` |
+| Answer blocks (how-to headings), question headings, paragraph shape | AEO | `ai-seo-limits.md` § AEO; `disc/geo-content.md` | `check_structure.py` · `article_health.py` |
 | FAQ from real queries | AEO | AH5; at most 5 | `article_health.py` |
 | Entities and terms | GEO | `disc/text-semantics.md`; the Class B bank | `article_health.py` SEMANTICS |
 | Key references, citable specifics | GEO | `ai-seo-limits.md` § GEO; `trusted-sources.md` | `article_health.py`; `claim-verification` |

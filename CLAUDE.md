@@ -9,6 +9,14 @@ and `services/web-design.md` (templates, components, rendering). `library/ai-seo
 concept, its research, its rule, what checks it and which system it serves. A new rule lands here and its row
 in the map in the same session; a consumer points to its service file and never restates it.
 
+## One session, one worktree (E54, 2026-11-03)
+
+The main checkout is Andrei's. A session that will **write** works in its own `git worktree` on its own branch
+off `origin/main`, and never switches the branch of the main checkout or commits on it; finding the checkout on
+someone else's branch, it says so and leaves it alone. Before any commit: `git branch --show-current`. Full rule:
+`ebs-marketing-system/CLAUDE.md` § Rules (2026-10-29); recorded as E54 in
+`ebs-article-system/library/error-classes.md` after one session switched five repos' checkouts.
+
 ## Before any SEO work (in this exact order)
 1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method,
    and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (AH1–AH7) with endpoint,

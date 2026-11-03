@@ -6,10 +6,12 @@ map and service files point only at files that exist. Read-only on the repos: ev
 copy passed through AI_SEO_LIMITS. Needs ebs-article-system and ebs-case-study-system cloned beside this repo.
 
     python3 scripts/test_ai_seo.py        exit 0 all pass, 1 any fail
+    AI_SEO_GITHUB=<dir> ...               run against other checkouts (worktrees) of the sibling repos
+    AI_SEO_REGISTER=<plan-state.json>     T18 reads this board register instead of the umbrella's
 """
 import json, os, re, subprocess, tempfile, glob
 
-G = os.path.expanduser("~/Documents/GitHub")
+G = os.environ.get("AI_SEO_GITHUB") or os.path.expanduser("~/Documents/GitHub")  # the folder holding the sibling repos
 SEO, ART, CASE = (os.path.join(G, x) for x in ("ebs-seo-system", "ebs-article-system", "ebs-case-study-system"))
 LIM = os.path.join(SEO, "library", "ai-seo-limits.md")
 ORIG = open(LIM, encoding="utf-8").read()
@@ -53,7 +55,7 @@ pairs = [("meta", "120–155", (machine["seo"]["meta_min"], machine["seo"]["meta
          ("paragraph", "≤ 75 words", machine["aeo"]["paragraph_words_max"] == 75),
          ("answer", "40–60 words", machine["aeo"]["answer_block_words"] == [40, 60]),
          ("faq", "at most 5", machine["aeo"]["faq_max"] == 5),
-         ("refs", "2–4 primary", machine["geo"]["key_references"] == [2, 4]),
+         ("refs", "at most 4 (reader cap)", machine["geo"]["key_references"] == [2, 4]),
          ("links", "at least 2, target 3+", (machine["seo"]["internal_links_min"], machine["seo"]["internal_links_target"]) == (2, 3)),
          ("slug", "≤ 60 characters", machine["seo"]["slug_max"] == 60)]
 bad = [k for k, phrase, ok in pairs if not (ok and phrase in tbl)]
@@ -178,6 +180,34 @@ open(fake, "w").write("import sys,re; sys.path.insert(0, %r); import article_hea
     % (os.path.join(ART, "scripts"), os.path.join(ART, "scripts", "article_health.py")))
 rc, out = run(["python3", fake], ART)
 check("T16", "a 200-word numbered list is not reported as a long paragraph", "OK" in out, out.strip()[:90])
+
+# T17 every site-problem number the docs cite exists on origin/main (S03)
+subprocess.run(["git", "fetch", "-q"], cwd=SEO, capture_output=True)
+log_main = subprocess.run(["git", "show", "origin/main:reports/site-problems-log.md"], cwd=SEO, capture_output=True, text=True).stdout
+on_main = set(re.findall(r"^## (P\d+) ", log_main, re.M))
+cited = {}
+for d in glob.glob(os.path.join(SEO, "library", "*.md")) + glob.glob(os.path.join(SEO, "services", "*.md")):
+    if d.endswith("error-classes.md"):
+        continue  # the register names branch-only items on purpose
+    for pn in re.findall(r"\b(P\d{1,2})\b", open(d).read()):
+        cited.setdefault(pn, set()).add(os.path.basename(d))
+missing = ["%s (%s)" % (k, ", ".join(sorted(v))) for k, v in sorted(cited.items()) if k not in on_main]
+check("T17", "every P-number the map, limits and service files cite exists on origin/main", not missing, "; ".join(missing))
+
+# T18 no doc or board card links a GitHub file on a branch other than main (S03)
+blob = re.compile(r"github\.com/zamolxis72/[\w.-]+/blob/([\w./-]+?)/(?:[\w.-]+/)*[\w.-]+\.\w+")
+bad = []
+for d in glob.glob(os.path.join(SEO, "library", "*.md")) + glob.glob(os.path.join(SEO, "services", "*.md")):
+    bad += ["%s: %s" % (os.path.basename(d), m) for m in blob.findall(open(d).read()) if m != "main"]
+reg = os.environ.get("AI_SEO_REGISTER") or os.path.join(G, "ebs-marketing-system", "planning", "plan-state.json")
+if os.path.exists(reg):
+    for m in json.load(open(reg))["modules"]:
+        for i in m["items"]:
+            for f in ("source_url", "url", "teamwork_url"):
+                mm = blob.search(i.get(f) or "")
+                if mm and mm.group(1) != "main":
+                    bad.append("%s %s -> branch %s" % (i["id"], f, mm.group(1)))
+check("T18", "no doc or board card links a file on a non-main branch", not bad, "; ".join(bad))
 
 for sid, desc, ok, detail in results:
     print("%-5s %-4s %s%s" % (sid, "PASS" if ok else "FAIL", desc, ("  [" + detail + "]") if detail and not ok else ""))
