@@ -56,7 +56,7 @@ Check `robots.txt` for unintentional blocks and a sitemap reference. Check the X
 
 ### 2. Technical foundations
 
-**Core Web Vitals.** LCP under 2.5s, INP under 200ms, CLS under 0.1. Diagnose against these thresholds; the implementation fixes (server response, image optimization, JS execution, CSS delivery, caching, CDN, font loading) route to developers. Tools: PageSpeed Insights, WebPageTest, Chrome DevTools, the Search Console CWV report. Page speed is a genuine ranking factor, so a multi-second load is a real finding. For any page-health test where weight or media is in question, run the method in `references/media-health-audit.md` — its benchmark → instruments → gap → options structure is the standing interface for delivering the result, and it carries the local-Lighthouse runbook, the measurement traps, and generic verification gates.
+**Core Web Vitals.** LCP under 2.5s, INP under 200ms, CLS under 0.1, at the 75th percentile of page loads (web.dev; held in `library/ai-seo-limits.md`). Diagnose against these thresholds; the implementation fixes (server response, image optimization, JS execution, CSS delivery, caching, CDN, font loading) route to developers. Tools: PageSpeed Insights, WebPageTest, Chrome DevTools, the Search Console CWV report. Page speed is a genuine ranking factor, so a multi-second load is a real finding. For any page-health test where weight or media is in question, run the method in `references/media-health-audit.md` — its benchmark → instruments → gap → options structure is the standing interface for delivering the result, and it carries the local-Lighthouse runbook, the measurement traps, and generic verification gates.
 
 **Mobile.** Responsive (not a separate m-dot site), viewport configured, adequate tap targets, parity with desktop content, mobile-first readiness.
 
@@ -66,8 +66,8 @@ Check `robots.txt` for unintentional blocks and a sitemap reference. Check the X
 
 For each of the following, this skill owns the SEO criteria; the wording belongs to the copy skills.
 
-- **Title tags:** unique per page, roughly 50-60 characters, primary keyword near the front, brand at the end. Wording routes to copywriting or communication-style.
-- **Meta descriptions:** unique, roughly 150-160 characters, intent-matched. Wording routes to the copy skills.
+- **Title tags:** unique per page, at most 60 characters including the brand suffix (`library/ai-seo-limits.md`), primary keyword near the front, brand at the end. Wording routes to copywriting or communication-style.
+- **Meta descriptions:** unique, 120-155 characters (`library/ai-seo-limits.md`), intent-matched. Wording routes to the copy skills.
 - **Headings:** one H1, logical hierarchy, descriptive not decorative. Note that the H1 Jade key-concept treatment is `ebs-integrator-design`'s signature and the wording is copy's; this audit only checks the SEO structure.
 - **Content for intent:** the target query answered early, search intent satisfied, depth at least matching the top-ranking pages.
 - **Images:** descriptive file names, alt text, compression, modern formats, lazy loading.

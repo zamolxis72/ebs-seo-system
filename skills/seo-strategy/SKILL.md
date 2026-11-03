@@ -33,6 +33,9 @@ Score = f(traffic potential, winnability, commercial intent, strategic fit) — 
 
 Per keyword tier: rank tracking cadence, GSC queries/pages baselines, the **Generative AI performance report** for AI visibility, AI-citation spot checks (Brand Radar if connected), and the business metric. "Impressions and clicks are ultimately the measure of success" — position is a diagnostic, not the goal.
 
+Off-page is **monitored, never targeted** (`library/ai-seo-limits.md` § SEO): AH7 reads the exact-match anchor share
+(alert near 10%); referring domains are watched for loss and spam, with no per-month backlink quota.
+
 ## Mode B: Diagnosis (rankings/traffic dropped)
 
 Follow the official taxonomy in order, cheapest checks first: (1) Data anomaly (Search Console data issues page), (2) seasonality (16-month range + Google Trends: is the drop web-wide?), (3) technical (Crawl Stats, Page Indexing, site-wide vs page-group via the Pages table), (4) security/spam (Security Issues, Manual Actions reports), (5) algorithmic update (check update timing; small position drop on a performing page → officially, don't make radical changes; large drop → whole-site people-first self-assessment, route to ebs-discoverability's trust layer), (6) SERP change (new AI Overview/feature absorbing clicks — impressions stable + clicks down also implicates title/snippet, route to ebs-discoverability's semantics layer). Deliver: diagnosis with evidence, severity, owner, and fix route.

@@ -4,10 +4,12 @@ Part of the EBS marketing system (umbrella: `zamolxis72/ebs-marketing-system`). 
 
 ## Before any SEO work (in this exact order)
 1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method,
-   and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (AH1–AH6) with endpoint,
+   and **`library/ahrefs-engine.md` — the engine**: every Ahrefs pull (AH1–AH7) with endpoint,
    parameters and cost. Workstream recipes cite pulls by id and hold only their own RULES
    (the article system's `collection-recipe.md` is the pattern); an endpoint restated outside
-   the engine is a fork.
+   the engine is a fork. **`library/ai-seo-limits.md` is the single home of every measurable limit**,
+   split SEO · AEO · GEO under the umbrella AI SEO; the article and case-study scripts read its
+   `## Machine values` block. Change a number there, never in a script.
 2. Read `reports/site-problems-log.md` — **the living site/SEO health log, and this repo owns it.**
    Every known site problem (evidence, why it matters, owner, status) lives there; whichever
    workstream finds a site-health issue appends it THERE, never to its own library. Update statuses
