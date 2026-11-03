@@ -15,7 +15,8 @@ discoverability references.
 | Anchor health (AH7) | same ritual, once set up | verify first | snapshot |
 | Full site audit | **not run yet**: first pass is open | Ahrefs Site Audit + live checks | `reports/<yyyy-mm-audit>/` |
 
-Last run: GSC and AI citations 2026-11-03 (the previous GSC pull was 2026-08-14).
+Last run: GSC and AI citations 2026-11-03 (the previous GSC pull was 2026-08-14). Those snapshots land with
+`data/gsc-refresh-2026-11-03` (PR #8); merge it with or before this file.
 
 ## The full audit's checklist, by part
 

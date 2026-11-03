@@ -45,8 +45,10 @@ yes/no checks on a template, owned by web design.
 **EBS adaptation.** The rule for every page and component: **the text, the links and the structured data are
 in the first HTML response.** Tabs and accordions may hide nothing an answer engine needs (`google-text-rules.md`
 § Visibility). The case-study listing that renders client-side only (site-problems P4) is the live example.
-AI crawlers (GPTBot, OAI-SearchBot, PerplexityBot) are among the bots that do not run JavaScript, which makes
-this a GEO rule as much as an SEO one.
+Whether AI crawlers (GPTBot, OAI-SearchBot, PerplexityBot) run JavaScript is **not officially documented**
+(`../../ebs-discoverability/references/official-machine-rules.md`, "never state as fact"), and [JS] notes some
+bots cannot run it at all. Serving everything in the first HTML response is the only choice that works either
+way, which makes this a GEO rule as much as an SEO one.
 
 ## Submission: telling engines a page changed [IN] [BW]
 

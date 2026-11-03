@@ -34,7 +34,7 @@ this repo already holds word for word, or fetched live on 2026-11-03 (marked bel
 | Secondary keywords | no count | n/a | `content-map.md` | Replaced by entity coverage (`text-semantics.md`). |
 | Core Web Vitals | LCP ≤ 2.5 s · INP ≤ 200 ms · CLS ≤ 0.1, at the 75th percentile of page loads, mobile and desktop | Official | `b2b-seo-audit` (site scope, live pages) | web.dev/articles/vitals, fetched 2026-11-03. Not scriptable per draft. |
 | Structured data | only types whose content is visible on the page; no count | Official | `article_health.py` (JSON-LD mirror) · `machine-signals.md` | The infographic's "1–3 per page" isn't a Google rule. The real rule is that markup must match what's visible. |
-| Freshness | `dateModified` moves only on a substantive change; every live page is **reviewed** at least every 90 days | Adaptation | `reports/site-problems-log.md` (P23) | Google lists "changing the date of pages to make them seem fresh when the content has not substantially changed" as a warning sign (`google-eeat-rules.md`). A review that changes nothing changes no date. |
+| Freshness | `dateModified` moves only on a substantive change; every live page is **reviewed** at least every 90 days | Adaptation | not tracked yet (no script reads the review dates) | Google lists "changing the date of pages to make them seem fresh when the content has not substantially changed" as a warning sign (`google-eeat-rules.md`). A review that changes nothing changes no date. |
 | Backlinks · anchor text | monitored, never a quota: exact-match anchors under ~10% of referring anchors is the alert line | Adaptation | `seo-strategy` (AH7) | Off-page. A per-month link target invites buying links. |
 
 ## AEO: lifted as the answer
@@ -67,7 +67,7 @@ this repo already holds word for word, or fetched live on 2026-11-03 (marked bel
 | URL 50–75 characters | Sets a minimum length. See Slug. |
 | Page load < 2.5 s | Repeats LCP under a vaguer name. |
 | Voice answer 20–40 words | No primary source. The 40–60 answer block covers it. |
-| Update every 30–90 days | As a publishing calendar it creates fake freshness (P23). Kept only as a review cadence, see Freshness. |
+| Update every 30–90 days | As a publishing calendar it creates fake freshness: a date moved without a substantive change. Kept only as a review cadence, see Freshness. |
 | Backlinks 5–20 per month | A quota, not a limit. Monitored under SEO, never targeted. |
 
 ## Machine values
