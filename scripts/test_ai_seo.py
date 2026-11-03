@@ -79,7 +79,7 @@ wt = os.path.join(TMP, "art-main")
 subprocess.run(["git", "worktree", "add", "-q", "--detach", wt, "origin/main"], cwd=ART, capture_output=True)
 diff = []
 for s in slugs:
-    rc, out = run(["python3", os.path.join(wt, "scripts", "article_health.py"), "articles/" + s], ART)
+    rc, out = run(["python3", os.path.join(wt, "scripts", "article_health.py"), "articles/" + s], ART, LIM)  # the copy has no sibling seo repo
     m = re.search(r"(\d+) publish blocker", out)
     if not m or m.group(1) != base[s]:
         diff.append("%s main=%s now=%s" % (s, m.group(1) if m else "?", base[s]))
