@@ -1,6 +1,6 @@
 # Site problems log (for future investigation / fixes)
 
-Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-09-09** (P22 added — two AI articles share one meta description; the tag system that answers P21's editorial half is now specified). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
+Evidence-based issues found during article pipeline work. Each item: evidence, why it matters, proposed owner. Update status as items get fixed. Last updated: **2026-11-03** (P1, P8 and P11 re-corroborated from the 2026-11-03 GSC snapshot; P11 gains the AI sprawl duplicate). Before that: **2026-09-07, second pass** (the blog retag closed P16 and P17 and cut P15 from 22 disagreements to 6; P18–P21 added from the same re-verification — a draft article served to readers, records served with no listing, seven URLs returning empty 200s, the related strip out of date order, and a filter vocabulary that no longer matches what articles carry. Earlier: P15–P17 added from blog tag curation — two disagreeing tag fields, 14 of 45 blog articles unreachable from the index, and a live test post; before that P14 llms.txt 404s behind the locale middleware, P13 the unsourced AI-page statistic, and P9–P12 from the sitemap reconciliation; P3 and P4 corroborated; P6 partially RESOLVED).
 
 **Fetching this log:** every item is `## P<n> — <title> — SEVERITY: <level>` with an
 `**Owner:** … **Status:** …` line, so one grep answers "what's open and whose is it":
@@ -18,6 +18,8 @@ own issue stack.
 **Owner:** DevOps + management (confidentiality call). **Status: OPEN — investigate first.**
 
 **Corroborated from Search Console, 2026-08-14** (`intake/snapshots/gsc-2026-08-14.json`): `pages.ebs-integrator.com` is not merely crawlable, it is **earning impressions in Google**. `pages.ebs-integrator.com/explore/projects/topics/meapp` drew 248 impressions at position 11.0, and `pages.ebs-integrator.com/` a further 47. The query `site:ebs-integrator.com` returns **324 URLs** with a GitLab project-topic page as `top_url`. The "my fetch returned empty, unconfirmed" caveat above is now resolved: it is indexed, and someone is running site: queries against the domain. Severity holds at HIGH.
+
+**Still live, 2026-11-03** (`intake/snapshots/gsc-2026-11-03.json`): `pages.ebs-integrator.com` still earns Google impressions, including a project tree and an issue board (`/skalx-app-templates/skalx-next-app/-/tree/main`, `/-/boards`), each with a click.
 
 ## P2 — 95 internal links point to a 404 — SEVERITY: HIGH
 
@@ -89,6 +91,8 @@ The legacy-URL half stands: not re-verified in this pass.
 **Fix direction:** confirm `http://` and `www.` both 301 to the canonical `https://ebs-integrator.com/en/home` in one hop, and confirm the canonical tag agrees. Check whether the GSC property set covers both variants (it evidently reports them separately). Verify with a redirect trace before changing anything — this may already be configured and mis-measured rather than genuinely duplicated.
 
 **Owner:** web dev / DevOps. **Status: OPEN — verify the redirect chain first.**
+
+**Still live, 2026-11-03** (`intake/snapshots/gsc-2026-11-03.json`): `http://www.ebs-integrator.com/` holds 1,143 impressions at position 6.9 and 1.9% CTR against `/en/home`'s 1,372 at 10.8 and 23.2%; it is still the URL Google shows for *it companies moldova* (position 1.6, 137 impressions, 1 click).
 
 ## P9 — Case studies published on `test-page` slugs, and BuildGreen indexed while believed unpublished — SEVERITY: HIGH
 
@@ -168,6 +172,8 @@ sitemap. Case 2 is the `/en/` prefix inconsistency also behind P5; a single rule
 fix both.
 
 **Owner:** web dev. **Status: OPEN.**
+
+**Still live, a new instance (GSC via Ahrefs project 9118279, 2026-08-03 → 2026-11-02, `intake/snapshots/gsc-2026-11-03.json`):** the AI sprawl article earns impressions on both `/blog/what-is-ai-sprawl` (215 impressions, position 10.6) and `/en/blog/what-is-ai-sprawl` (91, position 9.1), and the query *what is ai tool sprawl and how common is it?* reports `urls_count` 2. The undeclared non-`/en/` form now carries **more** impressions than the canonical one, so the split is costing the newest AI article most of its signal. Same fix as case 2.
 
 ## P12 — Sitemap hygiene and an orphaned live article — SEVERITY: LOW
 

@@ -1,0 +1,824 @@
+{
+  "snapshot": "2026-11-03",
+  "source": "Ahrefs GSC integration, project 9118279 (ebs-integrator.com, verified, mode subdomains)",
+  "window": {
+    "from": "2026-08-03",
+    "to": "2026-11-02"
+  },
+  "calls": {
+    "pages": "gsc-pages(project_id=9118279, date_from, date_to, limit=60)",
+    "queries": "gsc-keywords(project_id=9118279, date_from, date_to, limit=40, where=impressions gte 40)"
+  },
+  "api_units": 0,
+  "reproduced": "not re-run; same calls and limits as the 2026-08-14 baseline, window shifted",
+  "floor": {
+    "pages_impressions": 34,
+    "queries_impressions": 40,
+    "note": "Rows below the floor are ABSENT from this pull, never proven zero. gsc-pages was capped at 60 rows; the 60th sits at 34 impressions. gsc-keywords was filtered to >=40 impressions by design."
+  },
+  "transcription_note": "MCP tool output arrives in-session, not on disk, so these rows were transcribed by script from the API response (positions rounded to 2 decimals; one search-operator top_keyword shortened). Everything downstream is computed by scripts/build_entity_health.py.",
+  "pages": [
+    {
+      "url": "https://ebs-integrator.com/en/home",
+      "keywords_count": 125,
+      "top_keyword": "ebs integrator",
+      "clicks": 318,
+      "impressions": 1372,
+      "position": 10.76
+    },
+    {
+      "url": "http://www.ebs-integrator.com/",
+      "keywords_count": 46,
+      "top_keyword": "ebs integrator",
+      "clicks": 22,
+      "impressions": 1143,
+      "position": 6.93
+    },
+    {
+      "url": "https://ebs-integrator.com/career",
+      "keywords_count": 19,
+      "top_keyword": "ebs integrator",
+      "clicks": 11,
+      "impressions": 533,
+      "position": 10.63
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/django-orm-vs-sql-alchemy",
+      "keywords_count": 46,
+      "top_keyword": "django orm vs sqlalchemy",
+      "clicks": 3,
+      "impressions": 663,
+      "position": 8.32
+    },
+    {
+      "url": "https://ebs-integrator.com/en/career",
+      "keywords_count": 10,
+      "top_keyword": "ebs integrator",
+      "clicks": 3,
+      "impressions": 197,
+      "position": 4.57
+    },
+    {
+      "url": "https://ebs-integrator.com/en/about",
+      "keywords_count": 17,
+      "top_keyword": "ebs integrator",
+      "clicks": 2,
+      "impressions": 630,
+      "position": 5.77
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/basics-data-centric-vs-data-driven-the-whys-and-whats",
+      "keywords_count": 65,
+      "top_keyword": "data centric vs data driven",
+      "clicks": 1,
+      "impressions": 1343,
+      "position": 27.05
+    },
+    {
+      "url": "https://ebs-integrator.com/en/contact",
+      "keywords_count": 7,
+      "top_keyword": "ebs integrator moldova",
+      "clicks": 1,
+      "impressions": 320,
+      "position": 9.64
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/postal-service-digital-transformation",
+      "keywords_count": 37,
+      "top_keyword": "e postal service",
+      "clicks": 1,
+      "impressions": 278,
+      "position": 23.76
+    },
+    {
+      "url": "https://ebs-integrator.com/en/industries/fintech",
+      "keywords_count": 24,
+      "top_keyword": "ebs fintech",
+      "clicks": 1,
+      "impressions": 120,
+      "position": 17.38
+    },
+    {
+      "url": "https://ebs-integrator.com/",
+      "keywords_count": 9,
+      "top_keyword": "ebs integrator",
+      "clicks": 1,
+      "impressions": 26,
+      "position": 4.35
+    },
+    {
+      "url": "https://pages.ebs-integrator.com/skalx-app-templates/skalx-next-app/-/tree/main",
+      "keywords_count": 1,
+      "top_keyword": "skalx",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 9.0
+    },
+    {
+      "url": "https://pages.ebs-integrator.com/skalx-app-templates/skalx-next-app/-/boards",
+      "keywords_count": 1,
+      "top_keyword": "skalx",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 10.0
+    },
+    {
+      "url": "https://ebs-integrator.com/en/industries/retail-ecommerce",
+      "keywords_count": 134,
+      "top_keyword": "ecommerce built for infor distributors",
+      "clicks": 0,
+      "impressions": 1582,
+      "position": 56.76
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/what-is-banking-process-automation-and-why-it-matters",
+      "keywords_count": 133,
+      "top_keyword": "banking automation process",
+      "clicks": 0,
+      "impressions": 1239,
+      "position": 19.93
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/customer-pain-points",
+      "keywords_count": 97,
+      "top_keyword": "pain point meaning in business",
+      "clicks": 0,
+      "impressions": 900,
+      "position": 46.65
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/how-technology-and-data-helps-your-store-adapt-to-market-changes",
+      "keywords_count": 97,
+      "top_keyword": "real time in store purchase data into marketing platforms",
+      "clicks": 0,
+      "impressions": 479,
+      "position": 19.99
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/importance-of-version-control-and-release-management-in-development",
+      "keywords_count": 89,
+      "top_keyword": "release manager software",
+      "clicks": 0,
+      "impressions": 362,
+      "position": 22.38
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/how-businesses-sell-modern-commerce",
+      "keywords_count": 31,
+      "top_keyword": "ebs pos system",
+      "clicks": 0,
+      "impressions": 359,
+      "position": 15.73
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/mobile-wallet-for-offline-crypto-payments",
+      "keywords_count": 68,
+      "top_keyword": "crypto phone app",
+      "clicks": 0,
+      "impressions": 354,
+      "position": 12.44
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/what-digital-transformation-dx-is-for-business-today",
+      "keywords_count": 32,
+      "top_keyword": "\"new work transformation expert\" ebs",
+      "clicks": 0,
+      "impressions": 308,
+      "position": 17.51
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/business-consulting-has-changed-to-2-0",
+      "keywords_count": 7,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 237,
+      "position": 15.56
+    },
+    {
+      "url": "https://ebs-integrator.com/blog/what-is-ai-sprawl",
+      "keywords_count": 16,
+      "top_keyword": "what software is best for controlling ai tool sprawl across an organization?",
+      "clicks": 0,
+      "impressions": 215,
+      "position": 10.64
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/open-banking-api-economy-after-psd2",
+      "keywords_count": 51,
+      "top_keyword": "how to secure payment apis in accountants",
+      "clicks": 0,
+      "impressions": 191,
+      "position": 29.17
+    },
+    {
+      "url": "https://ebs-integrator.com/en/it-services",
+      "keywords_count": 8,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 176,
+      "position": 4.55
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/a-transition-story-clean-desk-and-clean-screen-policy",
+      "keywords_count": 28,
+      "top_keyword": "clean screen policy",
+      "clicks": 0,
+      "impressions": 163,
+      "position": 37.18
+    },
+    {
+      "url": "https://ebs-integrator.com/en/how-digital-transformation-changing-retail-trends-technologies",
+      "keywords_count": 18,
+      "top_keyword": "technology specific retail experts",
+      "clicks": 0,
+      "impressions": 150,
+      "position": 64.65
+    },
+    {
+      "url": "https://ebs-integrator.com/en/it-services/consulting/cto-as-a-service",
+      "keywords_count": 17,
+      "top_keyword": "cto consulting",
+      "clicks": 0,
+      "impressions": 148,
+      "position": 51.05
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/what-does-big-data-mean-for-modern-retail",
+      "keywords_count": 21,
+      "top_keyword": "big data analytics in retail industry",
+      "clicks": 0,
+      "impressions": 143,
+      "position": 8.36
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/why-omnichannel-your-online-&-physical-stores",
+      "keywords_count": 22,
+      "top_keyword": "omni channel technology",
+      "clicks": 0,
+      "impressions": 138,
+      "position": 22.06
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/cross-platform-vs-hybrid-two-different-stories",
+      "keywords_count": 15,
+      "top_keyword": "difference between hybrid and cross platform",
+      "clicks": 0,
+      "impressions": 133,
+      "position": 51.89
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/programming-timeline-part2",
+      "keywords_count": 61,
+      "top_keyword": "developed by",
+      "clicks": 0,
+      "impressions": 125,
+      "position": 13.54
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/fintech-is-changing-the-future-of-financial-services",
+      "keywords_count": 34,
+      "top_keyword": "how is fintech changing the way people manage money?",
+      "clicks": 0,
+      "impressions": 119,
+      "position": 23.76
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/e-admission-system-for-moldova",
+      "keywords_count": 11,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 102,
+      "position": 11.16
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/education-data-silos-higher-education-administration",
+      "keywords_count": 25,
+      "top_keyword": "data silo",
+      "clicks": 0,
+      "impressions": 97,
+      "position": 18.48
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/how-social-commerce-is-replacing-search-eu-ecommerce",
+      "keywords_count": 21,
+      "top_keyword": "social ecommerce platform",
+      "clicks": 0,
+      "impressions": 95,
+      "position": 21.87
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/data-privacy-protection-and-why-it-matters-for-ecommerce",
+      "keywords_count": 9,
+      "top_keyword": "privacy e commerce",
+      "clicks": 0,
+      "impressions": 95,
+      "position": 29.69
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/blockchain-and-its-future-with-digital-transformation",
+      "keywords_count": 15,
+      "top_keyword": "blockchain applications in retail",
+      "clicks": 0,
+      "impressions": 95,
+      "position": 22.44
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/non-bank-factoring-digitalization",
+      "keywords_count": 7,
+      "top_keyword": "e factoring",
+      "clicks": 0,
+      "impressions": 92,
+      "position": 34.45
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/what-is-ai-sprawl",
+      "keywords_count": 13,
+      "top_keyword": "what is ai sprawl",
+      "clicks": 0,
+      "impressions": 91,
+      "position": 9.12
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog",
+      "keywords_count": 5,
+      "top_keyword": "auro chatbot mobile apps",
+      "clicks": 0,
+      "impressions": 88,
+      "position": 5.83
+    },
+    {
+      "url": "https://ebs-integrator.com/en/it-services/consulting",
+      "keywords_count": 5,
+      "top_keyword": "ebs integrator",
+      "clicks": 0,
+      "impressions": 84,
+      "position": 9.51
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/1c-crm-integration-credit-management",
+      "keywords_count": 2,
+      "top_keyword": "microlending crm",
+      "clicks": 0,
+      "impressions": 80,
+      "position": 28.12
+    },
+    {
+      "url": "https://ebs-integrator.com/en/it-services/data-engineering-ai",
+      "keywords_count": 5,
+      "top_keyword": "big data engineering companies",
+      "clicks": 0,
+      "impressions": 76,
+      "position": 55.34
+    },
+    {
+      "url": "https://ebs-integrator.com/en/industries/egov-public-sector",
+      "keywords_count": 19,
+      "top_keyword": "egov",
+      "clicks": 0,
+      "impressions": 76,
+      "position": 12.7
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies",
+      "keywords_count": 12,
+      "top_keyword": "ebs",
+      "clicks": 0,
+      "impressions": 73,
+      "position": 18.64
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/cloud-migration-moving-data-from-offline-to-online",
+      "keywords_count": 22,
+      "top_keyword": "which platforms migrate user profiles and data with zero-touch?",
+      "clicks": 0,
+      "impressions": 55,
+      "position": 23.55
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/ai-big-data-fintech-pilot-to-production",
+      "keywords_count": 16,
+      "top_keyword": "how to move from treasury ai pilot to production",
+      "clicks": 0,
+      "impressions": 55,
+      "position": 22.75
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/ecommerce-marketplace-for-classified-ads",
+      "keywords_count": 5,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 54,
+      "position": 11.72
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/gift-giving-application",
+      "keywords_count": 6,
+      "top_keyword": "prsnt",
+      "clicks": 0,
+      "impressions": 49,
+      "position": 21.84
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/digital-optical-showroom-application",
+      "keywords_count": 4,
+      "top_keyword": "ebs marketing",
+      "clicks": 0,
+      "impressions": 49,
+      "position": 50.43
+    },
+    {
+      "url": "https://ebs-integrator.com/en/it-services/software-development",
+      "keywords_count": 9,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 45,
+      "position": 25.69
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/online-credit-system-for-individuals-and-businesses",
+      "keywords_count": 11,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 45,
+      "position": 62.11
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/online-shopping-gets-better-x-personalization",
+      "keywords_count": 19,
+      "top_keyword": "enterprise ecommerce personalization",
+      "clicks": 0,
+      "impressions": 45,
+      "position": 25.18
+    },
+    {
+      "url": "https://pages.ebs-integrator.com/",
+      "keywords_count": 1,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 43,
+      "position": 17.05
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/romania-moldova-tech-partners-nexus-2025",
+      "keywords_count": 4,
+      "top_keyword": "ebs integrator moldova",
+      "clicks": 0,
+      "impressions": 41,
+      "position": 10.95
+    },
+    {
+      "url": "https://ebs-integrator.com/en/case-studies/educational-platform-for-an-online-english-school",
+      "keywords_count": 4,
+      "top_keyword": "(search-operator query, truncated)",
+      "clicks": 0,
+      "impressions": 40,
+      "position": 37.6
+    },
+    {
+      "url": "https://ebs-integrator.com/en/industries/edtech",
+      "keywords_count": 2,
+      "top_keyword": "site:ebs-integrator.com",
+      "clicks": 0,
+      "impressions": 38,
+      "position": 7.42
+    },
+    {
+      "url": "https://ebs-integrator.com/en/industries",
+      "keywords_count": 3,
+      "top_keyword": "ebs-integrator",
+      "clicks": 0,
+      "impressions": 38,
+      "position": 8.32
+    },
+    {
+      "url": "https://ebs-integrator.com/en/blog/education-management-systems-without-integration",
+      "keywords_count": 6,
+      "top_keyword": "streamlining system integration for colleges and universities",
+      "clicks": 0,
+      "impressions": 34,
+      "position": 15.97
+    }
+  ],
+  "queries": [
+    {
+      "keyword": "ebs integrator",
+      "urls_count": 23,
+      "top_url": "https://ebs-integrator.com/en/home",
+      "clicks": 268,
+      "impressions": 621,
+      "position": 2.39
+    },
+    {
+      "keyword": "ebs",
+      "urls_count": 9,
+      "top_url": "https://ebs-integrator.com/en/home",
+      "clicks": 45,
+      "impressions": 236,
+      "position": 11.83
+    },
+    {
+      "keyword": "ebs integrator srl",
+      "urls_count": 12,
+      "top_url": "https://ebs-integrator.com/en/home",
+      "clicks": 13,
+      "impressions": 73,
+      "position": 4.88
+    },
+    {
+      "keyword": "ebs-integrator",
+      "urls_count": 26,
+      "top_url": "https://ebs-integrator.com/en/home",
+      "clicks": 7,
+      "impressions": 139,
+      "position": 6.5
+    },
+    {
+      "keyword": "django orm vs sqlalchemy",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/django-orm-vs-sql-alchemy",
+      "clicks": 2,
+      "impressions": 134,
+      "position": 5.9
+    },
+    {
+      "keyword": "it companies moldova",
+      "urls_count": 1,
+      "top_url": "http://www.ebs-integrator.com/",
+      "clicks": 1,
+      "impressions": 137,
+      "position": 1.63
+    },
+    {
+      "keyword": "data centric vs data driven",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/basics-data-centric-vs-data-driven-the-whys-and-whats",
+      "clicks": 1,
+      "impressions": 111,
+      "position": 12.03
+    },
+    {
+      "keyword": "sqlalchemy vs django",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/django-orm-vs-sql-alchemy",
+      "clicks": 1,
+      "impressions": 68,
+      "position": 6.31
+    },
+    {
+      "keyword": "e postal service",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/case-studies/postal-service-digital-transformation",
+      "clicks": 1,
+      "impressions": 49,
+      "position": 9.84
+    },
+    {
+      "keyword": "ebs fintech",
+      "urls_count": 2,
+      "top_url": "https://ebs-integrator.com/en/industries/fintech",
+      "clicks": 1,
+      "impressions": 40,
+      "position": 4.4
+    },
+    {
+      "keyword": "integrated ecommerce",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/industries/retail-ecommerce",
+      "clicks": 0,
+      "impressions": 310,
+      "position": 62.45
+    },
+    {
+      "keyword": "customer pain points",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/customer-pain-points",
+      "clicks": 0,
+      "impressions": 296,
+      "position": 45.5
+    },
+    {
+      "keyword": "data centric business initiatives",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/basics-data-centric-vs-data-driven-the-whys-and-whats",
+      "clicks": 0,
+      "impressions": 247,
+      "position": 18.96
+    },
+    {
+      "keyword": "consulting 2.0",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/business-consulting-has-changed-to-2-0",
+      "clicks": 0,
+      "impressions": 208,
+      "position": 12.02
+    },
+    {
+      "keyword": "data-centric approach",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/basics-data-centric-vs-data-driven-the-whys-and-whats",
+      "clicks": 0,
+      "impressions": 186,
+      "position": 40.91
+    },
+    {
+      "keyword": "modern commerce",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/how-businesses-sell-modern-commerce",
+      "clicks": 0,
+      "impressions": 145,
+      "position": 17.9
+    },
+    {
+      "keyword": "retail ecommerce solution",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/industries/retail-ecommerce",
+      "clicks": 0,
+      "impressions": 138,
+      "position": 34.09
+    },
+    {
+      "keyword": "sqlalchemy vs django orm",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/django-orm-vs-sql-alchemy",
+      "clicks": 0,
+      "impressions": 137,
+      "position": 6.61
+    },
+    {
+      "keyword": "site:ebs-integrator.com",
+      "urls_count": 108,
+      "top_url": "https://ebs-integrator.com/en/blog/sensitive-data-is-the-easiest-thing-for-a-school-to-underprice",
+      "clicks": 0,
+      "impressions": 129,
+      "position": 26.97
+    },
+    {
+      "keyword": "process automation in banking sector",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/what-is-banking-process-automation-and-why-it-matters",
+      "clicks": 0,
+      "impressions": 128,
+      "position": 26.74
+    },
+    {
+      "keyword": "data centric",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/basics-data-centric-vs-data-driven-the-whys-and-whats",
+      "clicks": 0,
+      "impressions": 121,
+      "position": 33.69
+    },
+    {
+      "keyword": "digital process automation tools banking",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/what-is-banking-process-automation-and-why-it-matters",
+      "clicks": 0,
+      "impressions": 108,
+      "position": 20.68
+    },
+    {
+      "keyword": "retail erp integration",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/industries/retail-ecommerce",
+      "clicks": 0,
+      "impressions": 105,
+      "position": 72.06
+    },
+    {
+      "keyword": "customer pain point",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/customer-pain-points",
+      "clicks": 0,
+      "impressions": 105,
+      "position": 44.17
+    },
+    {
+      "keyword": "banking process automation",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/what-is-banking-process-automation-and-why-it-matters",
+      "clicks": 0,
+      "impressions": 102,
+      "position": 17.96
+    },
+    {
+      "keyword": "data centric architecture",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/basics-data-centric-vs-data-driven-the-whys-and-whats",
+      "clicks": 0,
+      "impressions": 97,
+      "position": 28.81
+    },
+    {
+      "keyword": "real time in store purchase data into marketing platforms",
+      "urls_count": 2,
+      "top_url": "https://ebs-integrator.com/en/blog/how-technology-and-data-helps-your-store-adapt-to-market-changes",
+      "clicks": 0,
+      "impressions": 94,
+      "position": 17.27
+    },
+    {
+      "keyword": "dx digital transformation",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/what-digital-transformation-dx-is-for-business-today",
+      "clicks": 0,
+      "impressions": 92,
+      "position": 22.76
+    },
+    {
+      "keyword": "what is ai tool sprawl and how common is it?",
+      "urls_count": 2,
+      "top_url": "https://ebs-integrator.com/blog/what-is-ai-sprawl",
+      "clicks": 0,
+      "impressions": 90,
+      "position": 7.17
+    },
+    {
+      "keyword": "e commerce systems orem",
+      "urls_count": 2,
+      "top_url": "https://ebs-integrator.com/en/industries/retail-ecommerce",
+      "clicks": 0,
+      "impressions": 83,
+      "position": 49.88
+    },
+    {
+      "keyword": "data-centric",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/basics-data-centric-vs-data-driven-the-whys-and-whats",
+      "clicks": 0,
+      "impressions": 83,
+      "position": 28.08
+    },
+    {
+      "keyword": "retail integration support",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/industries/retail-ecommerce",
+      "clicks": 0,
+      "impressions": 75,
+      "position": 73.83
+    },
+    {
+      "keyword": "ecommerce privacy",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/data-privacy-protection-and-why-it-matters-for-ecommerce",
+      "clicks": 0,
+      "impressions": 74,
+      "position": 25.68
+    },
+    {
+      "keyword": "banking business process",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/what-is-banking-process-automation-and-why-it-matters",
+      "clicks": 0,
+      "impressions": 74,
+      "position": 28.22
+    },
+    {
+      "keyword": "modern commerce solutions",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/how-businesses-sell-modern-commerce",
+      "clicks": 0,
+      "impressions": 73,
+      "position": 11.75
+    },
+    {
+      "keyword": "microlending crm",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/case-studies/1c-crm-integration-credit-management",
+      "clicks": 0,
+      "impressions": 71,
+      "position": 25.86
+    },
+    {
+      "keyword": "e factoring",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/case-studies/non-bank-factoring-digitalization",
+      "clicks": 0,
+      "impressions": 69,
+      "position": 34.1
+    },
+    {
+      "keyword": "integrated ecommerce solutions",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/industries/retail-ecommerce",
+      "clicks": 0,
+      "impressions": 68,
+      "position": 66.04
+    },
+    {
+      "keyword": "how exactly does blockchain technology work, in simple terms?",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/blockchain-and-its-future-with-digital-transformation",
+      "clicks": 0,
+      "impressions": 68,
+      "position": 20.94
+    },
+    {
+      "keyword": "release management",
+      "urls_count": 1,
+      "top_url": "https://ebs-integrator.com/en/blog/importance-of-version-control-and-release-management-in-development",
+      "clicks": 0,
+      "impressions": 67,
+      "position": 12.37
+    }
+  ]
+}
