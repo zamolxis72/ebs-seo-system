@@ -30,7 +30,13 @@ advice cannot know.
 | 2. Citability | `references/geo-content.md` | Would an answer engine lift this, and what would it cite EBS **for**? |
 | 3. Machine | `references/machine-signals.md` (+ schema examples, official machine rules) | Can a crawler and an extractor parse it: schema, tables, headings, access? |
 | 4. Trust | `references/eeat-signals.md` (+ the rater guidelines verbatim) | Would a quality rater trust it, and is the bar raised because the topic is YMYL? |
-| 0. Mechanics | the surface's monitor · `text-semantics` | Title, meta, headings, internal links — MEASURED by script (for articles, `article_health.py`'s MECHANICS group); arrangement fixes are `text-semantics`'s, wording is the canon's. `b2b-seo-audit` enters at SITE scope only (live surfaces: crawl, indexation, CWV — findings to `ebs-seo-system`) |
+| 0. Mechanics | the surface's monitor · `text-semantics` · the numbers in `library/ai-seo-limits.md` | Title, meta, headings, internal links, answer block, FAQ count, key references — MEASURED by script (for articles, `article_health.py`'s MECHANICS group); arrangement fixes are `text-semantics`'s, wording is the canon's. `b2b-seo-audit` enters at SITE scope only (live surfaces: crawl, indexation, CWV — findings to `ebs-seo-system`) |
+
+**AI SEO: the umbrella, in three parts (2026-11-03).** Every limit is SEO (found and ranked), AEO (lifted as the
+direct answer) or GEO (cited by a generative engine), and its number lives once, in
+`ebs-seo-system/library/ai-seo-limits.md`. The layers map onto the parts: mechanics and machine are mostly **SEO**;
+semantics serves **SEO** (entity coverage) and **AEO** (answer blocks, paragraph shape); citability is **AEO** and
+**GEO**; trust is **GEO**. A number restated in this skill, a reference or a script is a fork.
 
 Run mechanics first because it is scripted and free, then semantics, citability, machine, trust. Trust last
 because its findings are usually the ones that need a human input rather than an edit.

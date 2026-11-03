@@ -47,8 +47,14 @@ never invented.
 **AH6 — Measurement (post-publish).** Rank and AI-citation tracking per `seo-strategy`'s method;
 GSC pulls for entity health per `entity-health-method.md` (0 API units).
 
+**AH7 — Anchor-text health (monitoring, 2026-11-03).** `site-explorer-anchors` for the domain, then the
+exact-match share: referring anchors that equal a target keyword verbatim, over all referring anchors. The
+alert line is ~10% (`ai-seo-limits.md` § SEO). Never a link quota. Verify the parameters with the `doc`
+tool and the unit cost against `subscription-info-limits-and-usage` before the first run; rides the ~2-week
+agenda ritual with AH6, cached into `intake/snapshots/`.
+
 ## Who runs what
 
-`seo-strategy` runs AH1/AH4/AH6 (demand, leveling, measurement); `ebs-discoverability` runs AH2/AH3/AH5
+`seo-strategy` runs AH1/AH4/AH6/AH7 (demand, leveling, measurement, anchor health); `ebs-discoverability` runs AH2/AH3/AH5
 (the entity engine and the question set). Consumers cite pulls by id — a workstream recipe that
 restates an endpoint here has forked the engine.
