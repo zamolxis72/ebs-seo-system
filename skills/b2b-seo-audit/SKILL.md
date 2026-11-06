@@ -100,6 +100,8 @@ Deliver an audit report:
 
 Every finding carries: Issue (what is wrong), Impact (high, medium, low), Evidence (how you found it, including any detection caveat), Fix (the recommendation, naming the skill that owns it when the fix is copy or structure), and Priority.
 
+**Untested options (read-only).** Optionally, after the action plan, as a last section of the report, list ideas from the knowledge base's `strategy-plays/` folder (`~/Documents/GitHub/knowledge-base`) that fit this situation, following `strategy-plays/README.md`, the single home of how plays are read and shown. Never write to that folder, and never turn a play into a fix or recommendation here.
+
 ## Self-check before delivering
 
 1. Did I diagnose and route, sending copy fixes to the copy skills and structural fixes to `b2b-site-architecture` rather than doing them here?

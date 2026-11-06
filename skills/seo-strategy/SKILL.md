@@ -40,6 +40,8 @@ Off-page is **monitored, never targeted** (`library/ai-seo-limits.md` § SEO): A
 
 Follow the official taxonomy in order, cheapest checks first: (1) Data anomaly (Search Console data issues page), (2) seasonality (16-month range + Google Trends: is the drop web-wide?), (3) technical (Crawl Stats, Page Indexing, site-wide vs page-group via the Pages table), (4) security/spam (Security Issues, Manual Actions reports), (5) algorithmic update (check update timing; small position drop on a performing page → officially, don't make radical changes; large drop → whole-site people-first self-assessment, route to ebs-discoverability's trust layer), (6) SERP change (new AI Overview/feature absorbing clicks — impressions stable + clicks down also implicates title/snippet, route to ebs-discoverability's semantics layer). Deliver: diagnosis with evidence, severity, owner, and fix route.
 
+**Untested options (read-only).** Optionally, after the diagnosis (or the prioritized tiers in Mode A), list ideas from the knowledge base's `strategy-plays/` folder (`~/Documents/GitHub/knowledge-base`) that fit this situation, following `strategy-plays/README.md`, the single home of how plays are read and shown. Never write to that folder, and never turn a play into a fix or recommendation here.
+
 ## Output format
 
 Portfolio mode: (1) scored keyword table with source-and-date column per metric, (2) SERP classification per priority keyword (rankable/citation/local + evidence), (3) keyword→page map with cannibalization check, (4) prioritized tiers with the scoring formula shown, (5) declined list with reasons, (6) measurement plan. Diagnosis mode: cause, evidence, fix, owner, recheck date. Label throughout: Official rule / Tool evidence (dated) / Judgment.
