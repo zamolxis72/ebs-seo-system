@@ -9,13 +9,15 @@ and `services/web-design.md` (templates, components, rendering). `library/ai-seo
 concept, its research, its rule, what checks it and which system it serves. A new rule lands here and its row
 in the map in the same session; a consumer points to its service file and never restates it.
 
-## One session, one worktree (E54, 2026-11-03)
+## Local first; GitHub at product close (owner, 2026-11-10)
 
-The main checkout is Andrei's. A session that will **write** works in its own `git worktree` on its own branch
-off `origin/main`, and never switches the branch of the main checkout or commits on it; finding the checkout on
-someone else's branch, it says so and leaves it alone. Before any commit: `git branch --show-current`. Full rule:
-`ebs-marketing-system/CLAUDE.md` § Rules (2026-10-29); recorded as E54 in
-`ebs-article-system/library/error-classes.md` after one session switched five repos' checkouts.
+Sessions write directly in this local folder: one writing session per repo at a time, no separate worktree.
+Before writing: `git status` and `git branch --show-current`. A branch that is not `main`, or changes that are
+not yours, means another writer: say so and stop; never switch the folder's branch. Work, test and improve
+locally; nothing goes to GitHub until the product is finished or Andrei names something concrete that has to go
+up. Each product keeps a running log (error, fix, difference from the system); the close turns it into system
+changes for approval, then one PR per repo. Replaces "One session, one worktree" (E54). Full rule:
+`ebs-marketing-system/CLAUDE.md` § Rules.
 
 ## Before any SEO work (in this exact order)
 1. Read `library/` — audit checklist, on-page and schema templates, the prioritization method,
